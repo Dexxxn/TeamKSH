@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.ksh.app">
+	<logger name="com.ksh.controller">
 		<level value="info" />
 	</logger>
 	
