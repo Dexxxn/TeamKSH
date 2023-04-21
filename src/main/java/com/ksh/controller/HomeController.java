@@ -48,4 +48,11 @@ public class HomeController {
 		return "popUp";
 	}	
 	
+	@RequestMapping(value = "/aside", method = RequestMethod.GET)
+	public String aside() {
+		return "aside";
+	}	
+	
+	
+	
 }
