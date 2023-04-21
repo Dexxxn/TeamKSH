@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 	<meta charset="UTF-8">
 	<title>일정 추가, 상세 일정 팝업</title>
 	<link rel="stylesheet" href="resources/css/popUp.css" />
