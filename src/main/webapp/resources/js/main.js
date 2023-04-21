@@ -1491,7 +1491,7 @@ var FullCalendar = (function (exports) {
         nowIndicator: false,
         scrollTime: '06:00:00',
         scrollTimeReset: true,
-        slotMinTime: '00:00:00',
+        slotMinTime: '08:00:00',
         slotMaxTime: '19:00:00',
         showNonCurrentDates: true,
         lazyFetching: true,

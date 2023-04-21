@@ -16,12 +16,12 @@
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
-      initialDate: '2023-01-12',
+      
       navLinks: true, // can click day/week names to navigate views
       selectable: true,
       selectMirror: true,
       select: function(arg) {
-        var title = prompt('Event Title:');
+        var title = prompt('일정추가');
         if (title) {
           calendar.addEvent({
             title: title,
@@ -33,7 +33,7 @@
         calendar.unselect()
       },
       eventClick: function(arg) {
-        if (confirm('Are you sure you want to delete this event?')) {
+        if (confirm('일정을 삭제하시겠습니까?')) {
           arg.event.remove()
         }
       },
