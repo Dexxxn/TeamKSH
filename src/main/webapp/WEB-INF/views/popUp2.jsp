@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head> 
+<head>
 	<meta charset="UTF-8">
-	<title>일정 추가, 상세 일정 팝업</title>
+	<title>일정 상세 팝업</title>
 	<link rel="stylesheet" href="resources/css/popUp.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0f537ad086.js" crossorigin="anonymous"></script>
@@ -85,6 +85,5 @@
 		</div>	
 	</form>	
 </div>
-
 </body>
 </html>

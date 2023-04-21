@@ -17,6 +17,17 @@
 	box-shadow: 0 8px 32px gray;
 }
 
+.title{
+	background-color: #003399;
+	padding: 10px 10px;
+}
+
+.title span{
+	color: white;
+	font-size: 17px;
+	font-weight: bold;
+}
+
 #calendar{
 	float: left;
 	margin: 20px;
@@ -29,10 +40,28 @@
 
 .item{
 	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;	
 }
 
 .label{
 	font-size: 14px;
 	font-weight: bold;
-	margin-bottom: 3px;	
+	margin-bottom: 3px;
+	width: 100px;
+}
+
+.value{
+	font-size: 15px;
+}
+
+.value select{
+	width: 110px;
+	height: 30px;
+}
+
+.button{
+	padding: 3px 15px;
+	margin: 0 5px;
+	margin-bottom: 20px;
 }
