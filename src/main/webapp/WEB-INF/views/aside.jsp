@@ -9,18 +9,18 @@
 <title>aside 작업 페이지-추후 메인으로 복붙 예정</title>
 
 <!-- CSS -->
-<link rel="stylesheet" href="resources/css/sideCalendar.css">
+<link rel="stylesheet" href="/resources/css/sideCalendar.css">
 
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src='resources/js/main.js' type="text/javascript"></script>
-<script src='resources/js/sideCalendar.js' type="text/javascript"></script>
+<script src="/resources/js/main.js" type="text/javascript"></script>
+<script src="/resources/js/sideCalendar.js" type="text/javascript"></script>
 
 <script>
 
 
 	document.addEventListener('DOMContentLoaded', function() {
-	    var calendarEl = document.getElementById('calendar');
+	    var calendarEl = document.getElementById('main_Calendar');
 	
 	    var calendar = new FullCalendar.Calendar(calendarEl, {
 	      headerToolbar: {
@@ -114,55 +114,105 @@
 	
 </script>
 <style>
+
+	/* 전체 */
+	#container{display: flex; width:100%; height:100%; /* background-color:#f5f5f5; */}
+	/* 로고 자리 */
+	#company_logo{ width: 245px; height: 100px; /* background-color: #E6E6FA; */}
+	#hospital_logo{width: 270px; height: 100px;}
+	#pageSide_left{background-color: #f5f5f5; }
 	
-	  body {
-	    margin: 40px 10px;
-	    padding: 0;
-	    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-	    font-size: 14px;
-	  }
-	
-	  #calendar {
-	    max-width: 1100px;
-	    margin: 0 auto;
-	  }
-	
+	#pageSide_right{/* background-color: #FAFAD2; */ }
+	/* aside 조회등록 폼  */
 	#form_wrap{
-		margin-top: 100px;
-		width: 230px;
-		height: 500px;
+		margin-top: 10px;
+		width: 260px;
+		height: 1920px;
 		margin-left: 10px;
-		background-color: pink;
+		font-size: 13px;
+		font-weight: bold;
+
+		/* background-color: pink; */
+	}
+	
+/* 	폼 타이틀 #form_wrap #patient_form_title{font-size: 16px; text-align: center; color: blue;} */
+	
+	#form_wrap .label_detail{ padding: 2px;}
+	
+	#form_wrap #form_contents{/* background-color: yellow; */}
+	
+	#form_wrap .patient_visit_radio{margin:6px;}
+	
+	#form_wrap .patient_form_btn{margin-left: 9px;}
+	
+	#form_wrap .patient_form_label{ display: inline-block; padding:2px; width:60px; font-size:13px; text-align: center; background-color: #f5f5f5;}
+	
+	#form_wrap .textarea_label{/* padding:2px; */}
+	
+	#form_wrap .patient_form_input{width:173px; padding: 1px; font-size:13px; font-weight: bold; }
+	
+	#form_wrap .patient_textarea{ resize: none; padding: 1px; font-weight: bold; } 
+	
+	#form_wrap #visit_radio_div{ margin-left:50px; padding: 3px;}
+	
+	/* aside 미니 캘린더  */
+	  .calendar {
+	    max-width: 230px;
+	    height: 100px;
+	    margin-left: 10px;
+	/*     margin-top: 600px;  */
+	background-color:yellow;
+	  } 
+	
+	
+	/* main 캘린더 */
+	#main_Calendar_wrap{
+		width: 1580px;
+		height: 500px;
+		/* background-color: yellow; */
+		margin-left: 30px;
+	
 		
 	}
+	
+	#main_Calendar{ margin-top: 150px;}
+	
+	
 </style>
 </head>
 <body>
-<aside><div id="form_wrap">진료예약 조회 및 등록 form</div></aside>
+<div id="container">
+	<div id="pageSide_left">
+		<header><div id="company_logo"><img src="/resources/img/hospital_logo_ex.png" id="hospital_logo" ></div></header>
+		<aside>
+			<div id="form_wrap">
+				<form>
+					<!-- <p id="patient_form_title">진료예약 조회 및 등록 form</p><br> -->
+					<div id="form_contents">
+					<div class="label_detail"><label class="patient_form_label">환자이름</label><input class="patient_form_input" type="text"></div>
+					<div class="label_detail"><label class="patient_form_label">주민번호</label><input class="patient_form_input" type="text"></div>
+						<div id="visit_radio_div">
+							<input type="radio" name="visit" value="first" checked><span class="patient_visit_radio">초진</span>
+							<input type="radio" name="visit" value="second"><span class="patient_visit_radio">재진</span>
+							<input type="button" value="조회/등록" class="patient_form_btn"><br>
+						</div>
+							<!-- <div  class="label_detail"><label class="patient_form_label">성별</label><input class="patient_form_input" type="text"></div> -->
+							<div  class="label_detail"><label class="patient_form_label">연락처</label><input class="patient_form_input" type="text"></div>
+							<div  class="label_detail"><label class="patient_form_label textarea_label">주소</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div>
+							<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div><br>
+					 <!--사이드캘린더 자리 include-->
+					<%@ include file = "sideCalendar.jsp" %>
+					</div>
+				</form>
+			</div> <!-- end of "form_wrap"  -->
+		</aside>
+	</div><!-- pageSide_left -->
 
- <div class="calendar">
-    <div class="header">
-      <div class="year-month"></div>
-      <div class="nav">
-        <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
-        <button class="nav-btn go-today" onclick="goToday()">Today</button>
-        <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
-      </div>
-    </div>
-    <div class="main">
-      <div class="days">
-        <div class="day">일</div>
-        <div class="day">월</div>
-        <div class="day">화</div>
-        <div class="day">수</div>
-        <div class="day">목</div>
-        <div class="day">금</div>
-        <div class="day">토</div>
-      </div>
-      <div class="dates"></div>
-    </div>
-  </div>
-  <div id='calendar'></div>
-
+	<div id="pageSide_right">
+		 <div id="main_Calendar_wrap">
+		  	<div id='main_Calendar'></div>
+		 </div>
+	</div><!-- pageSide_right -->
+</div><!-- wrapper -->
 </body>
 </html>

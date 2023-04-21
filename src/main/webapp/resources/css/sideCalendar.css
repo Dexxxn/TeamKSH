@@ -5,17 +5,17 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
+} */
 
-.calendar {
-  width: 600px;
-  margin: 50px;
-}
+/* .calendar {
+  width: 230px;
+  margin-left: 10px;
+} */
 
 .header {
   display: flex;
@@ -62,7 +62,7 @@ body {
 .dates {
   display: flex;
   flex-flow: row wrap;
-  height: 500px;
+  height: 200px; /* 미니캘린더 높이  */
   border-top: 1px solid #333333;
   border-right: 1px solid #333333;
 }
