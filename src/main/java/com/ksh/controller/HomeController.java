@@ -43,5 +43,9 @@ public class HomeController {
 		return "fullCalendar";
 	}
 	
+	@RequestMapping(value = "/popup", method = RequestMethod.GET)
+	public String popUp() {
+		return "popUp";
+	}	
 	
 }
