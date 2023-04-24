@@ -37,7 +37,7 @@ const renderCalender = () => {
     const condition = i >= firstDateIndex && i < lastDateIndex + 1
                       ? 'this'
                       : 'other';
-    dates[i] = `<div class="date"><span class=${condition}>${date}</span></div>`;
+    dates[i] = `<div class="date"><span class=${condition} data-date="${date}">${date}</span></div>`;
   });
 
   document.querySelector('.dates').innerHTML = dates.join('');
@@ -69,3 +69,17 @@ const goToday = () => {
   date = new Date();
   renderCalender();
 };
+
+const addSchedule = (date) => {
+  const schedule = prompt(`일정추가`);
+  if (schedule) {
+    // 일정을 저장하는 로직 추가
+  }
+};
+
+document.querySelector('.dates').addEventListener('click', (event) => {
+  if (event.target.classList.contains('this')) {
+    const clickedDate = event.target.dataset.date;
+    addSchedule(clickedDate);
+  }
+});
