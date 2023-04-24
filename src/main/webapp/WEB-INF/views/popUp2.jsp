@@ -19,6 +19,9 @@
 	<form>	
 		<!-- 일정 정보 -->
 		<div class="calendar_select">
+			<div class="item_title">
+				<i class="fa-solid fa-square fa-2xs"></i> <b>스케줄 정보</b>
+			</div>		
 			<div class="item">
 				<div class="label">날짜</div>			
 				<div class="value">
@@ -77,6 +80,9 @@
 		</div>
 		<!-- 환자 정보 -->
 		<div class="calendar_select">
+			<div class="item_title">
+				<i class="fa-solid fa-square fa-2xs"></i> <b>예약자 정보</b>			
+			</div>
 			<div class="item">
 				<div class="label">이름</div>			
 				<div class="value">

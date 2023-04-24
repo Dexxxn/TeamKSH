@@ -21,6 +21,7 @@
 		<span>일정 등록</span>
 		<i class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
 	</div>
+	
 	<!-- 캘린더 자리 -->
 	<div id="miniCalendar">
 		<%@ include file = "sideCalendar.jsp" %>
