@@ -5,6 +5,12 @@
 	padding: 0;
 	font-family: "맑은 고딕";
 }
+
+textarea{
+    width: 171px;
+    height: 50px;
+    resize: none;
+}
  
 .date_popUp{
 	z-index: 5;
@@ -44,12 +50,13 @@ form{
 }
 
 #miniCalendar .dates{
-	height: 100px;
+	height: 130px;
 }
 
 #miniCalendar .date{
 	padding: 1px 4px;
 	text-align: center;
+	font-size: 13px;
 }
 
 #calendar_insert{
@@ -61,7 +68,6 @@ form{
 
 .calendar_select{
 	margin: 15px 30px;
-	padding: 1px;
 	background-color: #EAEAEA;
 }
 
@@ -69,24 +75,26 @@ form{
 	font-size: 15px;
  	padding-bottom: 10px;
  	background-color: white;
+ 	border: 0;
 }
 
 .item{
 	margin-bottom: 10px;
 	display: flex;
 	justify-content: normal;	
-/* 	border: 1px solid black; 	 */
+	padding: 2px;
 }
 
 .item a{
-	font-size: 12px;
+	font-size: 11px;
 }
 
 .label{
 	font-size: 14px;
 	font-weight: bold;
-	margin-bottom: 3px;
-	width: 100px;
+	color: #353535;
+/* 	margin-bottom: 3px; */
+	width: 119px;
 }
 
 .calendar_select .label{
@@ -95,6 +103,7 @@ form{
 
 .value{
 	font-size: 14px;
+	width: 125px;
 }
 
 .value select{
