@@ -9,12 +9,12 @@
 <title>aside 작업 페이지-추후 메인으로 복붙 예정</title>
 
 <!-- CSS -->
-<link rel="stylesheet" href="/resources/css/sideCalendar.css">
+<link rel="stylesheet" href="resources/css/sideCalendar.css">
 
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="/resources/js/main.js" type="text/javascript"></script>
-<script src="/resources/js/sideCalendar.js" type="text/javascript"></script>
+
 
 <script>
 
@@ -161,7 +161,7 @@
 	    height: 100px;
 	    margin-left: 10px;
 	/*     margin-top: 600px;  */
-	background-color:yellow;
+	/* background-color:yellow; */
 	  } 
 	
 	
@@ -201,9 +201,9 @@
 							<div  class="label_detail"><label class="patient_form_label textarea_label">주소</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div>
 							<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div><br>
 					 <!--사이드캘린더 자리 include-->
-					<%@ include file = "sideCalendar.jsp" %>
 					</div>
-				</form>
+				</form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
+					<%@ include file = "sideCalendar.jsp" %>
 			</div> <!-- end of "form_wrap"  -->
 		</aside>
 	</div><!-- pageSide_left -->
