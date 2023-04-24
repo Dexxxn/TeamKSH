@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>일정 상세 팝업</title>
+	<title>상세 일정 팝업</title>
 	<link rel="stylesheet" href="resources/css/popUp.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0f537ad086.js" crossorigin="anonymous"></script>
@@ -13,16 +13,12 @@
 <!-- 팝업창 -->
 <div class="date_popUp">
 	<div class="title">
-		<span>일정 등록</span>
+		<span>상세 일정</span>
 		<i class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
 	</div>
 	<form>	
-		<!-- 캘린더 자리 -->
-		<div id="calendar">
-			<img src="resources/img/calendar.jpg">
-		</div>
-		<!-- INSERT 정보 -->
-		<div id="calendar_insert">
+		<!-- 일정 정보 -->
+		<div class="calendar_select">
 			<div class="item">
 				<div class="label">날짜</div>			
 				<div class="value">
@@ -79,9 +75,36 @@
 				</div>	
 			</div>			
 		</div>
+		<!-- 환자 정보 -->
+		<div class="calendar_select">
+			<div class="item">
+				<div class="label">이름</div>			
+				<div class="value">
+					장희영
+				</div>
+			</div>			
+			<div class="item">
+				<div class="label">연락처</div>			
+				<div class="value">
+					010-1234-1234
+				</div>
+			</div>
+			<div class="item">
+				<div class="label">생년월일</div>			
+				<div class="value">
+					000000
+				</div>
+			</div>
+			<div class="item">
+				<div class="label">진료 내역</div>			
+				<div class="value">
+					초진 / 재진 <a href="#">차트 보기</a>
+				</div>
+			</div>									
+		</div>
 		<div align="center">
-			<input class="button first" type="submit" value="확인">
-			<input class="button second" type="button" value="취소">
+			<input class="button first" type="submit" value="수정">
+			<input class="button second" type="submit" value="삭제">
 		</div>	
 	</form>	
 </div>

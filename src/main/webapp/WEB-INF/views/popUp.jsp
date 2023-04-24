@@ -4,10 +4,15 @@
 <html>
 <head> 
 	<meta charset="UTF-8">
-	<title>일정 추가, 상세 일정 팝업</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>일정 추가 팝업</title>
+	
 	<link rel="stylesheet" href="resources/css/popUp.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="resources/css/sideCalendar.css">
 	<script src="https://kit.fontawesome.com/0f537ad086.js" crossorigin="anonymous"></script>
+	
 </head>
 <body>
 <!-- 팝업창 -->
@@ -16,16 +21,16 @@
 		<span>일정 등록</span>
 		<i class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
 	</div>
+	<!-- 캘린더 자리 -->
+	<div id="miniCalendar">
+		<%@ include file = "sideCalendar.jsp" %>
+	</div>	
+	<!-- INSERT할 정보 -->
 	<form>	
-		<!-- 캘린더 자리 -->
-		<div id="calendar">
-			<img src="resources/img/calendar.jpg">
-		</div>
-		<!-- INSERT 정보 -->
 		<div id="calendar_insert">
 			<div class="item">
 				<div class="label">날짜</div>			
-				<div class="value">
+				<div>
 					2023. 04. 21
 				</div>
 			</div>	
@@ -79,7 +84,7 @@
 				</div>	
 			</div>			
 		</div>
-		<div align="center">
+		<div align="center" class="button_div">
 			<input class="button first" type="submit" value="확인">
 			<input class="button second" type="button" value="취소">
 		</div>	

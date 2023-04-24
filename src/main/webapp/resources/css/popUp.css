@@ -28,20 +28,46 @@
 	font-weight: bold;
 }
 
-#calendar{
+form{
 	float: left;
+}
+
+#miniCalendar{
+	float: left;
+	max-width: 190px;
 	margin: 20px;
+}
+
+#miniCalendar .year-month {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#miniCalendar .dates{
+	height: 100px;
+}
+
+#miniCalendar .date{
+	padding: 1px 4px;
+	text-align: center;
 }
 
 #calendar_insert{
 	float: left;
-	margin: 20px;	
+	margin: 20px;
+	background-color: #EAEAEA;
+}
+
+.calendar_select{
+	margin: 20px;
+	background-color: #EAEAEA;
 }
 
 .item{
 	margin-bottom: 10px;
 	display: flex;
 	justify-content: space-between;	
+/* 	border: 1px solid black; 	 */
 }
 
 .label{
@@ -58,6 +84,10 @@
 .value select{
 	width: 110px;
 	height: 30px;
+}
+
+.button_div{
+	clear: both;
 }
 
 .button{
