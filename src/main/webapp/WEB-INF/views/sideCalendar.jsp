@@ -23,5 +23,5 @@
       </div>
       <div class="dates"></div>
     </div>
-      <script src="resources/js/sideCalendar.js"></script>
   </div>
+    <script src="resources/js/sideCalendar.js"  type="text/javascript"></script>  

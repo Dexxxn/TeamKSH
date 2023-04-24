@@ -11,6 +11,7 @@
 <!-- CSS -->
 <link rel="stylesheet" href="resources/css/sideCalendar.css">
 <link rel="stylesheet" href="resources/css/main.css">
+<link rel="stylesheet" href="resources/css/aside.css">
 
 
 <!-- JS -->
@@ -22,7 +23,8 @@
 <script>
 
 
-	document.addEventListener('DOMContentLoaded', function() {
+/* 메인캘린더 js  */
+	  document.addEventListener('DOMContentLoaded', function() {
 	    var calendarEl = document.getElementById('main_Calendar');
 	
 	    var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -58,11 +60,11 @@
 	    });
 	
 	    calendar.render();
-	  });
+	  });  
 	
 	/* 네비게이션 달력 js */
 	 var today = new Date();
-        var date = new Date();
+        var aside_miniCalendar_date = new Date();
         function prevCalendar() {
             today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
             buildCalendar();  
@@ -74,7 +76,7 @@
         function buildCalendar(){
             var doMonth = new Date(today.getFullYear(),today.getMonth(),1);
             var lastDate = new Date(today.getFullYear(),today.getMonth()+1,0);
-            var tbCalendar = document.getElementById("calendar");
+            var tbCalendar = document.getElementById("nav_calendar");
             var tbCalendarYM = document.getElementById("tbCalendarYM");
             tbCalendarYM.innerHTML = today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";  
             while (tbCalendar.rows.length > 1) {          
@@ -94,118 +96,46 @@
                     var event = prompt("일정추가");
                 }
                 cnt = cnt + 1;
+                if (cnt %7 == 2){
+                	cell.innerHTML= i + "월"
+                }
+                if (cnt %7 == 3){
+                	cell.innerHTML= i + "화"
+                }
+                if (cnt %7 == 4){
+                	cell.innerHTML= i + "수"
+                }
+                if (cnt %7 == 5){
+                	cell.innerHTML= i + "목"
+                }
+                if (cnt %7 == 6){
+                	cell.innerHTML= i + "금"
+                }
                 if (cnt % 7 == 1) {
-                    cell.innerHTML = "<font color=#FF0000>" + i
+                    cell.innerHTML = "<font color=#FF0000>" + i +"일"
                 }    
                 if (cnt%7 == 0){
-                    cell.innerHTML = "<font color=solid>" + i                                                      
+                    cell.innerHTML = "<font color=solid>" + i + "토"                                                     
                 }              
                 if (today.getFullYear() == date.getFullYear()
                     && today.getMonth() == date.getMonth()
                     && i == date.getDate()) {
                     cell.bgColor = "#FAF58C";
                 }
-            }
+            } 
         }
+        
+
+  
 </script>
-<style>
+<!--여기부터  -->
 
-	/* 전체 */
-	#container{display: flex; width:100%; height:100%; /* background-color:#f5f5f5; */}
-	/* 로고 자리 */
-	#company_logo{ width: 245px; height: 100px; /* background-color: #E6E6FA; */}
-	#hospital_logo{width: 270px; height: 100px;}
-	#pageSide_left{background-color: #f5f5f5; }
-	
-	#pageSide_right{/* background-color: #FAFAD2; */ }
-	/* aside 조회등록 폼  */
-	#form_wrap{
-		margin-top: 10px;
-		width: 260px;
-		height: 1920px;
-		margin-left: 10px;
-		font-size: 13px;
-		font-weight: bold;
 
-		/* background-color: pink; */
-	}
-	
-/* 	폼 타이틀 #form_wrap #patient_form_title{font-size: 16px; text-align: center; color: blue;} */
-	
-	#form_wrap .label_detail{ padding: 2px;}
-	
-	#form_wrap #form_contents{/* background-color: yellow; */}
-	
-	#form_wrap .patient_visit_radio{margin:6px;}
-	
-	#form_wrap .patient_form_btn{margin-left: 9px;}
-	
-	#form_wrap .patient_form_label{ display: inline-block; padding:2px; width:60px; font-size:13px; text-align: center; background-color: #f5f5f5;}
-	
-	#form_wrap .textarea_label{/* padding:2px; */}
-	
-	#form_wrap .patient_form_input{width:173px; padding: 1px; font-size:13px; font-weight: bold; }
-	
-	#form_wrap .patient_textarea{ resize: none; padding: 1px; font-weight: bold; } 
-	
-	#form_wrap #visit_radio_div{ margin-left:50px; padding: 3px;}
-	
-	/* aside 미니 캘린더  */
-	  .calendar {
-	    max-width: 230px;
-	    height: 100px;
-	    margin-left: 10px;
-	/*     margin-top: 600px;  */
-	/* background-color:yellow; */
-	  } 
-	
-	
-	/* main 캘린더 */
-	#main_Calendar_wrap{
-		width: 1580px;
-		height: 500px;
-		/* background-color: yellow; */
-		margin-left: 30px;
-	
-		
-	}
-	
-	#main_Calendar{ margin-top: 150px;}
-	
-	
-	.fc .fc-timegrid-slot{height: 8.5em;}
-	
-	/* 네비게이션 달력 */
-        td{
-            width: 20px;
-            height: 20px;
-            text-align: center;
-            font-size: 15px;
-            font-family: 굴림;
-            border:1px solid #000000;
-            border-radius: 1px;
-        }
-    </style>
-</style>
 </head>
 <body>
 <div id="container">
 	<div id="pageSide_left">
 		<header><div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div>
-		<!-- 네비게이션 달력 -->
-		<p></p>
-    <table id="calendar" border="3" align="center" style="border-color:#000000 ">
-        <tr>
-            <td><label onclick="prevCalendar()"><</label></td>
-            <td align="center" id="tbCalendarYM" colspan="5">
-                yyyy년 m월
-            </td>
-            <td><label onclick="nextCalendar()">></label></td>
-        </tr>    
-    </table>
-<!-- 본 위치    <script language="javascript" type="text/javascript">
-        buildCalendar();
-    </script> --> 
 		</header>
 		<aside>
 			<div id="form_wrap">
@@ -233,12 +163,22 @@
 
 	<div id="pageSide_right">
 		 <div id="main_Calendar_wrap">
+		 <!-- 네비게이션 달력 -->
+		<p></p>
+    <table id="nav_calendar" border="3" align="center" >
+        <tr>
+            <td class="nav_calendar_td"><label onclick="prevCalendar()"><</label></td>
+            <td class="nav_calendar_td_YM" align="center" id="tbCalendarYM" colspan="5">
+                yyyy년 m월
+            </td>
+            <td class="nav_calendar_td"><label onclick="nextCalendar()">></label></td>
+        </tr>    
+    </table>
+    <script type="text/javascript" > buildCalendar(); </script>  
 		  	<div id='main_Calendar'></div>
 		 </div>
 	</div><!-- pageSide_right -->
 </div><!-- wrapper -->
-<script language="javascript" type="text/javascript">
-        buildCalendar();
-    </script>
+
 </body>
 </html>
