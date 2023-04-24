@@ -178,12 +178,15 @@
 	#main_Calendar{ margin-top: 150px;}
 	
 	
+	.fc .fc-timegrid-slot{height: 8.5em;}
+	
+	
 </style>
 </head>
 <body>
 <div id="container">
 	<div id="pageSide_left">
-		<header><div id="company_logo"><img src="/resources/img/hospital_logo_ex.png" id="hospital_logo" ></div></header>
+		<header><div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div></header>
 		<aside>
 			<div id="form_wrap">
 				<form>
