@@ -47,6 +47,14 @@
 	/*     margin-top: 600px;  */
 	/* background-color:yellow; */
 	  } 
+	  
+	  /* 미니캘린더 서브 폼 */
+	  #sub_form{ margin-top: 200px;}
+	  
+	  
+	  
+	  
+	  
 	
 	
 	/* main 캘린더 */
@@ -75,7 +83,7 @@
             border-radius: 1px;
         }
         
-        #nav_calendar .nav_calendar_td{width: 50px;}
+        #nav_calendar .nav_calendar_td{width: 17px;}
         
      /*    #tbCalendarYM{width: 40px;} */
         
