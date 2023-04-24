@@ -60,6 +60,53 @@
 	    calendar.render();
 	  });
 	
+	/* 네비게이션 달력 js */
+	 var today = new Date();
+        var date = new Date();
+        function prevCalendar() {
+            today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+            buildCalendar();  
+        }
+        function nextCalendar() {
+            today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+            buildCalendar();
+        }
+        function buildCalendar(){
+            var doMonth = new Date(today.getFullYear(),today.getMonth(),1);
+            var lastDate = new Date(today.getFullYear(),today.getMonth()+1,0);
+            var tbCalendar = document.getElementById("calendar");
+            var tbCalendarYM = document.getElementById("tbCalendarYM");
+            tbCalendarYM.innerHTML = today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";  
+            while (tbCalendar.rows.length > 1) {          
+                tbCalendar.deleteRow(tbCalendar.rows.length-1);                  
+            }
+            var row = null;
+            row = tbCalendar.insertRow();             
+            var cnt = 0;
+            for (i=0; i<doMonth.getDay(); i++) {             
+                cell = row.insertCell();
+                cnt = cnt + 1;
+            }            
+            for (i=1; i<=lastDate.getDate(); i++) {              
+                cell = row.insertCell();
+                cell.innerHTML = i;
+                cell.onclick = function () {
+                    var event = prompt("일정추가");
+                }
+                cnt = cnt + 1;
+                if (cnt % 7 == 1) {
+                    cell.innerHTML = "<font color=#FF0000>" + i
+                }    
+                if (cnt%7 == 0){
+                    cell.innerHTML = "<font color=solid>" + i                                                      
+                }              
+                if (today.getFullYear() == date.getFullYear()
+                    && today.getMonth() == date.getMonth()
+                    && i == date.getDate()) {
+                    cell.bgColor = "#FAF58C";
+                }
+            }
+        }
 </script>
 <style>
 
@@ -128,13 +175,38 @@
 	
 	.fc .fc-timegrid-slot{height: 8.5em;}
 	
-	
+	/* 네비게이션 달력 */
+        td{
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            font-size: 15px;
+            font-family: 굴림;
+            border:1px solid #000000;
+            border-radius: 1px;
+        }
+    </style>
 </style>
 </head>
 <body>
 <div id="container">
 	<div id="pageSide_left">
-		<header><div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div></header>
+		<header><div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div>
+		<!-- 네비게이션 달력 -->
+		<p></p>
+    <table id="calendar" border="3" align="center" style="border-color:#000000 ">
+        <tr>
+            <td><label onclick="prevCalendar()"><</label></td>
+            <td align="center" id="tbCalendarYM" colspan="5">
+                yyyy년 m월
+            </td>
+            <td><label onclick="nextCalendar()">></label></td>
+        </tr>    
+    </table>
+<!-- 본 위치    <script language="javascript" type="text/javascript">
+        buildCalendar();
+    </script> --> 
+		</header>
 		<aside>
 			<div id="form_wrap">
 				<form>
@@ -165,5 +237,8 @@
 		 </div>
 	</div><!-- pageSide_right -->
 </div><!-- wrapper -->
+<script language="javascript" type="text/javascript">
+        buildCalendar();
+    </script>
 </body>
 </html>
