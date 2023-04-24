@@ -1070,6 +1070,7 @@ A VERTICAL event
     position: relative;
     z-index: 1;
   }
+  
 .fc .fc-timegrid-slot { /* a <td> */
     height: 8.5em;
     border-bottom: 0 /* each cell owns its top border */
