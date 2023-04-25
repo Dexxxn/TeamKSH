@@ -143,6 +143,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     overflow: visible;
     text-transform: none;
     margin: 0;
+    margin-left: 20px;
+    margin-bottom: -22px;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;

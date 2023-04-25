@@ -63,6 +63,11 @@ public class HomeController {
 		return "login";
 	}	
 	
+	@RequestMapping(value = "/notice", method = RequestMethod.GET)
+	public String notice() {
+		return "notice";
+	}	
+	
 	
 	
 }

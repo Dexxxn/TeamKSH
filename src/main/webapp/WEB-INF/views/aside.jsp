@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>aside 작업 페이지-추후 메인으로 복붙 예정</title>
+<title>index</title>
 
 <!-- font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,7 +95,10 @@
                 cell = row.insertCell();
                 cell.innerHTML = i;
                 cell.onclick = function () {
-                    var event = prompt("일정추가");
+                   /*  var event = prompt("일정추가"); */
+                   var date = this.innerHTML;
+                   
+                 
                 }
                 cnt = cnt + 1;
                 if (cnt %7 == 2){
@@ -193,7 +196,7 @@
 			<!-- 네비게이션 바 -->
 			<span id="nav_btn_set">
 				<a href="#;"><div class="nav_btn" id="schedule_nav_btn">schedule</div></a>
-				<a href="#;"><div class="nav_btn" id="notice_nav_btn">notice</div></a>
+				<a href="notice"><div class="nav_btn" id="notice_nav_btn">notice</div></a>
 			</span>
 			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outpatient Clinic Schedule Board</div>
 			
