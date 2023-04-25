@@ -185,7 +185,8 @@
 				</div>
 				<input type="submit" value="조회/등록" class="patient_form_btn"><br><br><br><br><br><br><br>
 			
-			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="" >
+			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="location.href='/popup'" >
+			<!-- 진료 외 일정들 등록 전용 버튼 --><input type="button" value="상세 일정" onclick="location.href='/popup2'" >
 			</div>
 		</div> <!-- end of "form_wrap"  -->
 		</aside>
