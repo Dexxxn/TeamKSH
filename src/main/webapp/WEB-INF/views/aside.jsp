@@ -192,6 +192,12 @@
 
 
 	<div id="pageSide_right">
+<!-- 메인캘린더 상단 -->
+<div id="right_top">
+			<!-- 네비게이션 바 -->
+			<div id="navBar">Outpatient Clinic Schedule Board</div>
+			
+			
 		 <div id="main_Calendar_wrap">
 		 <!-- 네비게이션 달력 -->
 		<p></p>
@@ -209,6 +215,7 @@
     
     <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : n건">
     		<div class="scheduleSelect">
+			<input id="dateCheck" type="text" value="2023-04-25 TUE" readonly>
     			<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료과목</label>
 					<!-- 과 -->
 					<select>
@@ -229,7 +236,9 @@
 				</span>
 						<input type="button" value="검색" id="scheduleSelect_search_btn">
 			</div><!-- scheduleSelect -->
-				
+</div><!-- right_top -->	
+
+		
 		<!-- 메인 캘린더 -->
 		  	<div id='main_Calendar'></div>
 		 </div>
