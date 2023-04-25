@@ -162,29 +162,22 @@
 			<div id="sub_form">
 					
 				<div class="label_detail"><label class="patient_form_label">예약일자</label>
-					<!-- 월 --><!-- <select><option>1월</option><option>2월</option><option>3월</option><option>4월</option><option>5월</option><option>6월</option><option>7월</option><option>8월</option><option>9월</option>
-									  <option>10월</option><option>11월</option><option>12월</option>
-					</select> -->
-					<!-- 일 --><!-- <select><option>1일</option><option>2일</option><option>3일</option><option>4일</option><option>5일</option><option>6일</option><option>7일</option><option>8일</option><option>9일</option><option>10일</option><option>11일</option>
-									  <option>12일</option><option>13일</option><option>14일</option><option>15일</option><option>16일</option><option>17일</option><option>18일</option><option>19일</option><option>20일</option><option>21일</option><option>22일</option>
-									  <option>23일</option> <option>24일</option><option>25일</option><option>26일</option><option>27일</option><option>28일</option><option>29일</option><option>30일</option><option>31일</option>
-					</select> -->
-					<input class="patient_form_input" type="text">
+					<input class="rs_date" type="text" id="selectedDate">
 					
 				</div>
 				<div class="label_detail"><label class="patient_form_label">예약시각</label>
-					<!-- 시 --><select><option>09</option><option>10</option><option>11</option></select>
-					<!-- 분 --><select><option>00</option><option>30</option></select>
+					<!-- 시 --><select class="rs_time"><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option></select>
+					<!-- 분 --><select class="rs_time"><option>00</option><option>30</option></select>
 				</div>
 				
 				<div class="label_detail"><label class="patient_form_label">진료과목</label>
-					<!-- 과 --><select><option selected>정형외과</option><option>신경외과</option><option>내과</option></select>
+					<!-- 과 --><select class="patient_form_select"><option selected>정형외과</option><option>신경외과</option><option>내과</option></select>
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
-					<!-- 해당과의 의료진  --><select><option>김태원 원장님</option><option>엄경수 원장님</option></select>
+					<!-- 해당과의 의료진  --><select class="patient_form_select"><option>김태원 원장님</option><option>엄경수 원장님</option></select>
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료장소</label>
-					<input class="patient_form_input" type="text">
+					<input class="rs_date"  type="text">
 				</div>
 				<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label>
 					<textarea class="patient_textarea" rows="3" cols="21"></textarea>
@@ -212,6 +205,32 @@
         </tr>    
     </table>
     <script type="text/javascript" > buildCalendar(); </script>  
+    
+    
+    <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : n건">
+    		<div class="scheduleSelect">
+    			<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료과목</label>
+					<!-- 과 -->
+					<select>
+						<option selected>정형외과</option><option>신경외과</option><option>내과</option>
+					</select>
+				</span>
+				<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료의</label>
+					<!-- 해당과의 의료진  -->
+					<select>
+						<option>엄경수 원장님</option><option>김태원 원장님</option>
+					</select>
+				</span>
+				<span class="doctor_schedule_select"><label class="doctor_schedule_label">일정</label>
+					<!-- 일정 분류-->
+					<select>
+						<option>전체</option><option>외래진료</option><option>수술</option><option>회진</option><option>세미나 / 휴무</option>
+					</select>
+				</span>
+						<input type="button" value="검색" id="scheduleSelect_search_btn">
+			</div><!-- scheduleSelect -->
+				
+		<!-- 메인 캘린더 -->
 		  	<div id='main_Calendar'></div>
 		 </div>
 	</div><!-- pageSide_right -->

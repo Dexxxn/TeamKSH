@@ -27,7 +27,7 @@
 	
 	#form_wrap .patient_visit_radio{margin:6px;}
 	
-	#form_wrap .patient_form_btn{margin-left: 9px;}
+	#form_wrap .patient_form_btn{margin-left: 9px;  background-color:rgb(94, 94, 94); color:white; font-size:11px; width:61px; height:20px; border-radius: 5px;}
 	
 	#form_wrap .patient_form_label{ display: inline-block; padding:2px; width:60px; font-size:13px; text-align: center; background-color: #f5f5f5;}
 	
@@ -51,11 +51,23 @@
 	  /* 미니캘린더 서브 폼 */
 	  #sub_form{ margin-top: 200px;}
 	  
+	  .label_detail .rs_time{width: 53px;}
+	  
+	  .label_detail .patient_form_select{width: 110px;}
+	  
+	  .label_detail .rs_date{width: 110px;} /* 예약 일자, 진료장소 input */
 	  
 	  
 	  
+	  /* 오른쪽 섹션  */
+	  /* 전체 건수 */ #monthly_total{text-align:center; width: 120px; height:27px; margin:6px; padding:4px; background-color: 	#DCDCDC; color: white; border:none;}
 	  
+	 .scheduleSelect .doctor_schedule_select{margin-left: 9px;}
+	  
+	 .scheduleSelect .doctor_schedule_label{font-size:13px; font-weight: bold; }
 	
+	
+	/* 검색 버튼  */ #scheduleSelect_search_btn{background-color: rgb(127, 127, 127);	color:white; font-weight:bold;  font-size:10px; border: 1px solid #A9A9A9; width: 42px; height: 23px;}
 	
 	/* main 캘린더 */
 	#main_Calendar_wrap{
