@@ -65,21 +65,13 @@ const nextMonth = () => {
   renderCalender();
 };
 
-const goToday = () => {
-  date = new Date();
-  renderCalender();
-};
+const getDate = (event) => {
+	  const clickedDate = event.target.dataset.date;
+	  selectedDate.value = `${date.getFullYear()}-${date.getMonth() + 1}-${clickedDate}`;
+	};
 
-const addSchedule = (date) => {
-  const schedule = prompt(`일정추가`);
-  if (schedule) {
-    // 일정을 저장하는 로직 추가
-  }
-};
-
-document.querySelector('.dates').addEventListener('click', (event) => {
-  if (event.target.classList.contains('this')) {
-    const clickedDate = event.target.dataset.date;
-    addSchedule(clickedDate);
-  }
-});
+	document.querySelector(".dates").addEventListener("click", (event) => {
+	  if (event.target.classList.contains("this")) {
+	    getDate(event);
+	  }
+	});
