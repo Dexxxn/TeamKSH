@@ -8,6 +8,11 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>aside 작업 페이지-추후 메인으로 복붙 예정</title>
 
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+
 <!-- CSS -->
 <link rel="stylesheet" href="resources/css/sideCalendar.css">
 <link rel="stylesheet" href="resources/css/main.css">
@@ -19,10 +24,7 @@
 <script src="resources/js/main.js" type="text/javascript"></script>
 
 
-
 <script>
-
-
 /* 메인캘린더 js  */
 	  document.addEventListener('DOMContentLoaded', function() {
 	    var calendarEl = document.getElementById('main_Calendar');
@@ -124,13 +126,8 @@
                 }
             } 
         }
-        
 
-  
 </script>
-<!--여기부터  -->
-
-
 </head>
 <body>
 <div id="container">
@@ -140,7 +137,6 @@
 		<aside>
 			<div id="form_wrap">
 				<form>
-					<!-- <p id="patient_form_title">진료예약 조회 및 등록 form</p><br> -->
 					<div id="form_contents">
 					<div class="label_detail"><label class="patient_form_label">환자이름</label><input class="patient_form_input" type="text"></div>
 					<div class="label_detail"><label class="patient_form_label">주민번호</label><input class="patient_form_input" type="text"></div>
@@ -149,11 +145,9 @@
 							<input type="radio" name="visit" value="second"><span class="patient_visit_radio">재진</span>
 							<input type="submit" value="조회/등록" class="patient_form_btn"><br>
 						</div>
-							<!-- <div  class="label_detail"><label class="patient_form_label">성별</label><input class="patient_form_input" type="text"></div> -->
 							<div  class="label_detail"><label class="patient_form_label">연락처</label><input class="patient_form_input" type="text"></div>
 							<div  class="label_detail"><label class="patient_form_label textarea_label">주소</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div>
 							<!-- <div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div> --><br>
-					 <!--사이드캘린더 자리 include-->
 					</div>
 				</form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
 					<%@ include file = "sideCalendar.jsp" %>
@@ -197,7 +191,11 @@
 <!-- 메인캘린더 상단 -->
 <div id="right_top">
 			<!-- 네비게이션 바 -->
-			<div id="navBar">Outpatient Clinic Schedule Board</div>
+			<span id="nav_btn_set">
+				<a href="#;"><div class="nav_btn" id="schedule_nav_btn">schedule</div></a>
+				<a href="#;"><div class="nav_btn" id="notice_nav_btn">notice</div></a>
+			</span>
+			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outpatient Clinic Schedule Board</div>
 			
 			
     <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : n건">
