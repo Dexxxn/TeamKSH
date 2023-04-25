@@ -65,6 +65,11 @@ const nextMonth = () => {
   renderCalender();
 };
 
+const goToday = () => {
+  date = new Date();
+  renderCalender();
+};
+
 const getDate = (event) => {
 	  const clickedDate = event.target.dataset.date;
 	  selectedDate.value = `${date.getFullYear()}-${date.getMonth() + 1}-${clickedDate}`;
