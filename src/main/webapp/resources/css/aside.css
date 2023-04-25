@@ -58,11 +58,15 @@
 	  .label_detail .rs_date{width: 110px;} /* 예약 일자, 진료장소 input */
 	  
 	  
+	  /* 진료 외 일정들 등록 전용 버튼 */
+	  #other_schedule_register_btn{width: 110px; height:28px; margin-left: 75px; background-color:rgb(94, 94, 94); color: white; border-radius: 5px;}
+	  
+	  
 	  
 	  /* 오른쪽 섹션  */
 	  
 	  /* 네비게이션 바 */
-	  #navBar{position:static; margin-top:70px; width:1630px; height:30px; color: white; line-height: 27px; background-color: orange; margin-bottom: 20px;}
+	  #navBar{position:static; margin-top:70px; width:1630px; height:30px; color: white; line-height: 27px; background-color: orange; margin-bottom: 3px;}
 	  
 	  /* 전체 건수 */ #monthly_total{text-align:center; width: 120px; height:27px; margin:6px; padding:4px; background-color: 	#DCDCDC; color: white; border:none;}
 	  
@@ -80,12 +84,12 @@
 	/* main 캘린더 */
 	#main_Calendar_wrap{
 		width: 1580px;
-		height: 170px;
+		height: 130px;
 	/* 	background-color: yellow;  */
 		margin-left: 30px;
 	}
 	
-	#main_Calendar{ margin-top: 3px; margin-left: 10px; } /* 메인 시작 위치 조절 */
+	#main_Calendar{ margin-top: 2px; margin-left: 10px; } /* 메인 시작 위치 조절 */
 	
 	
 	

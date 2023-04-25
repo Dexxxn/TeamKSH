@@ -1,6 +1,8 @@
 package com.ksh.controller;
 
-/*@Controller*/
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class MedicalController {
 
 }

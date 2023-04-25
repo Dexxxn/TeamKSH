@@ -147,7 +147,7 @@
 						<div id="visit_radio_div">
 							<input type="radio" name="visit" value="first" checked><span class="patient_visit_radio">초진</span>
 							<input type="radio" name="visit" value="second"><span class="patient_visit_radio">재진</span>
-							<input type="button" value="조회/등록" class="patient_form_btn"><br>
+							<input type="submit" value="조회/등록" class="patient_form_btn"><br>
 						</div>
 							<!-- <div  class="label_detail"><label class="patient_form_label">성별</label><input class="patient_form_input" type="text"></div> -->
 							<div  class="label_detail"><label class="patient_form_label">연락처</label><input class="patient_form_input" type="text"></div>
@@ -183,8 +183,9 @@
 					<textarea class="patient_textarea" rows="3" cols="21"></textarea>
 					
 				</div>
-				<input type="button" value="조회/등록" class="patient_form_btn"><br>
+				<input type="submit" value="조회/등록" class="patient_form_btn"><br><br><br><br><br><br><br>
 			
+			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="" >
 			</div>
 		</div> <!-- end of "form_wrap"  -->
 		</aside>
@@ -198,6 +199,7 @@
 			<div id="navBar">Outpatient Clinic Schedule Board</div>
 			
 			
+    <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : n건">
 		 <div id="main_Calendar_wrap">
 		 <!-- 네비게이션 달력 -->
 		<p></p>
@@ -213,7 +215,6 @@
     <script type="text/javascript" > buildCalendar(); </script>  
     
     
-    <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : n건">
     		<div class="scheduleSelect">
 			<input id="dateCheck" type="text" value="2023-04-25 TUE" readonly>
     			<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료과목</label>
@@ -234,7 +235,7 @@
 						<option>전체</option><option>외래진료</option><option>수술</option><option>회진</option><option>세미나 / 휴무</option>
 					</select>
 				</span>
-						<input type="button" value="검색" id="scheduleSelect_search_btn">
+						<input type="submit" value="검색" id="scheduleSelect_search_btn">
 			</div><!-- scheduleSelect -->
 </div><!-- right_top -->	
 
