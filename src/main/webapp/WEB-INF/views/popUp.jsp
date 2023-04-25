@@ -27,18 +27,18 @@
 		<%@ include file = "sideCalendar.jsp" %>
 	</div>	
 	<!-- INSERT할 정보 -->
-	<form>	
+	<form id="date_submit" action="" method="get">	
 		<div id="calendar_insert">
 			<div class="item">
 				<div class="label">날짜</div>			
 				<div>
-					2023. 04. 21
+					<input type="hidden" name="date">2023. 04. 21
 				</div>
 			</div>	
 			<div class="item">
 				<div class="label">과목</div>			
 				<div class="value">    
-				    <select name="type">
+				    <select name="dept">
 						<option value="">선택</option>
 						<option value="">정형외과</option>
 						<option value="">신경외과</option>														
@@ -49,7 +49,7 @@
 			<div class="item">	
 				<div class="label">의사명</div>
 				<div class="value">    
-				    <select name="type">
+				    <select name="name">
 						<option value="">선택</option>
 						<option value="">정기원 원장님</option>
 						<option value="">이성언 원장님</option>														
@@ -60,7 +60,7 @@
 			<div class="item">	
 				<div class="label">일정 종류</div>
 				<div class="value">    
-				    <select name="type">
+				    <select name="datetype">
 						<option value="">선택</option>
 						<option value="">수술</option>
 						<option value="">외부 일정</option>														
@@ -71,7 +71,7 @@
 			<div class="item">	
 				<div class="label">시간</div>
 				<div class="value">    
-				    <select name="type">
+				    <select name="datetime">
 						<option value="">선택</option>
 						<option value="">오전(09:00~)</option>
 						<option value="">오후(14:00~)</option>														
@@ -81,15 +81,15 @@
 			<div class="item">	
 				<div class="label">메모</div>	
 				<div>
-					<textarea>메모</textarea>
+					<textarea name="memo" placeholder="기타 추가 사항 입력."></textarea>
 				</div>	
 			</div>			
-		</div>
-		<div align="center" class="button_div">
-			<input class="button first" type="submit" value="확인">
-			<input class="button second" type="button" value="취소">
 		</div>	
 	</form>	
+	<div align="center">
+		<input class="button first" type="submit" value="확인" id="date_submit">
+		<input class="button second" type="button" value="취소">
+	</div>
 </div>
 
 </body>

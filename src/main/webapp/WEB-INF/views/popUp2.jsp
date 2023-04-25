@@ -74,7 +74,7 @@
 			<div class="item">	
 				<div class="label">메모</div>	
 				<div>
-					<textarea>메모</textarea>
+					<textarea></textarea>
 				</div>	
 			</div>			
 		</div>
