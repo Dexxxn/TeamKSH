@@ -23,6 +23,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: -15px;
+  
 }
 
 .year-month {
@@ -58,6 +60,7 @@
 .days {
   display: flex;
   margin: 25px 0 10px;
+
 }
 
 .day {
@@ -68,14 +71,15 @@
 .dates {
   display: flex;
   flex-flow: row wrap;
-  height: 200px; /* 미니캘린더 높이  */
+  height: 182px; /* 미니캘린더 높이  */
   border-top: 1px solid #333333;
   border-right: 1px solid #333333;
+    background-color: white; /* 미니캘린더 배경색 */
 }
 
 .date {
   width: calc(100% / 7);
-  padding: 6px;
+  padding: 4px;
   text-align: right;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #333333;
@@ -102,7 +106,7 @@
   background-color: yellow;
 }
 
-.today::before {
+/* .today::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -114,4 +118,4 @@
   background-color: #FF0000;
   border-radius: 50%;
   content: '';
-}
+} */

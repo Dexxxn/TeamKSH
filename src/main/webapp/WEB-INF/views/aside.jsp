@@ -23,6 +23,12 @@
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="resources/js/main.js" type="text/javascript"></script>
 
+<!-- api 한글로 -->
+<!--  <script src="fullcalendar/lib/locales-all.js"></script> -->
+ <script src='fullcalendar/core/locales/ko.js'></script>
+
+
+
 
 <script>
 /* 메인캘린더 js  */
@@ -35,7 +41,7 @@
 	        center: 'title',
 	        right: 'dayGridMonth,timeGridWeek,timeGridDay'
 	      },
-	      
+	  /*     locale: "ko"; */
 	      navLinks: true, // can click day/week names to navigate views
 	      selectable: true,
 	      selectMirror: true,
@@ -95,8 +101,8 @@
                 cell = row.insertCell();
                 cell.innerHTML = i;
                 cell.onclick = function () {
-                   /*  var event = prompt("일정추가"); */
-                   var date = this.innerHTML;
+                   var event = prompt("일정추가"); 
+                  
                    
                  
                 }
@@ -194,10 +200,10 @@
 <!-- 메인캘린더 상단 -->
 <div id="right_top">
 			<!-- 네비게이션 바 -->
-			<span id="nav_btn_set">
-				<a href="#;"><div class="nav_btn" id="schedule_nav_btn">schedule</div></a>
-				<a href="notice"><div class="nav_btn" id="notice_nav_btn">notice</div></a>
-			</span>
+			<div id="nav_btn_set">
+				<div class="nav_btn" id="schedule_nav_btn"><a href="#;">schedule</a></div>
+				<div class="nav_btn" id="notice_nav_btn"><a href="notice">notice</a></div>
+			</div>
 			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outpatient Clinic Schedule Board</div>
 			
 			

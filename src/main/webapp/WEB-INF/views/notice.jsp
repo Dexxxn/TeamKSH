@@ -11,14 +11,27 @@
 <link rel="stylesheet" href="resources/css/notice.css">
 </head>
 <body>
-<header>
+
+<div id="container">
+	<div id="pageSide_left">
+		<header><div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div>
+		</header>
+		<aside>
+		</aside>
+	</div>
+
+	
+	<div id="pageSide_right">	
 <div id="right_top">
 			<!-- 네비게이션 바 -->
-			<span id="nav_btn_set">
-				<a href="#;"><div class="nav_btn" id="schedule_nav_btn">schedule</div></a>
-				<a href="#;"><div class="nav_btn" id="notice_nav_btn">notice</div></a>
-			</span>
+		<div id="nav_btn_set">
+				<div class="nav_btn" id="schedule_nav_btn"><a href="aside">schedule</a></div>
+				<div class="nav_btn" id="notice_nav_btn"><a href="notice">notice</a></div>
+		</div>
 			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notification</div>
-</header>
+</div>
+</div>
+</div><!-- container -->
+
 </body>
 </html>

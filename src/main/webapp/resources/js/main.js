@@ -489,7 +489,7 @@ var FullCalendar = (function (exports) {
             contentWidthEl.getBoundingClientRect().width;
     }
 
-    var DAY_IDS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    var DAY_IDS = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
     // Adding
     function addWeeks(m, n) {
         var a = dateToUtcArray(m);
@@ -4226,7 +4226,7 @@ var FullCalendar = (function (exports) {
             return "Show " + eventCnt + " more event" + (eventCnt === 1 ? '' : 's');
         } });
     function organizeRawLocales(explicitRawLocales) {
-        var defaultCode = explicitRawLocales.length > 0 ? explicitRawLocales[0].code : 'en';
+        var defaultCode = explicitRawLocales.length > 0 ? explicitRawLocales[0].code : 'ko';
         var allRawLocales = globalLocales.concat(explicitRawLocales);
         var rawLocaleMap = {
             en: RAW_EN_LOCALE,
