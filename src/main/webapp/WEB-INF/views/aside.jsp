@@ -152,7 +152,7 @@
 						<div id="visit_radio_div">
 							<input type="radio" name="visit" value="first" checked><span class="patient_visit_radio">초진</span>
 							<input type="radio" name="visit" value="second"><span class="patient_visit_radio">재진</span>
-							<input type="submit" value="조회/등록" class="patient_form_btn"><br>
+							<input type="submit" value="조회/등록" class="patient_form_btn" id="rs_btn1"><br>
 						</div>
 							<div  class="label_detail"><label class="patient_form_label">연락처</label><input class="patient_form_input" type="text"></div>
 							<div  class="label_detail"><label class="patient_form_label textarea_label">주소</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div>
@@ -186,7 +186,7 @@
 					<textarea class="patient_textarea" rows="3" cols="21"></textarea>
 					
 				</div>
-				<input type="submit" value="조회/등록" class="patient_form_btn"><br><br><br><br><br><br><br>
+				<input type="submit" value="조회/등록" class="patient_form_btn" id="rs_btn2"><br><br><br><br><br><br><br>
 			
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="location.href='/popup'" >
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input type="button" value="상세 일정" onclick="location.href='/popup2'" >
@@ -201,8 +201,8 @@
 <div id="right_top">
 			<!-- 네비게이션 바 -->
 			<div id="nav_btn_set">
-				<div class="nav_btn" id="schedule_nav_btn"><a href="#;">schedule</a></div>
-				<div class="nav_btn" id="notice_nav_btn"><a href="notice">notice</a></div>
+				<div class="nav_btn" id="schedule_nav_btn"><a href="#;" class="nav_anchor">schedule</a></div>
+				<div class="nav_btn" id="notice_nav_btn"><a href="notice" class="nav_anchor">notice</a></div>
 			</div>
 			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outpatient Clinic Schedule Board</div>
 			

@@ -40,7 +40,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
-		return "fullCalendar";
+		return "login";
 	}
 	
 	@RequestMapping(value = "/popup", method = RequestMethod.GET)
@@ -58,11 +58,7 @@ public class HomeController {
 		return "aside";
 	}	
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login() {
-		return "login";
-	}	
-	
+
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)
 	public String notice() {
 		return "notice";

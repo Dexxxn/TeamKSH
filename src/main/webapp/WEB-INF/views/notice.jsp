@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div id="container">
+<div id="notice_wrap">
 	<div id="pageSide_left">
 		<header><div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div>
 		</header>

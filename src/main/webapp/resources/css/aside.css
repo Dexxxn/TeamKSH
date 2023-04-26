@@ -7,10 +7,6 @@
 		box-sizing: border-box;
 	}
 
-	a{
-		text-decoration: none;
-	}
-	
 	
 	body {
 	    width: 100%;
@@ -45,7 +41,7 @@
 		
 		#form_wrap .patient_visit_radio{margin:6px;}
 		
-		#form_wrap .patient_form_btn{margin-left: 9px;  background-color:rgb(94, 94, 94); color:white; font-size:11px; width:61px; height:20px; border-radius: 5px;}
+		#form_wrap .patient_form_btn{ background-color:rgb(94, 94, 94); color:white; font-size:11px; width:61px; height:20px; border-radius: 5px;}
 		
 		#form_wrap .patient_form_label{ display: inline-block; padding:2px; width:60px; font-size:13px; text-align: center; background-color: #f5f5f5;}
 		
@@ -57,7 +53,7 @@
 		
 		#form_wrap #visit_radio_div{ margin-left:50px; padding: 3px;}
 		
-	 
+	 	 #rs_btn1{margin-left: 9px;}
 	  /* aside 미니 캘린더  */
 	  .calendar {
 	    width: 230px;
@@ -75,7 +71,7 @@
 	  
 	  .label_detail .rs_date{width: 110px;} /* 예약 일자, 진료장소 input */
 	  
-	  
+	  #rs_btn2{margin-left: 176px;}
 	  /* 진료 외 일정들 등록 전용 버튼 */
 	  #other_schedule_register_btn{width: 110px; height:28px; margin-left: 75px; background-color:rgb(94, 94, 94); color: white; border-radius: 5px;}
 	  
@@ -85,10 +81,15 @@
 	  
 	  /* 네비게이션 버튼  */
 		#nav_btn_set { display: flex; margin-left: 25px; margin-top: 7px; }
-		#nav_btn_set .nav_btn{ border-radius: 23px; color:white; width: 130px; height:45px; color:white; font-family: 'Oswald', sans-serif; font-size:23px; box-shadow: 2px 0 0 rgb(224, 224, 224); text-align:center; line-height: 42px;}
+		#nav_btn_set .nav_btn{ border-radius: 23px; color:white; width: 130px; height:45px; font-family: 'Oswald', sans-serif; font-size:23px; box-shadow: 2px 0 0 rgb(224, 224, 224); text-align:center; line-height: 42px;}
 		#schedule_nav_btn{ background-color: rgb(243, 156, 18);}
 		#notice_nav_btn{ background-color: rgb(155, 89, 182); }
 			  
+		#nav_btn_set .nav_anchor{
+			text-decoration: none;
+			color:white;
+		}
+		
 	  /* 네비게이션 바 */
 	  #navBar{ font-size:15px; width:1630px; height:30px; color: white; line-height: 27px; background-color: orange; margin-bottom: 3px;}
 	  
@@ -115,7 +116,7 @@
 		/* background-color: yellow;  */
 	}
 	
-	#main_Calendar{ margin-top: 2px; margin-left: 10px; } /* 메인 시작 위치 조절 */
+	#main_Calendar{ margin-top: 17px; margin-left: 10px; } /* 메인 시작 위치 조절 */
 	
 	
 	
