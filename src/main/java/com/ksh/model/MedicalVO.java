@@ -10,6 +10,11 @@ public class MedicalVO {
 	private String s_job;
 	private String s_type;
 	private String s_date;
+	private String s_startTime;
+	private String s_endTime;
+	private String s_place;
+	private String s_memo;
+	
 	
 	public String getS_id() {
 		return s_id;
@@ -59,11 +64,17 @@ public class MedicalVO {
 	public void setS_date(String s_date) {
 		this.s_date = s_date;
 	}
-	public String getS_time() {
-		return s_time;
+	public String getS_startTime() {
+		return s_startTime;
 	}
-	public void setS_time(String s_time) {
-		this.s_time = s_time;
+	public void setS_startTime(String s_startTime) {
+		this.s_startTime = s_startTime;
+	}
+	public String getS_endTime() {
+		return s_endTime;
+	}
+	public void setS_endTime(String s_endTime) {
+		this.s_endTime = s_endTime;
 	}
 	public String getS_place() {
 		return s_place;
@@ -71,6 +82,21 @@ public class MedicalVO {
 	public void setS_place(String s_place) {
 		this.s_place = s_place;
 	}
-	private String s_time;
-	private String s_place;
+	public String getS_memo() {
+		return s_memo;
+	}
+	public void setS_memo(String s_memo) {
+		this.s_memo = s_memo;
+	}
+	
+	@Override
+	public String toString() {
+		return "MedicalVO [s_id=" + s_id + ", s_password=" + s_password + ", s_name=" + s_name + ", s_phone=" + s_phone
+				+ ", s_dept=" + s_dept + ", s_job=" + s_job + ", s_type=" + s_type + ", s_date=" + s_date
+				+ ", s_startTime=" + s_startTime + ", s_endTime=" + s_endTime + ", s_place=" + s_place + ", s_memo="
+				+ s_memo + "]";
+	}
+	
+	
+
 }

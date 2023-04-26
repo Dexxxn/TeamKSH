@@ -15,8 +15,8 @@ public class MedicalServiceImpl implements MedicalService {
 	MedicalMapper mm;	// board 테이블 mapper
 	
 	@Override
-	public ArrayList<MedicalVO> medical() {
-		return mm.medical();
+	public ArrayList<MedicalVO> medical(MedicalVO medical) {
+		return mm.medical(medical);
 	}
 
 }

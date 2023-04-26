@@ -7,5 +7,5 @@ import com.ksh.model.MedicalVO;
 public interface MedicalService {
 	
 	// 셀렉
-	public ArrayList<MedicalVO> medical();
+	public ArrayList<MedicalVO> medical(MedicalVO medical);
 }

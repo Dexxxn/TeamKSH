@@ -40,14 +40,13 @@
 			<div class="item">
 				<div class="label">과목</div>			
 				<div class="value">    
-				    <select name="dept">
-						<option value="">선택</option>
-						<option value="">정형외과</option>
-						<option value="">신경외과</option>														
-						<option value="">내과</option>
+				    <select name="s_dept" onchange="location.href='/popup'">
+						<option>선택</option>
+						<option value="A">정형외과</option>
+						<option value="B">신경외과</option>														
+						<option value="C">내과</option>
 					</select>
 				</div>
-
 			</div>
 			<div class="item">	
 				<div class="label">의사명</div>
@@ -76,10 +75,40 @@
 			<div class="item">	
 				<div class="label">시간</div>
 				<div class="value">    
-				    <select name="datetime">
-						<option value="">선택</option>
-						<option value="">오전(09:00~)</option>
-						<option value="">오후(14:00~)</option>														
+				    <select name="s_startTime">
+						<option value="">09:00</option>
+						<option value="">09:30</option>
+						<option value="">10:00</option>
+						<option value="">10:30</option>
+						<option value="">11:00</option>
+						<option value="">11:30</option>
+						<option value="">12:00</option>
+						<option value="">12:30</option>
+						<option value="">14:00</option>
+						<option value="">14:30</option>
+						<option value="">15:00</option>
+						<option value="">15:30</option>
+						<option value="">16:00</option>
+						<option value="">16:30</option>
+						<option value="">17:00</option>
+						<option value="">17:30</option>														
+					</select> ~
+				    <select name="s_endTime">
+						<option value="">09:30</option>
+						<option value="">10:00</option>
+						<option value="">10:30</option>
+						<option value="">11:00</option>
+						<option value="">11:30</option>
+						<option value="">12:00</option>
+						<option value="">12:30</option>
+						<option value="">14:00</option>
+						<option value="">14:30</option>
+						<option value="">15:00</option>
+						<option value="">15:30</option>
+						<option value="">16:00</option>
+						<option value="">16:30</option>
+						<option value="">17:00</option>
+						<option value="">17:30</option>														
 					</select>
 				</div>
 			</div>

@@ -17,10 +17,12 @@ public class MedicalController {
 	MedicalService ms;
 	
 	@RequestMapping(value = "/popup", method = RequestMethod.GET)
-	public String medical(Model model) {
-		System.out.println(model);
-		model.addAttribute("medical", ms.medical());
-		ms.medical();
+	public String medical(Model model, MedicalVO medical) {
+		System.out.println("aaaaa");
+		System.out.println("medical="+medical);
+		ms.medical(medical);
+		model.addAttribute("medical", ms.medical(medical));
+		
 		return "popUp";
 	}
 }

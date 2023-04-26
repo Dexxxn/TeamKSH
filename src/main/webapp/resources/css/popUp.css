@@ -103,8 +103,16 @@ form{
 }
 
 .value{
-	width: 125px;
+	width: 160px;
 	font-size: 14px;
+}
+
+.calendar_select .item:nth-child(6) select{
+	width: 65px;
+}
+
+#calendar_insert .item:nth-child(5) select{
+	width: 65px;
 }
 
 .value select, input{
