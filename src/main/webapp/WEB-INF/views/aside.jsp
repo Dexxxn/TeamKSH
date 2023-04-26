@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%--  <%@ page import="java.text.SimpleDateFormat" %>   --%> 
+ <%@ page import="java.util.Date" %>   
+ <%@ page import="java.time.LocalDateTime" %>   
+ <%@ page  import="java.time.format.DateTimeFormatter" %>  
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,52 +150,65 @@
 		</header>
 		<aside>
 			<div id="form_wrap">
-				<form>
+<!--폼 시작 --><form method="post" action="/patientInfo">
 					<div id="form_contents">
-					<div class="label_detail"><label class="patient_form_label">환자이름</label><input class="patient_form_input" type="text"></div>
-					<div class="label_detail"><label class="patient_form_label">주민번호</label><input class="patient_form_input" type="text"></div>
+					<%
+					LocalDateTime now = LocalDateTime.now();
+					String formatDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"+"_"+"HHmmss"));
+					%> 
+					 <input type="text" value= <%="P_" +formatDate%>  name="p_chart"/> 	<!-- 차트번호 (현재datetime) -->
+					<div class="label_detail"><label class="patient_form_label">환자이름</label><input class="patient_form_input" type="text" name="p_name" ${patientInfo.p_name} ></div>
+					<div class="label_detail"><label class="patient_form_label">주민번호</label><input class="patient_form_input" type="text" name="p_no" ${patientInfo.p_no}></div>
 						<div id="visit_radio_div">
-							<input type="radio" name="visit" value="first" checked><span class="patient_visit_radio">초진</span>
-							<input type="radio" name="visit" value="second"><span class="patient_visit_radio">재진</span>
+							<input type="radio" name="visit" value="first" checked name="p_visit"><span class="patient_visit_radio">초진</span>
+							<input type="radio" name="visit" value="second" name="p_visit"><span class="patient_visit_radio">재진</span>
 							<input type="submit" value="조회/등록" class="patient_form_btn" id="rs_btn1"><br>
 						</div>
-							<div  class="label_detail"><label class="patient_form_label">연락처</label><input class="patient_form_input" type="text"></div>
-							<div  class="label_detail"><label class="patient_form_label textarea_label">주소</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div>
+							<div  class="label_detail"><label class="patient_form_label">연락처</label><input class="patient_form_input" type="text" name="p_phone" ${patientInfo.p_phone}></div>
+							<div  class="label_detail"><label class="patient_form_label textarea_label">주소</label><textarea class="patient_textarea" rows="3" cols="21" name="p_addr" ${patientInfo.p_addr}></textarea></div>
 							<!-- <div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div> --><br>
 					</div>
-				</form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
+<!-- 폼 끝  --><!-- </form> --><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
 					<%@ include file = "sideCalendar.jsp" %>
 					
 			<!-- 캘린더 아래 나머지 입력폼  -->
 			<div id="sub_form">
 					
-				<div class="label_detail"><label class="patient_form_label">예약일자</label>
-					<input class="rs_date" type="text" id="selectedDate">
-					
+				<div class="label_detail"><label class="patient_form_label" >예약일자</label>
+					<input class="rs_date" type="text" id="selectedDate" name="s_date" readonly>
 				</div>
 				<div class="label_detail"><label class="patient_form_label">예약시각</label>
-					<!-- 시 --><select class="rs_time"><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option></select>
-					<!-- 분 --><select class="rs_time"><option>00</option><option>30</option></select>
+					<!-- 시작시간 --><select class="rs_time" name="s_startTime">
+									<option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option>
+									<option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+									<option>16:00</option><option>16:30</option><option>17:00</option>
+					</select> ~
+					<!-- 끝 시간 --><select class="rs_time" name="s_endTime">
+									<option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option>
+									<option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+									<option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
+					</select>
 				</div>
 				
 				<div class="label_detail"><label class="patient_form_label">진료과목</label>
-					<!-- 과 --><select class="patient_form_select"><option selected>정형외과</option><option>신경외과</option><option>내과</option></select>
+					<!-- 과 --><select class="patient_form_select" name="s_dept"><option selected>정형외과</option><option>신경외과</option><option>내과</option></select>
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
-					<!-- 해당과의 의료진  --><select class="patient_form_select"><option>김태원 원장님</option><option>엄경수 원장님</option></select>
+					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_name"><option>김태원 원장님</option><option>엄경수 원장님</option></select>
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료장소</label>
-					<input class="rs_date"  type="text">
+					<input class="rs_date"  type="text" name="s_place" readonly>
 				</div>
 				<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label>
-					<textarea class="patient_textarea" rows="3" cols="21"></textarea>
+					<textarea class="patient_textarea" rows="3" cols="21" name="p_content" ${patientInfo.p_content}></textarea>
 					
 				</div>
-				<input type="submit" value="조회/등록" class="patient_form_btn" id="rs_btn2"><br><br><br><br><br><br><br>
+				<!-- <input type="submit" value="조회/등록" class="patient_form_btn" id="rs_btn2"> --><br><br><br><br><br><br><br>
 			
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="location.href='/popup'" >
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input type="button" value="상세 일정" onclick="location.href='/popup2'" >
 			</div>
+<!-- 폼 끝  --></form> 
 		</div> <!-- end of "form_wrap"  -->
 		</aside>
 	</div><!-- pageSide_left -->

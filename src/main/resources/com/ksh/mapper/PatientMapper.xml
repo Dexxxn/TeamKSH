@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.ksh.mapper.PatientMapper">
+  	<select id="secondVisit_patient" resultType="com.ksh.model.PatientVO">
+  		select p_name, p_no , p_phone, p_addr, p_content, p_chart
+  		from patient
+  		where p_name=#{p_name} and p_no=#{p_no};
+  	</select>
+  
+  </mapper>

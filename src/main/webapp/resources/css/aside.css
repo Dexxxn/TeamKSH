@@ -65,11 +65,11 @@
 	  /* 미니캘린더 서브 폼 */
 	  #sub_form{ margin-top: 200px;}
 	  
-	  .label_detail .rs_time{width: 53px;}
+	  .label_detail .rs_time{width: 60px;}
 	  
-	  .label_detail .patient_form_select{width: 110px;}
+	  .label_detail .patient_form_select{width: 138px;}
 	  
-	  .label_detail .rs_date{width: 110px;} /* 예약 일자, 진료장소 input */
+	  .label_detail .rs_date{width: 138px;} /* 예약 일자, 진료장소 input */
 	  
 	  #rs_btn2{margin-left: 176px;}
 	  /* 진료 외 일정들 등록 전용 버튼 */
