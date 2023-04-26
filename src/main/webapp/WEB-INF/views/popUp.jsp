@@ -31,8 +31,8 @@
 		<div id="calendar_insert">
 			<div class="item">
 				<div class="label">날짜</div>			
-				<div>
-					<input type="hidden" name="date">2023. 04. 21
+				<div class="value">
+					<input id="selectedDate" type="text" name="date">
 				</div>
 			</div>	
 			<div class="item">

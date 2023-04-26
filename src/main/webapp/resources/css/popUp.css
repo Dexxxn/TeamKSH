@@ -79,10 +79,10 @@ form{
 }
 
 .item{
-	margin-bottom: 10px;
+	margin: 5px 0;
+	padding: 3px;
 	display: flex;
-	justify-content: normal;	
-	padding: 2px;
+	justify-content: normal;
 }
 
 .item a{
@@ -95,6 +95,7 @@ form{
 	color: #353535;
 /* 	margin-bottom: 3px; */
 	width: 119px;
+	height: 29px;
 }
 
 .calendar_select .label{
@@ -102,18 +103,14 @@ form{
 }
 
 .value{
-	font-size: 14px;
 	width: 125px;
+	font-size: 14px;
 }
 
-.value select{
-	width: 110px;
-	height: 30px;
-}
-
-.calendar_select .value select{
+.value select, input{
 	width: 110px;
 	height: 25px;
+	font-size: 14px;
 }
 
 .button{

@@ -25,7 +25,7 @@
 			<div class="item">
 				<div class="label">날짜</div>			
 				<div class="value">
-					2023. 04. 21
+					<input type="text" name="date">
 				</div>
 			</div>	
 			<div class="item">
