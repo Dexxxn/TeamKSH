@@ -43,11 +43,11 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/popup", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/popup", method = RequestMethod.GET)
 	public String popUp() {
 		return "popUp";
 	}	
-
+*/
 	@RequestMapping(value = "/popup2", method = RequestMethod.GET)
 	public String popUp2() {
 		return "popUp2";

@@ -56,6 +56,7 @@
 				    <select name="type">
 						<option value="">선택</option>
 						<option value="">수술</option>
+						<option value="">회진</option>
 						<option value="">외부 일정</option>														
 						<option value="">휴무</option>
 					</select>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -45,15 +47,17 @@
 						<option value="">내과</option>
 					</select>
 				</div>
+
 			</div>
 			<div class="item">	
 				<div class="label">의사명</div>
 				<div class="value">    
 				    <select name="name">
 						<option value="">선택</option>
-						<option value="">정기원 원장님</option>
-						<option value="">이성언 원장님</option>														
-						<option value="">장희영 원장님</option>
+						<!-- for문 시작 --><!-- 상단 코드 필요 -->
+						<c:forEach items="${medical}" var="medical">
+		                    <option value="">${medical.s_name}</option>
+		                </c:forEach>
 					</select>
 				</div>		
 			</div>
@@ -63,6 +67,7 @@
 				    <select name="datetype">
 						<option value="">선택</option>
 						<option value="">수술</option>
+						<option value="">회진</option>
 						<option value="">외부 일정</option>														
 						<option value="">휴무</option>
 					</select>

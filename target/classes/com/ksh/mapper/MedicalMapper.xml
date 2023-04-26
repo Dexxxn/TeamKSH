@@ -7,6 +7,10 @@
 <!-- MedicalMapper.java와 연결 -->  
 <mapper namespace="com.ksh.mapper.MedicalMapper">
 
-
+	<select id="medical" resultType="com.ksh.model.MedicalVO">
+		SELECT s_dept, s_name
+		FROM Medical_Scheduling.staff
+		WHERE s_id like 'D%';
+	</select>
 
 </mapper>
