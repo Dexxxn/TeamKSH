@@ -72,7 +72,7 @@ const goToday = () => {
 
 const getDate = (event) => {
 	  const clickedDate = event.target.dataset.date;
-	  selectedDate.value = `${date.getFullYear()}-${date.getMonth() + 1}-${clickedDate}`;
+	  selectedDate.value = `${date.getFullYear()}-${('0'+(date.getMonth()+1)).slice(-2)}-${('0'+clickedDate).slice(-2)}`;
 	};
 
 	document.querySelector(".dates").addEventListener("click", (event) => {
@@ -80,3 +80,8 @@ const getDate = (event) => {
 	    getDate(event);
 	  }
 	});
+	
+/*	
+	("0" + this.getDate()).slice(-2);
+	월 2자리 표시
+	("0" + (this.getMonth() + 1)).slice(-2);*/	
