@@ -11,16 +11,22 @@
 		SELECT s_dept, s_name
 		FROM Medical_Scheduling.staff
         WHERE s_id like 'D%'
-		<if test="s_dept != null">
+	</select>
+	
+	<select id="medical2" resultType="com.ksh.model.MedicalVO">
+		SELECT s_dept, s_name
+		FROM Medical_Scheduling.staff
+        WHERE s_id like 'D%'
+ 		<if test="s_dept != null">
 			<choose>
 				<when test="s_dept=='A'.toString()">
-					and s_dept='정형외과';
+					and s_dept='정형외과'
 				</when>
 				<when test="s_dept=='B'.toString()">
-					and s_dept='신경외과';
+					and s_dept='신경외과'
 				</when>
 				<otherwise>
-					and s_dept='내과';
+					and s_dept='내과'
 				</otherwise>
 			</choose>
 		</if>

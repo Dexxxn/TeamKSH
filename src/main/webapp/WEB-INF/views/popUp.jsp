@@ -14,7 +14,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="resources/css/sideCalendar.css">
 	<script src="https://kit.fontawesome.com/0f537ad086.js" crossorigin="anonymous"></script>
-	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script type="text/javascript" src="/resources/js/popUp.js"></script>
 </head>
 <body>
 <!-- 팝업창 -->
@@ -40,7 +41,7 @@
 			<div class="item">
 				<div class="label">과목</div>			
 				<div class="value">    
-				    <select name="s_dept" onchange="location.href='/popup'">
+				    <select name="s_dept" id="dept"><!--  onchange="location.href='/popup'" -->
 						<option>선택</option>
 						<option value="A">정형외과</option>
 						<option value="B">신경외과</option>														
@@ -55,10 +56,10 @@
 						<option value="">선택</option>
 						<!-- for문 시작 --><!-- 상단 코드 필요 -->
 						<c:forEach items="${medical}" var="medical">
-		                    <option value="">${medical.s_name}</option>
+		                    <option value="${medical.s_name}">${medical.s_name}</option>
 		                </c:forEach>
 					</select>
-				</div>		
+				</div>
 			</div>
 			<div class="item">	
 				<div class="label">일정 종류</div>

@@ -8,4 +8,5 @@ public interface MedicalMapper {
 	
 	// 셀렉
 	public ArrayList<MedicalVO> medical(MedicalVO medical);
+	public ArrayList<MedicalVO> medical2(MedicalVO medical);
 }

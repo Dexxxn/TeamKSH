@@ -18,5 +18,9 @@ public class MedicalServiceImpl implements MedicalService {
 	public ArrayList<MedicalVO> medical(MedicalVO medical) {
 		return mm.medical(medical);
 	}
+	public ArrayList<MedicalVO> medical2(MedicalVO medical) {
+		System.out.println("MemberService = "+medical);
+		return mm.medical2(medical);
+	}
 
 }

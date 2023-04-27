@@ -89,6 +89,7 @@ public class MedicalVO {
 		this.s_memo = s_memo;
 	}
 	
+	
 	@Override
 	public String toString() {
 		return "MedicalVO [s_id=" + s_id + ", s_password=" + s_password + ", s_name=" + s_name + ", s_phone=" + s_phone
