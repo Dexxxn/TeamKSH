@@ -72,8 +72,7 @@
 	      dateClick: function(info) {
 	          var dateStr = info.dateStr;
 	          document.getElementById('dateCheck').value = dateStr;
-	        },
-	       
+	        }
 	    });
 	
 	    calendar.render();
@@ -162,10 +161,10 @@
 					LocalDateTime now = LocalDateTime.now();
 					String formatDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"+"_"+"HHmmss"));
 					%>
-<form method="post"> <!-- 진료등록 전체폼  -->
+<!-- <form method="post"> --> <!-- 진료등록 전체폼  -->
 					  <input type="hidden" readonly value= <%="P_" +formatDate%>  name="p_chart" value="${patientInfo.p_chart}" />  	<!-- 차트번호 (현재datetime) -->
 					<div class="label_detail"><label class="patient_form_label">환자이름</label>
-						<input class="patient_form_input" type="text" name="p_name" value="${patientInfo.p_name}" ></div>
+						<input class="patient_form_input" id="p_name_IN" type="text" name="p_name" value="${patientInfo.p_name}" ></div>
 					<div class="label_detail"><label class="patient_form_label">주민번호</label>
 						<input class="patient_form_input" type="text" name="p_no" value="${patientInfo.p_no}"></div>
 					<div id="visit_radio_div">
@@ -190,9 +189,11 @@
 <!-- 폼 끝  --></form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
 					<%@ include file = "sideCalendar.jsp" %>
 					
+<form method="post" action="/reserve">	
 			<!-- 캘린더 아래 나머지 입력폼  -->
 			<div id="sub_form">
-					
+	<!--  <div id="p_name_OUT" name="s_patient">출력</div>     -->
+<input type="text" id="" name="s_patient" > <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
 				<div class="label_detail"><label class="patient_form_label" >예약일자</label>
 					<input class="rs_date" type="text" id="selectedDate" name="s_date" readonly>
 				</div>
@@ -218,16 +219,16 @@
 							</select>
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
-					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_name" id="index_selectDept">
+					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_doctor" id="index_selectDept">
 								<!-- <option>김태원 원장님</option>
 								<option>엄경수 원장님</option> -->
 							</select>
 				</div>
-</form><!-- 진료등록 전체폼  -->	
-				 <input type="submit" value="예약 일정등록" class="patient_form_btn" id="rs_btn2"> <br><br><br><br><br><br><br>
+<!-- </form> --><!-- 진료등록 전체폼  -->	
+				 <input type="submit" value="예약 일정등록" class="patient_form_btn" id="rs_btn2" > <br><br><br><br><br><br><br>
 			
 			</div>
-
+</form>
 <!-- 폼 끝  --><!-- </form>  -->
 		</div> <!-- end of "form_wrap"  -->
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="location.href='/popup'" >

@@ -18,13 +18,12 @@
   		where p_name=#{p_name} and p_no=#{p_no};
   	</select>
   	
-  <!--	 <insert id="reserve">  스케줄 테이블 활용 
-	
-		
-		insert into schedule(s_date, s_startTime, s_endTime, s_patient, s_doctor)
-		 values(#{s_date}, #{s_date}, #{s_date}, #{s_date}, #{s_date}); 
+  	
+  	<insert id="reserve">
+		insert into schedule(s_type, s_date, s_startTime, s_endTime, s_patient, s_doctor)
+		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_patient}, #{s_doctor});  <!-- 진료 OC -->
 	 </insert>   
-	 -->
+	
   	
   
   </mapper>

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ksh.model.PatientVO;
+import com.ksh.model.ScheduleVO;
 import com.ksh.service.PatientService;
 
 @Controller
@@ -40,14 +41,13 @@ public class PatientController {
 	}
 	
 	// 진료일정 등록 후 다시 aside로 가져와야 함. + 메인달력에 보여줘야 함
-/*	@RequestMapping(value = "/reserve", method = RequestMethod.POST)
-	public String reservation(PatientVO patient, Model model) {
+	@RequestMapping(value = "/reserve", method = RequestMethod.POST)
+	public String InsertReservation(ScheduleVO schedule) {
 		System.out.println("bbb");
-		System.out.println("patient="+patient);
-		model.addAttribute("reservation", ps.reserve(patient));
-		ps.reserve(patient);
-		
+		System.out.println("patient="+schedule);
+		ps.reserve(schedule);
+
 		return "aside";
-	}*/
+	}
 	
 }

@@ -1,6 +1,7 @@
 package com.ksh.service;
 
 import com.ksh.model.PatientVO;
+import com.ksh.model.ScheduleVO;
 
 public interface PatientService {
 	
@@ -8,6 +9,6 @@ public interface PatientService {
 	
 	public PatientVO secondVisit_patient(PatientVO patient);
 	
-	/*public PatientVO reserve(PatientVO patient ScheduleVO schedule);*/
+	public void reserve(ScheduleVO schedule);
 }
 	

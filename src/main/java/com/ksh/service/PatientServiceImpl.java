@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.ksh.mapper.PatientMapper;
 import com.ksh.model.PatientVO;
+import com.ksh.model.ScheduleVO;
 
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -21,9 +22,9 @@ public class PatientServiceImpl implements PatientService {
 		 return pm.secondVisit_patient(patient);
 	}
 	
-	/*
-	public PatientVO reserve(PatientVO patient) {
-		return pm.reserve(patient);
+	
+	public void reserve(ScheduleVO schedule){
+		pm.reserve(schedule);
 	}
-	*/
+	
 }
