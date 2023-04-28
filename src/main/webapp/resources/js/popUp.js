@@ -14,8 +14,8 @@ $(document).ready(function(){
 	$("#dept").on("change",function(){
 		//alert("aaa")
 		var deptValue = $("select[name='s_dept']").val();
-		alert(deptValue);
-		console.log(deptValue);
+		//alert(deptValue);
+		//console.log(deptValue);
 		list({dept:deptValue});
 	})
 

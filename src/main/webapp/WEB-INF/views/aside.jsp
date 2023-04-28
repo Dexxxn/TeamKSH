@@ -72,7 +72,8 @@
 	      dateClick: function(info) {
 	          var dateStr = info.dateStr;
 	          document.getElementById('dateCheck').value = dateStr;
-	        }
+	        },
+	       
 	    });
 	
 	    calendar.render();
