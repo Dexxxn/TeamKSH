@@ -40,5 +40,21 @@ $(document).ready(function(){
 		});
 	}// list함수 선언 끝		
 			
+	// 휴무 옵션 선택시 시간 선택 못하게
+/*	$("#selectH").on("click",function(){
+		//alert("aaa")
+		$("option[value='H']").val();
+		var x = $("select[name='s_dept']").val();
+	});*/
+	
+    $('#type').on('change', function () {
+    	var x = $("select[name='s_type']").val();
+    	//alert(x);
+        if (x == 'H') {
+            $('#timeSelect').css('visibility', 'hidden');
+        } else {
+            $('#timeSelect').css('visibility', 'visible ');
+        }
+    });    
 })
 
