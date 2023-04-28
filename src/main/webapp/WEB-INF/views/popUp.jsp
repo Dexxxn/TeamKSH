@@ -52,12 +52,13 @@
 			<div class="item">	
 				<div class="label">의사명</div>
 				<div class="value">    
-				    <select name="name">
+				    <select name="name" id="selectDept">
 						<option value="">선택</option>
-						<!-- for문 시작 --><!-- 상단 코드 필요 -->
+											
+<%--					<!-- for문 시작 --><!-- 상단 코드 필요 -->
 						<c:forEach items="${medical}" var="medical">
 		                    <option value="${medical.s_name}">${medical.s_name}</option>
-		                </c:forEach>
+		                </c:forEach> --%>
 					</select>
 				</div>
 			</div>

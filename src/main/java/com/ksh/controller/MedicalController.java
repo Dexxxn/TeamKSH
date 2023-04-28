@@ -20,7 +20,7 @@ public class MedicalController {
 	// 비즈니스 모델을 컨트롤러에 연결하기
 	@Autowired
 	MedicalService ms;
-	
+/*	
 	@RequestMapping(value = "/popup", method = RequestMethod.GET)
 	public String medical(Model model, MedicalVO medical) {
 		System.out.println("aaaaa");
@@ -29,7 +29,7 @@ public class MedicalController {
 		model.addAttribute("medical", ms.medical(medical));
 		
 		return "popUp";
-	}
+	}*/
  
 	@RequestMapping(value = "/replies/{s_dept}", method = RequestMethod.GET)
 	public ResponseEntity<ArrayList<MedicalVO>> getList(@PathVariable("s_dept") String s_dept){

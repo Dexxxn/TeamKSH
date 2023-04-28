@@ -29,6 +29,14 @@ $(document).ready(function(){
 		$.getJSON("/replies/"+dept+".json",function(data){
 			console.log(data)	
 			
+			var str="";
+			
+			for(var i=0; i<data.length; i++){
+				str += "<option>"+data[i].s_name+"</option>"
+			}
+			
+			$("#selectDept").html(str);
+			
 			
 		});
 	}// list함수 선언 끝		
