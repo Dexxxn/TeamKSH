@@ -31,7 +31,7 @@
 	</div>	
 	<!-- INSERT할 정보 -->
 	<form id="addSchedule" action="/add" method="get">	
-		<div id="calendar_insert">
+		<div class="calendar_insert">
 			<div class="item">
 				<div class="label">날짜</div>			
 				<div class="value">
@@ -52,9 +52,7 @@
 			<div class="item">	
 				<div class="label">의사명</div>
 				<div class="value">    
-				    <select name="s_doctor" id="selectDept">
-						<option value="${s_doctor}}">선택</option>
-											
+				    <select name="s_doctor" id="selectDept">						
 <%--					<!-- for문 시작 --><!-- 상단 코드 필요 -->
 						<c:forEach items="${medical}" var="medical">
 		                    <option value="${medical.s_name}">${medical.s_name}</option>
@@ -65,7 +63,7 @@
 			<div class="item">	
 				<div class="label">일정 종류</div>
 				<div class="value">    
-				    <select name="s_type">
+				    <select name="s_type" id="type">
 						<option>선택</option>
 						<option value="OR">수술</option>
 						<option value="R">회진</option>
@@ -74,7 +72,7 @@
 					</select>
 				</div>				
 			</div>
-			<div class="item">	
+			<div class="item" id="timeSelect">	
 				<div class="label">시간</div>
 				<div class="value">    
 				    <select name="s_startTime">
