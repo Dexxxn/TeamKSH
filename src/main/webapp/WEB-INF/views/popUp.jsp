@@ -30,7 +30,7 @@
 		<%@ include file = "sideCalendar.jsp" %>
 	</div>	
 	<!-- INSERT할 정보 -->
-	<form id="date_submit" action="" method="get">	
+	<form id="date_submit" action="/scheduleI" method="get">	
 		<div id="calendar_insert">
 			<div class="item">
 				<div class="label">날짜</div>			

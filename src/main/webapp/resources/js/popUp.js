@@ -22,7 +22,7 @@ $(document).ready(function(){
 	function list(param){// list함수 선언 시작
 		
 		var dept = param.dept;
-		alert(dept);
+		//alert(dept);
 		console.log(dept)
 		
 		// controller에서 콜백(리턴)한 값이 data에 저장
@@ -36,7 +36,6 @@ $(document).ready(function(){
 			}
 			
 			$("#selectDept").html(str);
-			
 			
 		});
 	}// list함수 선언 끝		

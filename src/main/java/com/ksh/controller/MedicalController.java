@@ -32,10 +32,21 @@ public class MedicalController {
 	}*/
  
 	@RequestMapping(value = "/replies/{s_dept}", method = RequestMethod.GET)
+	// ResponseEntity: 비동기식은 결과가 js로 가기때문에 통신상태를 확인하기 위해 통신상태를 함께 보냄
 	public ResponseEntity<ArrayList<MedicalVO>> getList(@PathVariable("s_dept") String s_dept){
-		MedicalVO mvo = new MedicalVO();
-		mvo.setS_dept(s_dept);
+		MedicalVO mvo = new MedicalVO();	// mapper.xml(if문 가공)에서 String s_dept(단순 변수) 처리 못함 반드시 VO에담아서 전달해야함
+		mvo.setS_dept(s_dept);	//setter: VO에 데이터 저장하기 위함
 		System.out.println(mvo);
 		return new ResponseEntity<>(ms.medical2(mvo),HttpStatus.OK); 
+		// return ms.medical2(mvo) // 이렇게해도 되지만 서버 통신상태를 확인하기 위해서는 위 코드를 쓸것
 	}
+	/*	
+	@RequestMapping(value = "/scheduleI", method = RequestMethod.GET)
+	public String medical(MedicalVO medical) {
+		System.out.println("aaaaa");
+		System.out.println("medical="+medical);
+		ms.medical(medical);
+
+		return "aside";
+	}*/
 }
