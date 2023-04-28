@@ -1056,18 +1056,18 @@ var FullCalendar = (function (exports) {
 
     // timeZoneOffset is in minutes
     function buildIsoString(marker, timeZoneOffset, stripZeroTime) {
-        if (stripZeroTime === void 0) { stripZeroTime = false; }
+        if (stripZeroTime === void 0) { stripZeroTime = true; }
         var s = marker.toISOString();
         s = s.replace('.000', '');
         if (stripZeroTime) {
             s = s.replace('T00:00:00Z', '');
         }
-        if (s.length > 10) { // time part wasn't stripped, can add timezone info
+        if (s.length < 10) { // time part wasn't stripped, can add timezone info
             if (timeZoneOffset == null) {
-                s = s.replace('Z', '');
+                s = s.replace(' ', '');                
             }
             else if (timeZoneOffset !== 0) {
-                s = s.replace('Z', formatTimeZoneOffset(timeZoneOffset, true));
+                s = s.replace(' ', formatTimeZoneOffset(timeZoneOffset, true));
             }
             // otherwise, its UTC-0 and we want to keep the Z
         }

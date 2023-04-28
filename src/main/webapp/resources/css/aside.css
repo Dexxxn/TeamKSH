@@ -108,7 +108,7 @@
 	
 	 /* 검색 버튼  */ #scheduleSelect_search_btn{background-color: rgb(127, 127, 127); color:white; font-weight:bold;  font-size:10px; border: 1px solid #A9A9A9; width: 42px; height: 23px;}
 	
-	 #dateCheck{text-align:center; width: 140px; height:27px; font-size:15px; font-weight:bold; color:red;  margin: 8px 0; margin-right: 42px; }
+	 #dateCheck{text-align:center; width: 230px; height:27px; font-size:15px; font-weight:bold; color:red;  margin: 8px 0; }
 	
 	
 	
