@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 		// 2. #out 공간에 #data의 내용이 출력된다.
 
-		$("#p_name_OUT").text($("#p_name_IN").val());
+		$("#p_name_OUT").val($("#p_name_IN").val());
 
 		// #out의 위치에 text로 데이터를 받는다.(setter)
 
