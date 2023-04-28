@@ -47,7 +47,8 @@ public class MedicalController {
 		System.out.println("aaaaa");
 		System.out.println("medical="+schedule);
 		ms.addSchedule(schedule);
-
-		return "aside";
+		// 그냥 aside.jsp로 가면 서버주소에 insert하는 값이 남게됨 
+		// .jsp가 아닌 .jsp로 리턴되는 서버로 이동해야함
+		return "redirect:/aside";
 	}
 }
