@@ -27,9 +27,9 @@
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="resources/js/main.js" type="text/javascript"></script>
+<script src="resources/js/aside.js" type="text/javascript"></script>
 
 <!-- api 한글로 -->
-<!--  <script src="fullcalendar/lib/locales-all.js"></script> -->
  <script src='fullcalendar/core/locales/ko.js'></script>
 
 
@@ -150,25 +150,40 @@
 		</header>
 		<aside>
 			<div id="form_wrap">
-<!--폼 시작 --><form method="post" action="/patientInfo">
+			<form method="post">
+			
 					<div id="form_contents">
 					<%
+					request.setCharacterEncoding("utf-8");
 					LocalDateTime now = LocalDateTime.now();
 					String formatDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"+"_"+"HHmmss"));
-					%> 
-					 <input type="text" value= <%="P_" +formatDate%>  name="p_chart"/> 	<!-- 차트번호 (현재datetime) -->
-					<div class="label_detail"><label class="patient_form_label">환자이름</label><input class="patient_form_input" type="text" name="p_name" ${patientInfo.p_name} ></div>
-					<div class="label_detail"><label class="patient_form_label">주민번호</label><input class="patient_form_input" type="text" name="p_no" ${patientInfo.p_no}></div>
-						<div id="visit_radio_div">
-							<input type="radio" name="visit" value="first" checked name="p_visit"><span class="patient_visit_radio">초진</span>
-							<input type="radio" name="visit" value="second" name="p_visit"><span class="patient_visit_radio">재진</span>
-							<input type="submit" value="조회/등록" class="patient_form_btn" id="rs_btn1"><br>
-						</div>
-							<div  class="label_detail"><label class="patient_form_label">연락처</label><input class="patient_form_input" type="text" name="p_phone" ${patientInfo.p_phone}></div>
-							<div  class="label_detail"><label class="patient_form_label textarea_label">주소</label><textarea class="patient_textarea" rows="3" cols="21" name="p_addr" ${patientInfo.p_addr}></textarea></div>
-							<!-- <div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label><textarea class="patient_textarea" rows="3" cols="21"></textarea></div> --><br>
+					%>
+<form method="post"> <!-- 진료등록 전체폼  -->
+					  <input type="hidden" readonly value= <%="P_" +formatDate%>  name="p_chart" value="${patientInfo.p_chart}" />  	<!-- 차트번호 (현재datetime) -->
+					<div class="label_detail"><label class="patient_form_label">환자이름</label>
+						<input class="patient_form_input" type="text" name="p_name" value="${patientInfo.p_name}" ></div>
+					<div class="label_detail"><label class="patient_form_label">주민번호</label>
+						<input class="patient_form_input" type="text" name="p_no" value="${patientInfo.p_no}"></div>
+					<div id="visit_radio_div">
+							<input type="radio"  value="first"  name="p_visit" id="first_visit" checked><span class="patient_visit_radio">초진</span>
+							<input type="radio"  value="second" name="p_visit" id="second_visit"><span class="patient_visit_radio">재진</span>
+						<input type="submit" value="등록" class="patient_form_btn rs_btn1"  formaction="/patientF">
+						<input type="submit" value="조회" class="patient_form_btn rs_btn1"  formaction="/patientS">
+						<input type="reset" value="초기화" class="patient_form_btn rs_btn1">
+						<br>
 					</div>
-<!-- 폼 끝  --><!-- </form> --><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
+						<div class="label_detail"><label class="patient_form_label">연락처</label>
+							<input class="patient_form_input" type="text" name="p_phone" value="${patientInfo.p_phone}">
+						</div>
+						<div class="label_detail"><label class="patient_form_label textarea_label">주소</label>
+							<textarea class="patient_textarea" rows="3" cols="21" name="p_addr">${patientInfo.p_addr}</textarea>
+						</div>
+						<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label>
+					<textarea class="patient_textarea" rows="3" cols="21" name="p_content">${patientInfo.p_content}</textarea>
+					
+				</div>
+				</div>
+<!-- 폼 끝  --></form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
 					<%@ include file = "sideCalendar.jsp" %>
 					
 			<!-- 캘린더 아래 나머지 입력폼  -->
@@ -196,20 +211,15 @@
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
 					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_name"><option>김태원 원장님</option><option>엄경수 원장님</option></select>
 				</div>
-				<div class="label_detail"><label class="patient_form_label">진료장소</label>
-					<input class="rs_date"  type="text" name="s_place" readonly>
-				</div>
-				<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label>
-					<textarea class="patient_textarea" rows="3" cols="21" name="p_content" ${patientInfo.p_content}></textarea>
-					
-				</div>
-				<!-- <input type="submit" value="조회/등록" class="patient_form_btn" id="rs_btn2"> --><br><br><br><br><br><br><br>
+</form><!-- 진료등록 전체폼  -->	
+				 <input type="submit" value="예약 일정등록" class="patient_form_btn" id="rs_btn2"> <br><br><br><br><br><br><br>
 			
+			</div>
+
+<!-- 폼 끝  --><!-- </form>  -->
+		</div> <!-- end of "form_wrap"  -->
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="location.href='/popup'" >
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input type="button" value="상세 일정" onclick="location.href='/popup2'" >
-			</div>
-<!-- 폼 끝  --></form> 
-		</div> <!-- end of "form_wrap"  -->
 		</aside>
 	</div><!-- pageSide_left -->
 

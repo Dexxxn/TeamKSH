@@ -12,10 +12,18 @@ public class PatientServiceImpl implements PatientService {
 	@Autowired
 	PatientMapper pm;
 	
-	@Override
-	public PatientVO secondVisit_patient(PatientVO patient) {
-		 return pm.secondVisit_patient(patient);
-		 
+	public void patientreg(PatientVO patient) {
+		pm.patientreg(patient);
 	}
 	
+	
+	public PatientVO secondVisit_patient(PatientVO patient) {
+		 return pm.secondVisit_patient(patient);
+	}
+	
+	/*
+	public PatientVO reserve(PatientVO patient) {
+		return pm.reserve(patient);
+	}
+	*/
 }

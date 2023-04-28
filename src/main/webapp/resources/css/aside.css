@@ -41,7 +41,9 @@
 		
 		#form_wrap .patient_visit_radio{margin:6px;}
 		
-		#form_wrap .patient_form_btn{ background-color:rgb(94, 94, 94); color:white; font-size:11px; width:61px; height:20px; border-radius: 5px;}
+		#form_wrap .patient_form_btn{ background-color:rgb(94, 94, 94); color:white; font-size:11px; height:20px; border-radius: 5px;}
+		
+		#form_wrap .rs_btn1{ width:37px;}
 		
 		#form_wrap .patient_form_label{ display: inline-block; padding:2px; width:60px; font-size:13px; text-align: center; background-color: #f5f5f5;}
 		
@@ -53,7 +55,7 @@
 		
 		#form_wrap #visit_radio_div{ margin-left:50px; padding: 3px;}
 		
-	 	 #rs_btn1{margin-left: 9px;}
+	 
 	  /* aside 미니 캘린더  */
 	  .calendar {
 	    width: 230px;
@@ -71,7 +73,9 @@
 	  
 	  .label_detail .rs_date{width: 138px;} /* 예약 일자, 진료장소 input */
 	  
-	  #rs_btn2{margin-left: 176px;}
+	  #rs_btn2{margin-left: 80px; width:80px;} /* 예약 일정등록 버튼 */
+	  
+	  
 	  /* 진료 외 일정들 등록 전용 버튼 */
 	  #other_schedule_register_btn{width: 110px; height:28px; margin-left: 75px; background-color:rgb(94, 94, 94); color: white; border-radius: 5px;}
 	  

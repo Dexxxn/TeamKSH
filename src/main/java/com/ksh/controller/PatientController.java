@@ -16,11 +16,38 @@ public class PatientController {
 	@Autowired
 	PatientService ps;
 	
-	@RequestMapping(value = "/patientInfo", method = RequestMethod.POST)
+	
+	
+	// 초진 환자 정보 insert하기 
+	@RequestMapping(value = "/patientF", method = RequestMethod.POST)
+	public String patientPost(PatientVO patient) {
+		System.out.println(patient);
+		ps.patientreg(patient);
+		return "aside";
+		
+	}
+	
+	
+	// 재진 환자 정보 select해오기
+	@RequestMapping(value = "/patientS", method = RequestMethod.POST)
 	public String patientCheck(Model model, PatientVO patient) {
+		System.out.println("aaaaa");
+		System.out.println("patient="+patient);
 		model.addAttribute("patientInfo", ps.secondVisit_patient(patient));
 		ps.secondVisit_patient(patient);
+		
 		return "aside";
 	}
+	
+	// 진료일정 등록 후 다시 aside로 가져와야 함. + 메인달력에 보여줘야 함
+/*	@RequestMapping(value = "/reserve", method = RequestMethod.POST)
+	public String reservation(PatientVO patient, Model model) {
+		System.out.println("bbb");
+		System.out.println("patient="+patient);
+		model.addAttribute("reservation", ps.reserve(patient));
+		ps.reserve(patient);
+		
+		return "aside";
+	}*/
 	
 }

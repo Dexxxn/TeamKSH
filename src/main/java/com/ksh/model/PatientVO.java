@@ -52,4 +52,12 @@ public class PatientVO {
 		this.p_chart = p_chart;
 	}
 	
+	@Override
+	public String toString() {
+		return "PatientVO [p_name=" + p_name + ", p_no=" + p_no + ", p_addr=" + p_addr + ", p_phone=" + p_phone
+				+ ", p_visit=" + p_visit + ", p_content=" + p_content + ", p_chart=" + p_chart + "]";
+	}
+	
+
+	
 }
