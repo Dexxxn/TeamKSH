@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ksh.service.MedicalService;
 import com.ksh.model.MedicalVO;
+import com.ksh.model.ScheduleVO;
 
 @Controller
 public class MedicalController {
@@ -31,7 +32,7 @@ public class MedicalController {
 		return "popUp";
 	}*/
  
-	@RequestMapping(value = "/replies/{s_dept}", method = RequestMethod.GET)
+	@RequestMapping(value = "/popup/{s_dept}", method = RequestMethod.GET)
 	// ResponseEntity: 비동기식은 결과가 js로 가기때문에 통신상태를 확인하기 위해 통신상태를 함께 보냄
 	public ResponseEntity<ArrayList<MedicalVO>> getList(@PathVariable("s_dept") String s_dept){
 		MedicalVO mvo = new MedicalVO();	// mapper.xml(if문 가공)에서 String s_dept(단순 변수) 처리 못함 반드시 VO에담아서 전달해야함
@@ -40,13 +41,13 @@ public class MedicalController {
 		return new ResponseEntity<>(ms.medical2(mvo),HttpStatus.OK); 
 		// return ms.medical2(mvo) // 이렇게해도 되지만 서버 통신상태를 확인하기 위해서는 위 코드를 쓸것
 	}
-	/*	
-	@RequestMapping(value = "/scheduleI", method = RequestMethod.GET)
-	public String medical(MedicalVO medical) {
+	
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	public String InsertSchedule(ScheduleVO schedule) {
 		System.out.println("aaaaa");
-		System.out.println("medical="+medical);
-		ms.medical(medical);
+		System.out.println("medical="+schedule);
+		ms.addSchedule(schedule);
 
 		return "aside";
-	}*/
+	}
 }

@@ -30,12 +30,12 @@
 		<%@ include file = "sideCalendar.jsp" %>
 	</div>	
 	<!-- INSERT할 정보 -->
-	<form id="date_submit" action="/scheduleI" method="get">	
+	<form id="addSchedule" action="/add" method="get">	
 		<div id="calendar_insert">
 			<div class="item">
 				<div class="label">날짜</div>			
 				<div class="value">
-					<input id="selectedDate" type="text" name="date">
+					<input id="selectedDate" type="text" name="s_date">
 				</div>
 			</div>	
 			<div class="item">
@@ -52,8 +52,8 @@
 			<div class="item">	
 				<div class="label">의사명</div>
 				<div class="value">    
-				    <select name="name" id="selectDept">
-						<option value="">선택</option>
+				    <select name="s_doctor" id="selectDept">
+						<option value="${s_doctor}}">선택</option>
 											
 <%--					<!-- for문 시작 --><!-- 상단 코드 필요 -->
 						<c:forEach items="${medical}" var="medical">
@@ -65,12 +65,12 @@
 			<div class="item">	
 				<div class="label">일정 종류</div>
 				<div class="value">    
-				    <select name="datetype">
-						<option value="">선택</option>
-						<option value="">수술</option>
-						<option value="">회진</option>
-						<option value="">외부 일정</option>														
-						<option value="">휴무</option>
+				    <select name="s_type">
+						<option>선택</option>
+						<option value="OR">수술</option>
+						<option value="R">회진</option>
+						<option value="S">외부 일정</option>														
+						<option value="H">휴무</option>
 					</select>
 				</div>				
 			</div>
@@ -78,52 +78,52 @@
 				<div class="label">시간</div>
 				<div class="value">    
 				    <select name="s_startTime">
-						<option value="">09:00</option>
-						<option value="">09:30</option>
-						<option value="">10:00</option>
-						<option value="">10:30</option>
-						<option value="">11:00</option>
-						<option value="">11:30</option>
-						<option value="">12:00</option>
-						<option value="">12:30</option>
-						<option value="">14:00</option>
-						<option value="">14:30</option>
-						<option value="">15:00</option>
-						<option value="">15:30</option>
-						<option value="">16:00</option>
-						<option value="">16:30</option>
-						<option value="">17:00</option>
-						<option value="">17:30</option>														
+						<option value="09:00">09:00</option>
+						<option value="09:30">09:30</option>
+						<option value="10:00">10:00</option>
+						<option value="10:30">10:30</option>
+						<option value="11:00">11:00</option>
+						<option value="11:30">11:30</option>
+						<option value="12:00">12:00</option>
+						<option value="12:30">12:30</option>
+						<option value="14:00">14:00</option>
+						<option value="14:30">14:30</option>
+						<option value="15:00">15:00</option>
+						<option value="15:30">15:30</option>
+						<option value="16:00">16:00</option>
+						<option value="16:30">16:30</option>
+						<option value="17:00">17:00</option>
+						<option value="17:30">17:30</option>														
 					</select> ~
 				    <select name="s_endTime">
-						<option value="">09:30</option>
-						<option value="">10:00</option>
-						<option value="">10:30</option>
-						<option value="">11:00</option>
-						<option value="">11:30</option>
-						<option value="">12:00</option>
-						<option value="">12:30</option>
-						<option value="">14:00</option>
-						<option value="">14:30</option>
-						<option value="">15:00</option>
-						<option value="">15:30</option>
-						<option value="">16:00</option>
-						<option value="">16:30</option>
-						<option value="">17:00</option>
-						<option value="">17:30</option>														
+						<option value="09:30">09:30</option>
+						<option value="10:00">10:00</option>
+						<option value="10:30">10:30</option>
+						<option value="11:00">11:00</option>
+						<option value="11:30">11:30</option>
+						<option value="12:00">12:00</option>
+						<option value="12:30">12:30</option>
+						<option value="14:00">14:00</option>
+						<option value="14:30">14:30</option>
+						<option value="15:00">15:00</option>
+						<option value="15:30">15:30</option>
+						<option value="16:00">16:00</option>
+						<option value="16:30">16:30</option>
+						<option value="17:00">17:00</option>
+						<option value="17:30">17:30</option>														
 					</select>
 				</div>
 			</div>
 			<div class="item">	
 				<div class="label">메모</div>	
 				<div>
-					<textarea name="memo" placeholder="기타 추가 사항 입력."></textarea>
+					<textarea name="s_memo" placeholder="기타 추가 사항 입력."></textarea>
 				</div>	
 			</div>			
 		</div>	
 	</form>	
 	<div align="center">
-		<input class="button first" type="submit" value="확인" id="date_submit">
+		<input class="button first" type="submit" value="확인" form="addSchedule">
 		<input class="button second" type="button" value="취소">
 	</div>
 </div>

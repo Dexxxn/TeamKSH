@@ -26,7 +26,7 @@ $(document).ready(function(){
 		console.log(dept)
 		
 		// controller에서 콜백(리턴)한 값이 data에 저장
-		$.getJSON("/replies/"+dept+".json",function(data){
+		$.getJSON("/popup/"+dept+".json",function(data){
 			console.log(data)	
 			
 			var str="";

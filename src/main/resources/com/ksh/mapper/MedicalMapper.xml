@@ -31,5 +31,10 @@
 			</choose>
 		</if>
 	</select>
+	
+	<insert id="addSchedule">
+		INSERT into Medical_Scheduling.schedule(s_no, s_date, s_type, s_startTime, s_endTime, s_memo, s_doctor)
+		VALUES(#{s_no}, #{s_date}, #{s_type}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor});
+	</insert>
 
 </mapper>
