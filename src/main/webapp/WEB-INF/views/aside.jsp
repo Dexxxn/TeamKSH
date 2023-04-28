@@ -209,10 +209,18 @@
 				</div>
 				
 				<div class="label_detail"><label class="patient_form_label">진료과목</label>
-					<!-- 과 --><select class="patient_form_select" name="s_dept"><option selected>정형외과</option><option>신경외과</option><option>내과</option></select>
+					<!-- 과 --><select class="patient_form_select" name="index_s_dept" id="index_medical_dept">
+								<option>선택</option>
+								<option value="A">정형외과</option>
+								<option value="B">신경외과</option>
+								<option value="C">내과</option>
+							</select>
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
-					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_name"><option>김태원 원장님</option><option>엄경수 원장님</option></select>
+					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_name" id="index_selectDept">
+								<!-- <option>김태원 원장님</option>
+								<option>엄경수 원장님</option> -->
+							</select>
 				</div>
 </form><!-- 진료등록 전체폼  -->	
 				 <input type="submit" value="예약 일정등록" class="patient_form_btn" id="rs_btn2"> <br><br><br><br><br><br><br>
@@ -258,20 +266,28 @@
 			<input id="dateCheck" type="text" readonly>
     			<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료과목</label>
 					<!-- 과 -->
-					<select>
-						<option selected>정형외과</option><option>신경외과</option><option>내과</option>
+					<select class="top_optionSelect" name="index_top_s_dept" id="index_top_medical_dept">
+						<option>선택</option>
+						<option value="A">정형외과</option>
+						<option value="B">신경외과</option>
+						<option value="C">내과</option>
 					</select>
 				</span>
 				<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료의</label>
 					<!-- 해당과의 의료진  -->
-					<select>
-						<option>엄경수 원장님</option><option>김태원 원장님</option>
+					<select class="top_optionSelect" name="s_name" id="index_top_selectDept">
+						<!-- <option>엄경수 원장님</option><option>김태원 원장님</option> -->
 					</select>
 				</span>
 				<span class="doctor_schedule_select"><label class="doctor_schedule_label">일정</label>
 					<!-- 일정 분류-->
-					<select>
-						<option>전체</option><option>외래진료</option><option>수술</option><option>회진</option><option>세미나 / 휴무</option>
+						 <select class="top_optionSelect" name="s_type">
+						<option>선택</option>
+						<option value="OC">외래진료</option>
+						<option value="OR">수술</option>
+						<option value="R">회진</option>
+						<option value="S">외부 일정</option>														
+						<option value="H">휴무</option>
 					</select>
 				</span>
 						<input type="submit" value="검색" id="scheduleSelect_search_btn">
