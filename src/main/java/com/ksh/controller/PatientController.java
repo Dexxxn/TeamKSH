@@ -46,7 +46,6 @@ public class PatientController {
 		System.out.println("bbb");
 		System.out.println("patient="+schedule);
 		ps.reserve(schedule);
-
 		return "redirect:/aside"; // redirect안쓰면 브라우저 새로고침 시 데이터 계속 들어감
 	}
 	

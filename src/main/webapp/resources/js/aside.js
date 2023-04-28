@@ -12,6 +12,7 @@ $(document).ready(function(){
 
 		$("#p_name_OUT").val($("#p_name_IN").val());
 
+		
 		// #out의 위치에 text로 데이터를 받는다.(setter)
 
 		// 들어가는 데이터는 #data의 값(.val())이다. (getter)

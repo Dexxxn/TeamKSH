@@ -288,6 +288,7 @@
 						<option value="S">외부 일정</option>														
 						<option value="H">휴무</option>
 					</select>
+					
 				</span>
 						<input type="submit" value="검색" id="scheduleSelect_search_btn">
 			</div><!-- scheduleSelect -->
