@@ -69,7 +69,10 @@
 	      },
 	      editable: true,
 	      dayMaxEvents: true, // allow "more" link when too many events
-	     
+	      dateClick: function(info) {
+	          var dateStr = info.dateStr;
+	          document.getElementById('dateCheck').value = dateStr;
+	        }
 	    });
 	
 	    calendar.render();
@@ -252,7 +255,7 @@
     
     
     		<div class="scheduleSelect">
-			<input id="dateCheck" type="text" value="2023-04-25 TUE" readonly>
+			<input id="dateCheck" type="text" readonly>
     			<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료과목</label>
 					<!-- 과 -->
 					<select>
