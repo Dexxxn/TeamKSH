@@ -168,8 +168,8 @@
 					<div class="label_detail"><label class="patient_form_label">주민번호</label>
 						<input class="patient_form_input" type="text" name="p_no" value="${patientInfo.p_no}"></div>
 					<div id="visit_radio_div">
-							<input type="radio"  value="first"  name="p_visit" id="first_visit" checked><span class="patient_visit_radio">초진</span>
-							<input type="radio"  value="second" name="p_visit" id="second_visit"><span class="patient_visit_radio">재진</span>
+							<input type="radio"  value="first"  name="p_visit" id="first_visit" checked ><span class="patient_visit_radio" onclick="showBTN_f()">초진</span>
+							<input type="radio"  value="second" name="p_visit" id="second_visit" onclick="showBTN_s()"><span class="patient_visit_radio">재진</span>
 						<input type="submit" value="등록" class="patient_form_btn rs_btn1"  formaction="/patientF" id="patientF">
 						<input type="submit" value="조회" class="patient_form_btn rs_btn1"  formaction="/patientS" id="patientS">
 						<input type="reset" value="초기화" class="patient_form_btn rs_btn1">
@@ -225,6 +225,7 @@
 					
 				</div>
 				 <input type="submit" value="예약 일정등록" class="patient_form_btn" id="rs_btn2"> 
+				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/aside'"> 
 			</div>
 </form>
 
