@@ -170,8 +170,8 @@
 					<div id="visit_radio_div">
 							<input type="radio"  value="first"  name="p_visit" id="first_visit" checked><span class="patient_visit_radio">초진</span>
 							<input type="radio"  value="second" name="p_visit" id="second_visit"><span class="patient_visit_radio">재진</span>
-						<input type="submit" value="등록" class="patient_form_btn rs_btn1"  formaction="/patientF">
-						<input type="submit" value="조회" class="patient_form_btn rs_btn1"  formaction="/patientS">
+						<input type="submit" value="등록" class="patient_form_btn rs_btn1"  formaction="/patientF" id="patientF">
+						<input type="submit" value="조회" class="patient_form_btn rs_btn1"  formaction="/patientS" id="patientS">
 						<input type="reset" value="초기화" class="patient_form_btn rs_btn1">
 						<br>
 					</div>
@@ -181,10 +181,7 @@
 						<div class="label_detail"><label class="patient_form_label textarea_label">주소</label>
 							<textarea class="patient_textarea" rows="3" cols="21" name="p_addr">${patientInfo.p_addr}</textarea>
 						</div>
-						<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label>
-					<textarea class="patient_textarea" rows="3" cols="21" name="p_content">${patientInfo.p_content}</textarea>
-					
-				</div>
+						
 				</div>
 </form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
 					<%@ include file = "sideCalendar.jsp" %>
@@ -192,7 +189,7 @@
 		<form method="post" action="/reserve">
 			<!-- 캘린더 아래 나머지 입력폼  -->
 			<div id="sub_form">
-				<input type="hidden" id="p_name_OUT" name="s_patient" >  <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
+				<input type="hidden" id="p_name_OUT" name="s_patient" value="">  <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
 				<div class="label_detail"><label class="patient_form_label" >예약일자</label>
 					<input class="rs_date" type="text" id="selectedDate" name="s_date" readonly>
 				</div>
@@ -222,6 +219,10 @@
 								<!-- <option>김태원 원장님</option>
 								<option>엄경수 원장님</option> -->
 							</select>
+				</div>
+				<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label>
+					<textarea class="patient_textarea" rows="3" cols="21" name="s_memo"></textarea>
+					
 				</div>
 				 <input type="submit" value="예약 일정등록" class="patient_form_btn" id="rs_btn2"> 
 			</div>
@@ -290,6 +291,7 @@
 					</select>
 					
 				</span>
+				
 						<input type="submit" value="검색" id="scheduleSelect_search_btn">
 			</div><!-- scheduleSelect -->
 </div><!-- right_top -->	

@@ -1,5 +1,17 @@
-// 스케줄 테이블로 진료예약 등록 시 활용할 input창
 
+// 재진 환자 조회 후 예약등록 시 환자이름 DB로 같이 넘기기
+
+$(document).ready(function(){
+	$("#index_medical_dept").on('click', function(){
+		/*var patientName = '1234';*/
+		var patientName = $("#p_name_IN").val();
+		$('input[name=s_patient]').attr('value', patientName);
+	});
+});
+
+
+
+//  환자이름 다른 폼에서 가져오기
 $(document).ready(function(){
 
 	// 입력란에 입력을 하면 입력내용에 내용이 출력
@@ -11,6 +23,7 @@ $(document).ready(function(){
 		// 2. #out 공간에 #data의 내용이 출력된다.
 
 		$("#p_name_OUT").val($("#p_name_IN").val());
+		
 
 		
 		// #out의 위치에 text로 데이터를 받는다.(setter)

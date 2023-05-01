@@ -7,21 +7,21 @@
   <mapper namespace="com.ksh.mapper.PatientMapper">
   
 	<insert id="patientreg"> 
-		insert into patient(p_name, p_no, p_addr, p_phone, p_visit, p_content, p_chart) 
-		values(#{p_name},#{p_no},#{p_addr}, #{p_phone}, "F", #{p_content}, #{p_chart});
+		insert into patient(p_name, p_no, p_addr, p_phone, p_visit,p_chart) 
+		values(#{p_name},#{p_no},#{p_addr}, #{p_phone}, "F", #{p_chart});
 	</insert>  
 	
 	
 	<select id="secondVisit_patient" resultType="com.ksh.model.PatientVO">
-  		select p_name, p_no, p_phone, p_addr, p_content
+  		select p_name, p_no, p_phone, p_addr
   		from patient
   		where p_name=#{p_name} and p_no=#{p_no};
   	</select>
   	
   	
   	<insert id="reserve">
-		insert into schedule(s_type, s_date, s_startTime, s_endTime, s_patient, s_doctor)
-		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_patient}, #{s_doctor});  <!-- 진료 OC -->
+		insert into schedule(s_type, s_date, s_startTime, s_endTime, s_memo, s_patient, s_doctor)
+		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient}, #{s_doctor});  <!-- 진료 OC -->
 	 </insert>   
 	
   	
