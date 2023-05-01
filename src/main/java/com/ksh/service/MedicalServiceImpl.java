@@ -25,5 +25,9 @@ public class MedicalServiceImpl implements MedicalService {
 		System.out.println("ScheduleService = "+schedule);
 		mm.addSchedule(schedule);
 	}
+	
+	public MedicalVO detail(ScheduleVO schedule) {
+		return mm.detail(schedule);
+	}
 
 }

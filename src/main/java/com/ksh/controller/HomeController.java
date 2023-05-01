@@ -48,10 +48,10 @@ public class HomeController {
 		return "popUp";
 	}	
 
-	@RequestMapping(value = "/popup2", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/popup2", method = RequestMethod.GET)
 	public String popUp2() {
 		return "popUp2";
-	}
+	}*/
 	
 	@RequestMapping(value = "/aside", method = RequestMethod.GET)
 	public String aside() {

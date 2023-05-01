@@ -51,4 +51,11 @@ public class MedicalController {
 		// .jsp가 아닌 .jsp로 리턴되는 서버로 이동해야함
 		return "redirect:/aside";
 	}
+	
+	@RequestMapping(value = "/popup2", method = RequestMethod.GET)
+	public String DetailSchedule(Model model, ScheduleVO schedule) {
+		//ms.detail(schedule);
+		model.addAttribute("detail", ms.detail(schedule));
+		return "popUp2";
+	}
 }

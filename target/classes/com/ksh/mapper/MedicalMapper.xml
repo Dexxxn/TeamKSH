@@ -36,5 +36,30 @@
 		INSERT into Medical_Scheduling.schedule(s_no, s_date, s_type, s_startTime, s_endTime, s_memo, s_doctor)
 		VALUES(#{s_no}, #{s_date}, #{s_type}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor});
 	</insert>
+	
+	<resultMap type="ScheduleVO" id="ScheduleVO">
+	    <result column="BBB_UID" property="bbbUid"/>
+	    <result column="BBB_COL1" property="bbbCol1"/>
+	    <result column="BBB_UID" property="bbbUid"/>
+	    <result column="BBB_COL1" property="bbbCol1"/>
+	    <result column="BBB_UID" property="bbbUid"/>
+	    <result column="BBB_COL1" property="bbbCol1"/>	    	    
+	</resultMap>
+	 
+	<resultMap type="PatientVO" id="PatientVO">
+	    <result column="AAA_UID" property="aaaUid"/>
+	    <result column="AAA_COL1" property="aaaCol1"/>
+	    <result column="AAA_COL2" property="aaaCol2"/>
+	    <collection property="PatientVO" resultMap="PatientVO"/>
+	</resultMap>
+	
+	<select id="detail" resultType="com.ksh.model.">
+		SELECT
+		s.s_date, s.s_startTime, s.s_endTime, s.s_memo, s.s_doctor, p.p_name, p.p_no, p.p_phone, p.p_visit, p.p_chart, s.s_no
+		FROM patient AS p
+		JOIN schedule AS s
+		ON p.p_name = s.s_patient
+		WHERE s.s_no = '4';
+	</select>
 
 </mapper>
