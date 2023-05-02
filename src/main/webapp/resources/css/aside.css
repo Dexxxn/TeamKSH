@@ -13,7 +13,7 @@
 	    height: 100%;
 	}
 	
-	#container{display: flex; width:100%; height:100%; /* background-color:#f5f5f5; */}
+	#container{display: flex; width:100%; height:100%;}
 	/* 로고 자리 */
 	#company_logo{ width: 245px; height: 100px; /* background-color: #E6E6FA; */}
 	#hospital_logo{width: 270px; height: 100px;}
@@ -25,7 +25,7 @@
 	#form_wrap{
 		margin-top: 10px;
 		width: 260px;
-		height: 1920px;
+		height: 800px;
 		margin-left: 10px;
 		font-size: 13px;
 		font-weight: bold;
@@ -33,49 +33,61 @@
 	}
 	
 	
+	#patientS{display: none;}
+
+	
 	/* 	폼 타이틀 #form_wrap #patient_form_title{font-size: 16px; text-align: center; color: blue;} */
 		
 		#form_wrap .label_detail{ padding: 2px;}
 		
 		#form_wrap #form_contents{/* background-color: yellow; */}
 		
-		#form_wrap .patient_visit_radio{margin:6px;}
+		#form_wrap .patient_visit_radio{margin:5px; }
 		
 		#form_wrap .patient_form_btn{ background-color:rgb(94, 94, 94); color:white; font-size:11px; height:20px; border-radius: 5px;}
-		
-		#form_wrap .rs_btn1{ width:37px;}
+		#form_wrap .patient_form_btn:hover{color:black; background-color:white; font-weight:bold;}
+		#form_wrap .rs_btn1{ width:37px; margin: 3px;}
+		#form_wrap .rs_btn1:hover{color:black; background-color:white; font-weight:bold;}
 		
 		#form_wrap .patient_form_label{ display: inline-block; padding:2px; width:60px; font-size:13px; text-align: center; background-color: #f5f5f5;}
 		
 		#form_wrap .textarea_label{/* padding:2px; */}
 		
-		#form_wrap .patient_form_input{width:173px; padding: 1px; font-size:13px; font-weight: bold; }
+		#form_wrap .patient_form_input{width:173px; padding: 1px; font-size:13px; font-weight: bold; padding-left:10px; }
+		#form_wrap .patient_form_input:focus{background-color:#e8f0fe;}
+		#form_wrap .patient_textarea{width:173px; resize:none; font-weight:bold; padding-left:10px; padding-top:3px;} 
 		
-		#form_wrap .patient_textarea{ resize: none; padding: 1px; font-weight: bold; } 
+		#form_wrap .patient_textarea:focus{background-color:#e8f0fe;}
+		#form_wrap #visit_radio_div{ margin-left:59px; padding: 3px; width:200px; display: flex; }
 		
-		#form_wrap #visit_radio_div{ margin-left:50px; padding: 3px;}
-		
+	.textarea_label_position{/* position:absolute; */} 
+
+	.textarea_label{position:relative; margin-bottom: 2px;}
+	 
+	 .patient_textarea{position:absolute; margin-left:5px;}
+	 
 	 
 	  /* aside 미니 캘린더  */
 	  .calendar {
 	    width: 230px;
-	    height: 260px; /* 복구 50px */
-	    margin-left: 10px;
+	    height: 260px;
+	    margin-left: 11px;
+	    margin-top: 53px;
 	  } 
 
 
 	  
 	  /* 미니캘린더 서브 폼 */
 	   /* 복구    #sub_form{ margin-top: 200px;} */
+	  #selectedDate{text-align:center;}
+	  .label_detail .rs_time{width: 77px; text-align:center;}
 	  
-	  .label_detail .rs_time{width: 60px;}
+	  .label_detail .patient_form_select{width: 172px; text-align:center;}
 	  
-	  .label_detail .patient_form_select{width: 138px;}
+	  .label_detail .rs_date{width: 172px;} /* 예약 일자, 진료장소 input */
 	  
-	  .label_detail .rs_date{width: 138px;} /* 예약 일자, 진료장소 input */
-	  
-	  #rs_btn2{margin-left: 80px; width:80px;} /* 예약 일정등록 버튼 */
-	  
+	  #rs_btn2{margin-left: 106px; width:80px;} /* 예약 일정등록 버튼 */
+	  #rs_btn2:hover{color:black; background-color:white; font-weight:bold;}
 	  
 	  /* 진료 외 일정들 등록 전용 버튼 */
 	  #other_schedule_register_btn{width: 110px; height:28px; margin-left: 75px; background-color:rgb(94, 94, 94); color: white; border-radius: 5px;}
@@ -100,17 +112,18 @@
 	  
 	  
 	  
-	  /* 전체 건수 */ #monthly_total{text-align:center; width: 120px; height:27px; margin:6px; padding:4px; background-color: 	#DCDCDC; color: white; border:none; margin-left: 30px;}
+	  /* 전체 건수 */ #monthly_total{text-align:center; width: 120px; height:27px; margin:6px; padding:4px; background-color: #DCDCDC; color: white; border:none; margin-left: 30px;}
 	  
 	 .scheduleSelect .doctor_schedule_select{margin-left: 9px;}
 	  
-	 .scheduleSelect .doctor_schedule_label{font-size:13px; font-weight: bold; }
+	 .scheduleSelect .doctor_schedule_label{font-size:13px; font-weight:bold;}
 	
 	
-	 /* 검색 버튼  */ #scheduleSelect_search_btn{background-color: rgb(127, 127, 127); color:white; font-weight:bold;  font-size:10px; border: 1px solid #A9A9A9; width: 42px; height: 23px;}
+	 /* 검색 버튼  */ #scheduleSelect_search_btn{background-color:rgb(127, 127, 127); color:white; font-weight:bold;  font-size:10px; border: 1px solid #A9A9A9; width: 42px; height: 23px;}
 	
-	 #dateCheck{text-align:center; width: 230px; height:27px; font-size:15px; font-weight:bold; color:red;  margin: 8px 0; }
+	 #dateCheck{text-align:center; width: 190px; height:27px; font-size:15px; font-weight:bold; color:red;  margin: 8px 0; }
 	
+	.specificDate_btn{height:27px; width:18px; font-size: 16px; line-height:2px;}
 	
 	
 	 /* 상단 네비게이션 캘린더 */
@@ -123,7 +136,8 @@
 	
 	.scheduleSelect .top_optionSelect{width: 100px;}
 	
-	
+	.nav_calendar_td{background-color: #f5f5f5;}
+	.nav_calendar_td_YM{font-weight:bold;}
 	
 	#main_Calendar{ margin-top: 17px; margin-left: 10px; } /* 메인 시작 위치 조절 */
 	
@@ -132,13 +146,15 @@
 	/* 네비게이션 달력 */
        #nav_calendar { 
         	table-layout: fixed;
-            width: 700px;
+            width: 800px;
             height: 80px;
             text-align: center;
             font-size: 15px;
             font-family: 굴림;
-            border-radius: 1px;
+           /*  border-radius: 1px; */
+            border:none;
         }
         
         #nav_calendar .nav_calendar_td{width: 17px;}
+        #nav_calendar .nav_calendar_td:hover{background-color:#DCDCDC;}
         

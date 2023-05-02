@@ -178,7 +178,8 @@
 						<div class="label_detail"><label class="patient_form_label">연락처</label>
 							<input class="patient_form_input" type="text" name="p_phone" value="${patientInfo.p_phone}">
 						</div>
-						<div class="label_detail"><label class="patient_form_label textarea_label">주소</label>
+						<div class="label_detail textarea_label_position">
+							<label class="patient_form_label textarea_label">주소</label>
 							<textarea class="patient_textarea" rows="3" cols="21" name="p_addr">${patientInfo.p_addr}</textarea>
 						</div>
 						
@@ -220,11 +221,11 @@
 								<option>엄경수 원장님</option> -->
 							</select>
 				</div>
-				<div  class="label_detail"><label class="patient_form_label textarea_label">진료내용</label>
+				<div  class="label_detail textarea_label_position">
+				<label class="patient_form_label textarea_label">진료내용</label>
 					<textarea class="patient_textarea" rows="3" cols="21" name="s_memo"></textarea>
-					
 				</div>
-				 <input type="submit" value="예약 일정등록" class="patient_form_btn" id="rs_btn2"> 
+				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2"> 
 				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/aside'"> 
 			</div>
 </form>
@@ -247,7 +248,7 @@
 			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outpatient Clinic Schedule Board</div>
 			
 			
-    <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : n건">
+    <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : n건" readonly>
 		 <div id="main_Calendar_wrap">
 		 <!-- 네비게이션 달력 -->
 		<p></p>
@@ -264,7 +265,7 @@
     
     
     		<div class="scheduleSelect">
-			<input id="dateCheck" type="text" readonly>
+			<button class="specificDate_btn"><</button><input id="dateCheck" type="text" readonly><button class="specificDate_btn">></button>
     			<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료과목</label>
 					<!-- 과 -->
 					<select class="top_optionSelect" name="index_top_s_dept" id="index_top_medical_dept">

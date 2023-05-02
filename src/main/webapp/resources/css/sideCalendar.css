@@ -24,7 +24,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: -15px;
-  
+  margin-left: -5px;
+  width: 230px;
 }
 
 .year-month {
@@ -36,17 +37,20 @@
   display: flex;
   border: 1px solid #333333;
   border-radius: 5px;
+  margin-left:2px;
 }
 
 .nav-btn {
   width: 17px;
-  height: 20px;
+  height: 22px;
   line-height: 1px;
   border: none;
   font-size: 16px;
   background-color: transparent;
   cursor: pointer;
 }
+
+.nav-btn:hover{font-weight:bold;}
 
 .go-today { /* 오늘 버튼 */
   width: 45px;
@@ -56,6 +60,10 @@
   border-right: 1px solid #333333;
   background-color: white;
 }
+
+.go-today:hover{ color: blue; font-weight:bold;}
+
+
 
 .days {
   display: flex;
@@ -85,6 +93,8 @@
   border-left: 1px solid #333333;
 }
 
+.date:hover{background-color: #FFD700;}
+
 .day:nth-child(7n + 1),
 .date:nth-child(7n + 1) {
   color: #D13E3E;
@@ -99,14 +109,15 @@
   opacity: 0.3;
 }
 
-.today {
+ .today {
   position: relative;
-  color: blue; /* 오늘날짜 색깔표시 */
   font-size: 15px;
+/*   color:#FF1493; */
   background-color: yellow;
-}
+  border-radius: 50%;
+} 
 
-/* .today::before {
+ /* .today::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -118,4 +129,4 @@
   background-color: #FF0000;
   border-radius: 50%;
   content: '';
-} */
+}   */

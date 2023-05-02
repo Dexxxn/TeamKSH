@@ -1,9 +1,32 @@
 
+// radio버튼 click이벤트 발생시 특정 로직 구현('초진'='등록'버튼 (디폴트)/ '재진'='조회'버튼클릭시 버튼 바뀌기)
+
+$(document).ready(function(){
+	$("#second_visit").on('click', function(){ //재진 라디오 클릭시
+		  const btn1 = document.getElementById('patientF');
+		  const btn2 = document.getElementById('patientS');
+		// 등록 버튼은 숨기고, 조회 버튼을 보이기
+		btn1.style.display = 'none';
+		btn2.style.display = 'block';
+	});
+});
+
+$(document).ready(function(){
+	$("#first_visit").on('click', function(){ //초진 라디오 클릭시
+		const btn1 = document.getElementById('patientF'); //등록버튼
+		const btn2 = document.getElementById('patientS'); //조회버튼
+		// 등록 버튼은 보이고, 조회 버튼을 숨기기
+		btn1.style.display = 'block';
+		btn2.style.display = 'none';
+	});
+});
+
+
+
 // 재진 환자 조회 후 예약등록 시 환자이름 DB로 같이 넘기기
 
 $(document).ready(function(){
 	$("#index_medical_dept").on('click', function(){
-		/*var patientName = '1234';*/
 		var patientName = $("#p_name_IN").val();
 		$('input[name=s_patient]').attr('value', patientName);
 	});
