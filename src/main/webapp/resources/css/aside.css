@@ -86,7 +86,7 @@
 	  
 	  .label_detail .rs_date{width: 172px;} /* 예약 일자, 진료장소 input */
 	  
-	  #rs_btn2{margin-left: 106px; width:80px;} /* 예약 일정등록 버튼 */
+	  #rs_btn2{margin-left: 109px; margin-top:44px; width:80px;} /* 예약 일정등록 버튼 */
 	  #rs_btn2:hover{color:black; background-color:white; font-weight:bold;}
 	  
 	  /* 진료 외 일정들 등록 전용 버튼 */
