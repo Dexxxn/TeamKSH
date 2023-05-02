@@ -37,46 +37,75 @@
 
 <script>
 /* 메인캘린더 js  */
-	  document.addEventListener('DOMContentLoaded', function() {
-	    var calendarEl = document.getElementById('main_Calendar');
+
+	document.addEventListener('DOMContentLoaded', function() {
+		$(function () {
+			var request = $.ajax({
+			    url: "/production/monthPlan", // 변경하기
+			    method: "GET",
+			    dataType: "json"
+			});
+			
+			request.done(function (data) {
+			    console.log(data); // log 로 데이터 찍어주기.
+	    
+			    var calendarEl = document.getElementById('main_Calendar');
 	
-	    var calendar = new FullCalendar.Calendar(calendarEl, {
-	      headerToolbar: {
-	        left: 'prev,next today',
-	        center: 'title',
-	        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-	      },
-	  /*     locale: "ko"; */
-	      navLinks: true, // can click day/week names to navigate views
-	      selectable: true,
-	      selectMirror: true,
-	      select: function(arg) {
-	        var title = prompt('일정추가');
-	        if (title) {
-	          calendar.addEvent({
-	            title: title,
-	            start: arg.start,
-	            end: arg.end,
-	            allDay: arg.allDay
-	          })
-	        }
-	        calendar.unselect()
-	      },
-	      eventClick: function(arg) {
-	        if (confirm('일정을 삭제하시겠습니까?')) {
-	          arg.event.remove()
-	        }
-	      },
-	      editable: true,
-	      dayMaxEvents: true, // allow "more" link when too many events
-	      dateClick: function(info) {
-	          var dateStr = info.dateStr;
-	          document.getElementById('dateCheck').value = dateStr;
-	        }
-	    });
-	
-	    calendar.render();
-	  });  
+			    var calendar = new FullCalendar.Calendar(calendarEl, {
+			     	headerToolbar: {
+				        left: 'prev,next today',
+				        center: 'title',
+				        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+			      	},
+			      	
+ 					locale: "ko",
+					navLinks: true, // can click day/week names to navigate views
+					selectable: true,
+					selectMirror: true,
+					select: function(arg) {
+					console.log(arg);
+						var title = prompt('일정추가');
+						if (title) {
+							calendar.addEvent({
+								title: title,
+								start: arg.start,
+								end: arg.end,
+								allDay: arg.allDay
+							})
+						}
+					calendar.unselect()
+					},
+					
+					// 상세일정 보기
+					// 있는 일정 클릭시,
+					eventClick: function(arg) {
+					 
+					console.log("#등록된 일정 클릭#");
+					console.log(arg.event);
+					 
+						if (confirm('일정을 삭제하시겠습니까?')) {
+							arg.event.remove()
+						}
+					},
+					// 얘는 뭐지
+					editable: true,
+					dayMaxEvents: true, // allow "more" link when too many events
+					dateClick: function(info) {
+					    var dateStr = info.dateStr;
+					    document.getElementById('dateCheck').value = dateStr;
+					}, 
+					 
+			      // data 로 값이 넘어온다. log 값 전달.  
+			      events: data
+			    });
+			
+				calendar.render();
+			}); 
+			request.fail(function( jqXHR, textStatus ) {
+				alert( "Request failed: " + textStatus );
+			});
+		});
+	});
 	
 	/* 네비게이션 달력 js */
 	 var today = new Date();

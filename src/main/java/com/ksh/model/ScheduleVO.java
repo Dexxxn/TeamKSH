@@ -81,8 +81,6 @@ public class ScheduleVO {
 				+ ", s_endTime=" + s_endTime + ", s_memo=" + s_memo + ", s_doctor=" + s_doctor + ", s_patient="
 				+ s_patient + ", patientVO=" + patientVO + ", medicalVO=" + medicalVO + "]";
 	}
-	
-	
-	
+
 	
 }
