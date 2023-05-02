@@ -89,6 +89,7 @@ $(document).ready(function(){
 			
 			var str="";
 			
+			str += "<option>"+"선택"+"</option>"
 			for(var i=0; i<data.length; i++){
 				str += "<option>"+data[i].s_name+"</option>"
 			}
