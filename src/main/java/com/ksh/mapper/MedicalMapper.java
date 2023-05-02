@@ -14,5 +14,5 @@ public interface MedicalMapper {
 	// 일정 추가
 	public void addSchedule(ScheduleVO schedule);
 	
-	public MedicalVO detail(ScheduleVO schedule);
+	public ScheduleVO detail(ScheduleVO schedule);
 }

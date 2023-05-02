@@ -129,7 +129,7 @@
 			<div class="item">
 				<div class="label">생년월일</div>			
 				<div class="value">
-					${detail.p_no}
+					${detail.patientVO.p_no}
 				</div>
 			</div>
 			<div class="item">
