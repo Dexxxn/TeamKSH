@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,47 +27,69 @@
 			<div class="item">
 				<div class="label">날짜</div>			
 				<div class="value">
-					<input type="text" name="date">
+					<input type="text" name="date" value="${detail.s_date}">
 				</div>
 			</div>	
 			<div class="item">
 				<div class="label">과목</div>			
-				<div class="value">    
-				    <select name="type">
+				<div class="value">  
+					${detail.medicalVO.s_dept}  
+<%-- 				<select name="type">
+				    	<option selected>${detail.medicalVO.s_dept}</option>
 						<option value="">선택</option>
 						<option value="">정형외과</option>
 						<option value="">신경외과</option>														
 						<option value="">내과</option>
-					</select>
+					</select> --%>
 				</div>
 			</div>
 			<div class="item">	
 				<div class="label">의사명</div>
-				<div class="value">    
-				    <select name="type">
+				<div class="value">   
+					${detail.s_doctor}
+<%-- 				<select name="type">
+				    	<option selected>${detail.s_doctor}</option>
 						<option value="">선택</option>
 						<option value="">정기원 원장님</option>
 						<option value="">이성언 원장님</option>														
 						<option value="">장희영 원장님</option>
-					</select>
+					</select> --%>
 				</div>		
 			</div>
 			<div class="item">	
 				<div class="label">일정 종류</div>
-				<div class="value">    
-				    <select name="type">
+				<div class="value">
+					<c:if test="${detail.s_type=='OC'}">
+						진료
+					</c:if>
+					<c:if test="${detail.s_type=='OR'}">
+						수술
+					</c:if> 
+					<c:if test="${detail.s_type=='R'}">
+						회진
+					</c:if>
+					<c:if test="${detail.s_type=='S'}">
+						외부 일정
+					</c:if>
+					<c:if test="${detail.s_type=='H'}">
+						휴무
+					</c:if>
+ 
+<%-- 				<select name="type">
+				    	<option selected>${detail.s_type}</option>
 						<option value="">선택</option>
 						<option value="">수술</option>
 						<option value="">회진</option>
 						<option value="">외부 일정</option>														
 						<option value="">휴무</option>
-					</select>
+					</select> --%>
 				</div>				
 			</div>
 			<div class="item">	
 				<div class="label">시간</div>
 				<div class="value">    
 				    <select name="s_startTime">
+				    	<option selected>${detail.s_startTime}</option>
 						<option value="">09:00</option>
 						<option value="">09:30</option>
 						<option value="">10:00</option>
@@ -84,6 +108,7 @@
 						<option value="">17:30</option>														
 					</select> ~
 				    <select name="s_endTime">
+						<option selected>${detail.s_endTime}</option>
 						<option value="">09:30</option>
 						<option value="">10:00</option>
 						<option value="">10:30</option>
@@ -105,7 +130,7 @@
 			<div class="item">	
 				<div class="label">메모</div>	
 				<div>
-					<textarea></textarea>
+					<textarea>${detail.s_memo}</textarea>
 				</div>	
 			</div>			
 		</div>
@@ -117,13 +142,13 @@
 			<div class="item">
 				<div class="label">이름</div>			
 				<div class="value">
-					장희영
+					${detail.patientVO.p_name}
 				</div>
 			</div>			
 			<div class="item">
 				<div class="label">연락처</div>			
 				<div class="value">
-					010-1234-1234
+					${detail.patientVO.p_phone}
 				</div>
 			</div>
 			<div class="item">
@@ -135,7 +160,13 @@
 			<div class="item">
 				<div class="label">진료 내역</div>			
 				<div class="value">
-					초진 / 재진 <a href="#">차트 보기</a>
+					<c:if test="${detail.patientVO.p_visit=='F'}">
+						초진
+					</c:if> 
+					<c:if test="${detail.patientVO.p_visit=='S'}">
+						재진
+					</c:if> 
+					<a href="#">차트 보기</a><!-- ${detail.patientVO.p_chart} -->
 				</div>
 			</div>									
 		</div>

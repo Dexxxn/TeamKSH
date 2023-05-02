@@ -12,6 +12,7 @@ public class ScheduleVO {
 	private String s_patient;
 	
 	private PatientVO patientVO;
+	private MedicalVO medicalVO;
 	
 	public int getS_no() {
 		return s_no;
@@ -67,12 +68,21 @@ public class ScheduleVO {
 	public void setPatientVO(PatientVO patientVO) {
 		this.patientVO = patientVO;
 	}
+	public MedicalVO getMedicalVO() {
+		return medicalVO;
+	}
+	public void setMedicalVO(MedicalVO medicalVO) {
+		this.medicalVO = medicalVO;
+	}
+	
 	@Override
 	public String toString() {
 		return "ScheduleVO [s_no=" + s_no + ", s_type=" + s_type + ", s_date=" + s_date + ", s_startTime=" + s_startTime
 				+ ", s_endTime=" + s_endTime + ", s_memo=" + s_memo + ", s_doctor=" + s_doctor + ", s_patient="
-				+ s_patient + ", patientVO=" + patientVO + "]";
+				+ s_patient + ", patientVO=" + patientVO + ", medicalVO=" + medicalVO + "]";
 	}
+	
+	
 	
 	
 }
