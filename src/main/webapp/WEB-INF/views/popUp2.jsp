@@ -135,6 +135,9 @@
 			</div>			
 		</div>
 		<!-- 환자 정보 -->
+		
+		<!-- s_patient가 null이면 -->
+		
 		<div class="calendar_select">
 			<div class="item_title">
 				<i class="fa-solid fa-square fa-2xs"></i> <b>예약자 정보</b>			

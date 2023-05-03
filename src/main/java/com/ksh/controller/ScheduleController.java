@@ -97,4 +97,12 @@ public class ScheduleController {
 		return "redirect:/monthPlan";
 	}
 	
+	// 상세 일정 보기
+	@RequestMapping(value = "/model", method = RequestMethod.GET)
+	public String model(Model model, ScheduleVO schedule) {
+		//ss.detail(schedule);
+		model.addAttribute("detail", ss.detail(schedule));
+		return "aside";
+	}
+	
 }

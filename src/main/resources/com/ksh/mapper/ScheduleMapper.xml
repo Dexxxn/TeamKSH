@@ -12,8 +12,8 @@
 	</select>
 
 	<insert id="addSchedule">
-		INSERT into Medical_Scheduling.schedule(s_no, s_date, s_type, s_startTime, s_endTime, s_memo, s_doctor)
-		VALUES(#{s_no}, #{s_date}, #{s_type}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor});
+		INSERT into Medical_Scheduling.schedule(s_no, s_type, s_date, s_startTime, s_endTime, s_memo, s_doctor)
+		VALUES(#{s_no}, #{s_type}, #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor});
 	</insert>
 	
 	<resultMap type="com.ksh.model.PatientVO" id="PatientVO">
@@ -29,6 +29,7 @@
 	</resultMap>
 	
 	<resultMap type="com.ksh.model.ScheduleVO" id="ScheduleVO">
+		<result column="s_no" property="s_no"/>
 	    <result column="s_date" property="s_date"/>
 	    <result column="s_type" property="s_type"/>
 	    <result column="s_startTime" property="s_startTime"/>
@@ -42,12 +43,12 @@
 	
 	<select id="detail" parameterType="com.ksh.model.ScheduleVO" resultMap="ScheduleVO">
 		SELECT
-		s.s_date, s.s_type, s.s_startTime, s.s_endTime, s.s_memo, s.s_doctor, p.p_name, p.p_no, p.p_phone, p.p_visit, p.p_chart, st.s_dept
-		FROM patient AS p
-		JOIN schedule AS s
-		ON p.p_name = s.s_patient
+		s.s_no, s.s_date, s.s_type, s.s_startTime, s.s_endTime, s.s_memo, s.s_doctor, st.s_dept, p.p_name, p.p_no, p.p_phone, p.p_visit, p.p_chart
+		FROM schedule AS s
 		JOIN staff AS st
-  		ON s.s_doctor = st.s_name
+		ON s.s_doctor = st.s_name        
+		LEFT OUTER JOIN patient AS p
+		ON p.p_name = s.s_patient
 		WHERE s.s_no = #{s_no};
 	</select>
 	
