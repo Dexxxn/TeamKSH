@@ -1,3 +1,11 @@
+// aside폼 fixed-> 가로로는 고정, 세로로만 스크롤 가능
+$(function() {
+  var marginLeft = parseInt( $("#form_wrap").css('margin-left') );
+  $(window).scroll(function(e) {
+    $("#form_wrap").css("margin-left", marginLeft - $(this).scrollLeft() );
+  });
+});
+
 
 // radio버튼 click이벤트 발생시 특정 로직 구현('초진'='등록'버튼 (디폴트)/ '재진'='조회'버튼클릭시 버튼 바뀌기)
 

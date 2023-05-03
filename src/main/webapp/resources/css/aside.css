@@ -17,20 +17,21 @@
 	/* 로고 자리 */
 	#company_logo{ width: 245px; height: 100px; /* background-color: #E6E6FA; */}
 	#hospital_logo{width: 263px; height: 100px;}
-	#pageSide_left{/* background-color: #f5f5f5; */ }
-	#pageSide_right{margin-left: 25px; }
+	#pageSide_left{ /* background-color: #f5f5f5;  */ }
+	#pageSide_right{}
+	#right_top{margin-left:18px;}
 	
 	
 	/* aside 조회등록 폼  */
 	#form_wrap{
-		
-		width: 260px;
+		width: 263px;
 		height: 1200px;
 		font-size: 13px;
 		font-weight: bold;
 		background-color: #f5f5f5;; 
 		position: fixed;
 		padding-top: 10px;
+		padding-left: 7px;
 	}
 	
 	
