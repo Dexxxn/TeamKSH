@@ -41,7 +41,7 @@
 	document.addEventListener('DOMContentLoaded', function() {
 		$(function () {
 			var request = $.ajax({
-			    url: "/production/monthPlan", // 변경하기
+			    url: "/monthPlan", // 변경하기
 			    method: "GET",
 			    dataType: "json"
 			});
@@ -77,16 +77,18 @@
 					},
 					
 					// 상세일정 보기
-					// 있는 일정 클릭시,
+					// 등록된 일정 클릭시,
 					eventClick: function(arg) {
 					 
 					console.log("#등록된 일정 클릭#");
 					console.log(arg.event);
-					 
-						if (confirm('일정을 삭제하시겠습니까?')) {
+						// 상세 팝업으로
+						location.href = "/popup2";
+/* 						if (confirm('일정을 삭제하시겠습니까?')) {
 							arg.event.remove()
-						}
+						} */
 					},
+					
 					// 얘는 뭐지
 					editable: true,
 					dayMaxEvents: true, // allow "more" link when too many events

@@ -171,8 +171,8 @@
 			</div>									
 		</div>
 		<div align="center">
-			<input class="button first" type="submit" value="수정">
-			<input class="button second" type="submit" value="삭제">
+			<input class="button first" type="submit" value="수정" formaction="/popup2/modify">
+			<input class="button second" type="submit" value="삭제" formaction="/popup2/remove">
 		</div>	
 	</form>	
 </div>

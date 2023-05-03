@@ -42,20 +42,5 @@ public class MedicalController {
 		// return ms.medical2(mvo) // 이렇게해도 되지만 서버 통신상태를 확인하기 위해서는 위 코드를 쓸것
 	}
 	
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public String InsertSchedule(ScheduleVO schedule) {
-		System.out.println("aaaaa");
-		System.out.println("medical="+schedule);
-		ms.addSchedule(schedule);
-		// 그냥 aside.jsp로 가면 서버주소에 insert하는 값이 남게됨 
-		// .jsp가 아닌 .jsp로 리턴되는 서버로 이동해야함
-		return "redirect:/aside";
-	}
-	
-	@RequestMapping(value = "/popup2", method = RequestMethod.GET)
-	public String DetailSchedule(Model model, ScheduleVO schedule) {
-		//ms.detail(schedule);
-		model.addAttribute("detail", ms.detail(schedule));
-		return "popUp2";
-	}
+
 }

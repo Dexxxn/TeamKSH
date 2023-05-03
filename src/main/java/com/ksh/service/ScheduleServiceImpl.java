@@ -18,4 +18,23 @@ public class ScheduleServiceImpl implements ScheduleService{
 	public ArrayList<ScheduleVO> list(){
 		return sm.list();
 	}
+	
+	public void addSchedule(ScheduleVO schedule) {
+		System.out.println("ScheduleService = "+schedule);
+		sm.addSchedule(schedule);
+	}
+	
+	public ScheduleVO detail(ScheduleVO schedule) {
+		return sm.detail(schedule);
+	}
+	
+	public void modify(ScheduleVO schedule) {
+		sm.modify(schedule);
+	}
+	
+	public void remove(ScheduleVO schedule) {
+		sm.remove(schedule);
+	}
+
+
 }

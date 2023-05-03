@@ -11,8 +11,5 @@ public interface MedicalMapper {
 	public ArrayList<MedicalVO> medical(MedicalVO medical);
 	public ArrayList<MedicalVO> medical2(MedicalVO medical);
 	
-	// 일정 추가
-	public void addSchedule(ScheduleVO schedule);
 	
-	public ScheduleVO detail(ScheduleVO schedule);
 }

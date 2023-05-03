@@ -12,8 +12,5 @@ public interface MedicalService {
 	// 과목-의사 select(비동기식)
 	public ArrayList<MedicalVO> medical2(MedicalVO medical);
 	
-	// 일정 추가
-	public void addSchedule(ScheduleVO schedule);
-	
-	public ScheduleVO detail(ScheduleVO schedule);
+
 }

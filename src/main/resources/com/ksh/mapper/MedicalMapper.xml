@@ -32,44 +32,6 @@
 		</if>
 	</select>
 	
-	<insert id="addSchedule">
-		INSERT into Medical_Scheduling.schedule(s_no, s_date, s_type, s_startTime, s_endTime, s_memo, s_doctor)
-		VALUES(#{s_no}, #{s_date}, #{s_type}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor});
-	</insert>
-	
-	<resultMap type="com.ksh.model.PatientVO" id="PatientVO">
-	    <result column="p_name" property="p_name"/>
-	    <result column="p_phone" property="p_phone"/>
-	    <result column="p_visit" property="p_visit"/>
-	    <result column="p_no" property="p_no"/>
-	    <result column="p_chart" property="p_chart"/>
-	</resultMap>
-	
-	<resultMap type="com.ksh.model.MedicalVO" id="MedicalVO">
-	    <result column="s_dept" property="s_dept"/>
-	</resultMap>
-	
-	<resultMap type="com.ksh.model.ScheduleVO" id="ScheduleVO">
-	    <result column="s_date" property="s_date"/>
-	    <result column="s_type" property="s_type"/>
-	    <result column="s_startTime" property="s_startTime"/>
-	    <result column="s_endTime" property="s_endTime"/>
-	    <result column="s_memo" property="s_memo"/>
-	    <result column="s_doctor" property="s_doctor"/>
-	    <result column="s_patient" property="s_patient"/>    	    
-   	    <collection property="patientVO" resultMap="PatientVO"/>
-   	    <collection property="medicalVO" resultMap="MedicalVO"/>
-	</resultMap>
-	
-	<select id="detail" parameterType="com.ksh.model.ScheduleVO" resultMap="ScheduleVO">
-		SELECT
-		s.s_date, s.s_type, s.s_startTime, s.s_endTime, s.s_memo, s.s_doctor, p.p_name, p.p_no, p.p_phone, p.p_visit, p.p_chart, st.s_dept
-		FROM patient AS p
-		JOIN schedule AS s
-		ON p.p_name = s.s_patient
-		JOIN staff AS st
-  		ON s.s_doctor = st.s_name
-		WHERE s.s_no = '4';
-	</select>
+
 
 </mapper>

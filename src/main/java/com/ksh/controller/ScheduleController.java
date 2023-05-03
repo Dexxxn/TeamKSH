@@ -22,7 +22,6 @@ import com.ksh.service.MedicalService;
 import com.ksh.service.ScheduleService;
 
 @Controller
-@RequestMapping("/production")
 public class ScheduleController {	
 
 	private static final Logger log = LoggerFactory.getLogger(ScheduleController.class);
@@ -33,7 +32,6 @@ public class ScheduleController {
 		this.service = service;
 	}
 
-	
 	// 비즈니스 모델을 컨트롤러에 연결하기
 	@Autowired
 	ScheduleService ss;	
@@ -65,6 +63,38 @@ public class ScheduleController {
 			return jsonArr;
 		}
 
-
-
+	// 일정 추가
+	@RequestMapping(value = "/add", method = RequestMethod.GET)
+	public String insertSchedule(ScheduleVO schedule) {
+		System.out.println("aaaaa");
+		System.out.println("medical="+schedule);
+		ss.addSchedule(schedule);
+		// 그냥 aside.jsp로 가면 서버주소에 insert하는 값이 남게됨 
+		// .jsp가 아닌 .jsp로 리턴되는 서버로 이동해야함
+		return "redirect:/aside";
+	}
+	
+	// 상세 일정 보기
+	@RequestMapping(value = "/popup2", method = RequestMethod.GET)
+	public String detailSchedule(Model model, ScheduleVO schedule) {
+		//ss.detail(schedule);
+		model.addAttribute("detail", ss.detail(schedule));
+		return "popUp2";
+	}
+	
+	// 수정
+	@RequestMapping(value = "/popup2/modify", method = RequestMethod.GET)
+	public String modifySchedule(ScheduleVO schedule) {
+		ss.modify(schedule);
+		//model.addAttribute("detail", ss.detail(schedule));
+		return "redirect:/popUp2";
+	}
+	
+	// 삭제
+	@RequestMapping(value = "/popup2/remove", method = RequestMethod.GET)
+	public String removeSchedule(ScheduleVO schedule) {
+		ss.remove(schedule);
+		return "redirect:/monthPlan";
+	}
+	
 }
