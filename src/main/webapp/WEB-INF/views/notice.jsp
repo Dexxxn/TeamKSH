@@ -12,23 +12,86 @@
 </head>
 <body>
 
-<div id="notice_wrap">
-	<div id="pageSide_left">
+<div id="notice_container">
+	<div id="side_left">
 		<header><div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div>
 		</header>
 		<aside>
+			<div id="notice_form_wrap"></div>
 		</aside>
 	</div>
 
 	
-	<div id="pageSide_right">	
+	<div id="side_right">	
 <div id="right_top">
 			<!-- 네비게이션 바 -->
 		<div id="nav_btn_set">
-				<div class="nav_btn" id="schedule_nav_btn"><a href="aside">schedule</a></div>
-				<div class="nav_btn" id="notice_nav_btn"><a href="notice">notice</a></div>
+				<div class="nav_btn" id="schedule_nav_btn"><a href="aside" class="notice_nav_anchor">schedule</a></div>
+				<div class="nav_btn" id="notice_nav_btn"><a href="notice"  class="notice_nav_anchor">notice</a></div>
 		</div>
-			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notification</div>
+		<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notification</div>
+			
+<section class="notice">
+  <div class="page-title">
+        <div class="container">
+            <h3>공지사항</h3>
+        </div>
+    </div>
+
+    <!-- board seach area -->
+    <div id="board-search">
+        <div class="container">
+            <div class="search-window">
+                <form action="">
+                    <div class="search-wrap">
+                        <label for="search" class="blind">공지사항 내용 검색</label>
+                        <input id="search" type="search" name="" placeholder="검색어를 입력해주세요." value="">
+                        <button type="submit" class="btn btn-dark">검색</button>
+                 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+  <!-- board list area -->
+    <div id="board-list">
+        <div class="container">
+            <table class="board-table">
+                <thead>
+                <tr>
+                    <th scope="col" class="th-num">번호</th>
+                    <th scope="col" class="th-title">제목</th>
+                    <th scope="col" class="th-date">등록일</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>3</td>
+                    <th>
+                      <a href="#!">[공지사항] 개인정보 처리방침 변경안내처리방침</a>
+                      <p>테스트</p>
+                    </th>
+                    <td>2017.07.13</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <th><a href="#!">공지사항 안내입니다. 이용해주셔서 감사합니다</a></th>
+                    <td>2017.06.15</td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <th><a href="#!">공지사항 안내입니다. 이용해주셔서 감사합니다</a></th>
+                    <td>2017.06.15</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
 </div>
 </div>
 </div><!-- container -->
