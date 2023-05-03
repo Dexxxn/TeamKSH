@@ -256,6 +256,7 @@
 				<label class="patient_form_label textarea_label">진료내용</label>
 					<textarea class="patient_textarea" rows="3" cols="21" name="s_memo"></textarea>
 				</div>
+				 <input type="submit" value="예약 조회" class="patient_form_btn" id=""> 
 				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2"> 
 				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/aside'"><br><br><br><br><br><br><br>
 			</div>
