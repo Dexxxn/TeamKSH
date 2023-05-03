@@ -215,7 +215,7 @@
 						</div>
 						
 				</div>
-</form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
+	</form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
 					<%@ include file = "sideCalendar.jsp" %>
 					
 		<form method="post" action="/reserve">
@@ -259,7 +259,7 @@
 				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2"> 
 				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/aside'"><br><br><br><br><br><br><br>
 			</div>
-</form>
+	</form>
 
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="location.href='/popup'" >
 			<!-- 진료 외 일정들 등록 전용 버튼 --><input type="button" value="상세 일정" onclick="location.href='/popup2'" >
@@ -269,8 +269,8 @@
 
 
 	<div id="pageSide_right">
-<!-- 메인캘린더 상단 -->
-<div id="right_top">
+	<!-- 메인캘린더 상단 -->
+	<div id="right_top">
 			<!-- 네비게이션 바 -->
 			<div id="nav_btn_set">
 				<div class="nav_btn" id="schedule_nav_btn"><a href="#;" class="nav_anchor">schedule</a></div>
@@ -327,14 +327,14 @@
 				
 						<input type="submit" value="검색" id="scheduleSelect_search_btn">
 			</div><!-- scheduleSelect -->
-</div><!-- right_top -->	
+	</div><!-- right_top -->	
 
 		
 		<!-- 메인 캘린더 -->
 		  	<div id='main_Calendar'></div>
 		 </div>
 	</div><!-- pageSide_right -->
-</div><!-- wrapper -->
+	</div><!-- wrapper -->
 
 </body>
 </html>
