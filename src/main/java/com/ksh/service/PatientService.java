@@ -10,5 +10,7 @@ public interface PatientService {
 	public PatientVO secondVisit_patient(PatientVO patient);
 	
 	public void reserve(ScheduleVO schedule);
+	
+	public ScheduleVO reservationCheck(ScheduleVO schedule);
 }
 	

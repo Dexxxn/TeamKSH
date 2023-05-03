@@ -28,6 +28,10 @@
 		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient}, #{s_doctor});  <!-- 진료 OC -->
 	 </insert>   
 	
-  	
+  	<select id="reservationCheck" resultType="com.ksh.model.ScheduleVO">
+  		select s_date, s_startTime, s_endTime, s_doctor,s_memo
+  		from schedule
+  		where s_patient=#{s_patient};
+  	</select>
   
   </mapper>

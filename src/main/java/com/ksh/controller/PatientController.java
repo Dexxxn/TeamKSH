@@ -40,7 +40,7 @@ public class PatientController {
 		return "aside";
 	}
 	
-	// 진료일정 등록 후 다시 aside로 가져와야 함. + 메인달력에 보여줘야 함
+	// 예약등록 
 	@RequestMapping(value = "/reserve", method = RequestMethod.POST)
 	public String InsertReservation(ScheduleVO schedule) {
 		System.out.println("bbb");
@@ -48,5 +48,17 @@ public class PatientController {
 		ps.reserve(schedule);
 		return "redirect:/aside"; // redirect안쓰면 브라우저 새로고침 시 데이터 계속 들어감
 	}
+	
+	// 예약 조회
+	@RequestMapping(value = "/reservationCheck", method = RequestMethod.POST)
+	public String selectReservation(Model model, ScheduleVO schedule) {
+		System.out.println("bbb");
+		System.out.println("patient="+schedule);
+		model.addAttribute("OCreservation", ps.reservationCheck(schedule));
+		ps.reservationCheck(schedule);
+		return "aside";
+	}
+	
+	
 	
 }

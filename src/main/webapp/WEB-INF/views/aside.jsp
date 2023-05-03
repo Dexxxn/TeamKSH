@@ -180,18 +180,20 @@
 <body>
 <div id="container">
 	<div id="pageSide_left">
-		<header><div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div>
+		<header> <div id="company_logo"><!-- <img src="resources/img/hospital_logo_ex.png" id="hospital_logo" > --></div> 
 		</header>
 		<aside>
 			<div id="form_wrap">
 			<form method="post">
 			
-					<div id="form_contents">
+			<!-- <div id="form_contents"> -->
 					<%
 					request.setCharacterEncoding("utf-8");
 					LocalDateTime now = LocalDateTime.now();
 					String formatDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"+"_"+"HHmmss"));
 					%>
+					<div id="company_logo"><img src="resources/img/hospital_logo_ex.png" id="hospital_logo" ></div>
+			<div id="form_contents">
 					  <input type="hidden" readonly value= <%="P_" +formatDate%>  name="p_chart" value="${patientInfo.p_chart}" />  	<!-- 차트번호 (현재datetime) -->
 					<div class="label_detail"><label class="patient_form_label">환자이름</label>
 						<input class="patient_form_input" id="p_name_IN" type="text" name="p_name" value="${patientInfo.p_name}" ></div>
@@ -214,24 +216,26 @@
 							<textarea class="patient_textarea" rows="3" cols="21" name="p_addr">${patientInfo.p_addr}</textarea>
 						</div>
 						
-				</div>
+				</div><!-- form_contents끝 -->
 	</form><!-- 폼이랑 사이드캘린더 따로 잡아야 함 -->
 					<%@ include file = "sideCalendar.jsp" %>
 					
-		<form method="post" action="/reserve">
+		<form method="post">
 			<!-- 캘린더 아래 나머지 입력폼  -->
 			<div id="sub_form">
-				<input type="hidden" id="p_name_OUT" name="s_patient" value="">  <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
+				<input type="text" id="p_name_OUT" name="s_patient" value="${OCreservation.s_patient}">  <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
 				<div class="label_detail"><label class="patient_form_label" >예약일자</label>
-					<input class="rs_date" type="text" id="selectedDate" name="s_date" readonly>
+					<input class="rs_date" type="text" id="selectedDate" name="s_date" readonly value="${OCreservation.s_date}">
 				</div>
 				<div class="label_detail"><label class="patient_form_label">예약시각</label>
 					<!-- 시작시간 --><select class="rs_time" name="s_startTime">
+					<option selected>${OCreservation.s_startTime}</option>
 									<option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option>
 									<option>12:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
 									<option>16:00</option><option>16:30</option><option>17:00</option>
 					</select> ~
 					<!-- 끝 시간 --><select class="rs_time" name="s_endTime">
+					<option selected>${OCreservation.s_endTime}</option>
 									<option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option>
 									<option>12:30</option><option>13:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
 									<option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
@@ -248,16 +252,17 @@
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
 					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_doctor" id="index_selectDept">
+					<option selected>${OCreservation.s_doctor}</option>
 								<!-- <option>김태원 원장님</option>
 								<option>엄경수 원장님</option> -->
 							</select>
 				</div>
 				<div  class="label_detail textarea_label_position">
 				<label class="patient_form_label textarea_label">진료내용</label>
-					<textarea class="patient_textarea" rows="3" cols="21" name="s_memo"></textarea>
+					<textarea class="patient_textarea" rows="3" cols="21" name="s_memo">${OCreservation.s_memo}</textarea>
 				</div>
-				 <input type="submit" value="예약 조회" class="patient_form_btn" id=""> 
-				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2"> 
+				 <input type="submit" value="예약 조회" class="patient_form_btn" id="" formaction="/reservationCheck"> 
+				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2" formaction="/reserve"> 
 				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/aside'"><br><br><br><br><br><br><br>
 			</div>
 	</form>

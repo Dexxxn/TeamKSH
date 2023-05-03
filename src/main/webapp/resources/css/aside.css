@@ -15,9 +15,9 @@
 	
 	#container{display: flex; width:100%; height:100%;}
 	/* 로고 자리 */
-	#company_logo{ width: 245px; height: 100px; /* background-color: #E6E6FA; */}
+	#company_logo{ /* width: 245px; height: 100px; */ /* background-color: #E6E6FA; */}
 	#hospital_logo{width: 263px; height: 100px;}
-	#pageSide_left{ /* background-color: #f5f5f5;  */ }
+	#pageSide_left{ width: 245px; height: 100px; position:relative;/* background-color: #f5f5f5;  */ }
 	#pageSide_right{}
 	#right_top{margin-left:18px;}
 	
@@ -30,8 +30,9 @@
 		font-weight: bold;
 		background-color: #f5f5f5;; 
 		position: fixed;
-		padding-top: 10px;
-		padding-left: 7px;
+		/* padding-top: 10px;
+		padding-left: 7px; */
+		z-index: 100;
 	}
 	
 	
@@ -42,7 +43,7 @@
 		
 		#form_wrap .label_detail{ padding: 2px;}
 		
-		#form_wrap #form_contents{/* background-color: yellow; */}
+		#form_wrap #form_contents{/* background-color: yellow; */ margin-left:8px; margin-top:5px;}
 		
 		#form_wrap .patient_visit_radio{margin:5px; }
 		
@@ -80,7 +81,7 @@
 
 	  
 	  /* 미니캘린더 서브 폼 */
-	   /* 복구    #sub_form{ margin-top: 200px;} */
+	   #sub_form{ margin-left:8px;} 
 	  #selectedDate{text-align:center;}
 	  .label_detail .rs_time{width: 77px; text-align:center;}
 	  

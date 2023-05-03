@@ -17,4 +17,5 @@ public interface ScheduleService {
 	public void modify(ScheduleVO schedule);
 	// 삭제
 	public void remove(ScheduleVO schedule);
+	
 }

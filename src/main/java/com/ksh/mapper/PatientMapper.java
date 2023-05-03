@@ -8,4 +8,5 @@ public interface PatientMapper {
 	public void patientreg(PatientVO patient);
 	public PatientVO secondVisit_patient(PatientVO patient);
 	public void reserve(ScheduleVO schedule);
+	public ScheduleVO reservationCheck(ScheduleVO schedule);
 }

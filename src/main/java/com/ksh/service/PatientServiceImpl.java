@@ -27,4 +27,8 @@ public class PatientServiceImpl implements PatientService {
 		pm.reserve(schedule);
 	}
 	
+	public ScheduleVO reservationCheck(ScheduleVO schedule){
+		return pm.reservationCheck(schedule);
+	}
+	
 }
