@@ -18,7 +18,7 @@
 		<span>상세 일정</span>
 		<i class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
 	</div>
-	<form>	
+	<form name="detailSchedule" onsubmit="return confirm('일정을 수정하시겠습니까?');">	
 		<!-- 일정 정보 -->
 		<div class="calendar_select">
 			<div class="item_title">
@@ -176,5 +176,15 @@
 		</div>	
 	</form>	
 </div>
+<!-- 
+	<script>
+		function btn(a){
+			 if (confirm(a)){	//확인
+			     document.detailSchedule.submit();
+			 }else{   			//취소
+			     return false;
+			 }
+		}
+	</script> -->
 </body>
 </html>
