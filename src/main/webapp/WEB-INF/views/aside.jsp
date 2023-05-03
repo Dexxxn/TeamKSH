@@ -228,12 +228,12 @@
 				<div class="label_detail"><label class="patient_form_label">예약시각</label>
 					<!-- 시작시간 --><select class="rs_time" name="s_startTime">
 									<option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option>
-									<option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+									<option>12:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
 									<option>16:00</option><option>16:30</option><option>17:00</option>
 					</select> ~
 					<!-- 끝 시간 --><select class="rs_time" name="s_endTime">
 									<option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option>
-									<option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+									<option>12:30</option><option>13:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
 									<option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
 					</select>
 				</div>

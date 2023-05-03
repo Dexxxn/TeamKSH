@@ -13,9 +13,13 @@
 	
 	
 	<select id="secondVisit_patient" resultType="com.ksh.model.PatientVO">
+  	<!-- 	select p_name, p_no, p_phone, p_addr
+  		from patient
+  		where p_name=#{p_name} and p_no=#{p_no}; -->
   		select p_name, p_no, p_phone, p_addr
   		from patient
-  		where p_name=#{p_name} and p_no=#{p_no};
+  		where p_name=#{p_name} and substring(#{p_no},1,6);
+  		
   	</select>
   	
   	

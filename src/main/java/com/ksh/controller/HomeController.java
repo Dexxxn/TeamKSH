@@ -65,5 +65,11 @@ public class HomeController {
 	}	
 	
 	
+	@RequestMapping(value = "/notice_write", method = RequestMethod.GET)
+	public String write() {
+		return "notice_write";
+	}	
+	
+	
 	
 }

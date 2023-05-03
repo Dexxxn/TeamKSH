@@ -100,7 +100,7 @@
 		            </table>
 		        </div>
 		    </div>
-		
+		<input type="button" value="글쓰기" onclick="location.href='/notice_write'" >
 		</section>
 </div><!-- right_top -->
 </div><!-- side_right -->
