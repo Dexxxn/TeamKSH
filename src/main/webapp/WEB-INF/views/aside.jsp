@@ -66,6 +66,39 @@
 					navLinks: true, // can click day/week names to navigate views
 					selectable: true,
 					selectMirror: true,
+					eventDrop: function (info){
+						console.log(info)
+                        if(confirm("'"+ info.event.title +"' 일정을 수정하시겠습니까 ?")){
+
+                        //var events = new Array(); // Json 데이터를 받기 위한 배열 선언
+                        var obj = new Object();
+                        obj.s_doctor = info.event._def.title;	// 의사
+                        obj.s_no = info.event._def.extendedProps.s_no;	// 의사
+                        var startDate = new Date(info.event._instance.range.start);// 시작일자
+                        var s_date = startDate.toISOString().substring(0, 10);	// 시작일자 날짜만
+                        var s_startTime = startDate.toISOString().substring(11, 16);	// 시작일자 시간만
+                        var endDate = new Date(info.event._instance.range.end);	// 종료일자
+                        var s_endTime = endDate.toISOString().substring(11, 16);	// 종료일자 시간만
+                        // s_no
+                        obj.s_date = s_date;
+                        obj.s_startTime = s_startTime;
+                        obj.s_endTime = s_endTime;
+                        console.log(obj);
+                        }else{                            
+                            location.reload();
+                        }
+                        $(function modifyData() {
+                            $.ajax({
+                                url: "/update",
+                                method: "PATCH",
+                                dataType: "json",
+                                data: JSON.stringify(obj),
+                                contentType: 'application/json',
+                            })
+                        })
+
+
+                    },
 					select: function(arg) {
 					console.log(arg);
 						var title = prompt('일정추가');

@@ -51,6 +51,13 @@
 		ON p.p_name = s.s_patient
 		WHERE s.s_no = #{s_no};
 	</select>
+	<update id="update" parameterType="com.ksh.model.ScheduleVO">
+  		UPDATE schedule
+  		SET s_date = #{s_date},
+      	s_startTime = #{s_startTime},
+      	s_endTime = #{s_endTime}
+  		WHERE s_no = #{s_no}
+	</update>
 	
 	<update id="modify">
 		UPDATE schedule 
