@@ -31,4 +31,10 @@ public class PatientServiceImpl implements PatientService {
 		return pm.reservationCheck(schedule);
 	}
 	
+	//환자 등록 유무 체크
+	public int already_patient_chk(PatientVO patient) {
+		int result = pm.already_patient_chk(patient);
+		return result;
+	}
+	
 }

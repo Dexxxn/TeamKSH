@@ -6,6 +6,19 @@
             alert(responseMessage)
         };
     });*/
+function already_patient_Chk(){
+			$.ajax({
+				url : "/idChk",
+				type : "post",
+				dataType : "json",
+				data : {"patient_idNum": $("#p_idNum_IN").val()},
+				success : function(data){
+					if(data == 1){
+						alert("기 내원환자입니다.");
+					}
+				}
+			})
+		}
 
 
 // aside폼 fixed-> 가로로는 고정, 세로로만 스크롤 가능

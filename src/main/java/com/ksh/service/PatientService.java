@@ -12,5 +12,8 @@ public interface PatientService {
 	public void reserve(ScheduleVO schedule);
 	
 	public ScheduleVO reservationCheck(ScheduleVO schedule);
+	
+	//환자등록 유무 체크
+	public int already_patient_chk(PatientVO patient);
 }
 	

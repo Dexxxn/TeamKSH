@@ -34,4 +34,12 @@
   		where s_patient=#{s_patient} and substring(#{s_patientIdNum},1,6);
   	</select>
   
+  <!--기존 등록 환자 유무 체크(count)  -->
+	  <select id="already_patient_chk" resultType="int">
+	  	select count(*) 
+	  	from patient
+	  	where p_no = #{p_no};
+	  </select>
+	  
+  
   </mapper>

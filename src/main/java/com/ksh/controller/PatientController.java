@@ -1,14 +1,11 @@
 package com.ksh.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ksh.model.PatientVO;
 import com.ksh.model.ScheduleVO;
@@ -64,6 +61,16 @@ public class PatientController {
 	 }*/
 
 	
+	// 아이디 중복 체크
+		 @ResponseBody
+		 @RequestMapping(value="/idChk", method = RequestMethod.POST)
+		 public int idChk(PatientVO patient) throws Exception {
+		 	int result = ps.already_patient_chk(patient);
+		 	return result;
+		 }
+
+	 
+	 
 	// 재진 환자 정보 select해오기
 	@RequestMapping(value = "/patientS", method = RequestMethod.POST)
 	public String patientCheck(Model model, PatientVO patient) {

@@ -245,6 +245,7 @@
 							<input type="radio"  value="second" name="p_visit" id="second_visit" onclick="showBTN_s()"><span class="patient_visit_radio">재진</span>
 						<input type="submit" value="등록" class="patient_form_btn rs_btn1"  formaction="/patientF" id="patientF">
 						<input type="submit" value="조회" class="patient_form_btn rs_btn1"  formaction="/patientS" id="patientS">
+						<button onclick="already_patient_Chk()">여부조회</button>
 						<input type="reset" value="초기화" class="patient_form_btn rs_btn1">
 						<br>
 					</div>
