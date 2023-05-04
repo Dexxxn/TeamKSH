@@ -102,10 +102,10 @@
 					dateClick: function(info) {
 					    var dateStr = info.dateStr;
 					    document.getElementById('dateCheck').value = dateStr;
-					}, 
-					 
-			      // data 로 값이 넘어온다. log 값 전달.  
-			      events: data
+					},
+					
+					// data 로 값이 넘어온다. log 값 전달.  
+					events: data
 			    });
 			
 				calendar.render();

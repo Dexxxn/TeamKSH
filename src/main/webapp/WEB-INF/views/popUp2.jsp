@@ -27,7 +27,7 @@
 			<div class="item">
 				<div class="label">날짜</div>			
 				<div class="value">
-					<input type="text" name="date" value="${detail.s_date}">
+					<input type="text" name="s_date" value="${detail.s_date}">
 				</div>
 			</div>	
 			<div class="item">
@@ -46,7 +46,7 @@
 			<div class="item">	
 				<div class="label">의사명</div>
 				<div class="value">   
-					${detail.s_doctor}
+					${detail.s_doctor}님
 <%-- 				<select name="type">
 				    	<option selected>${detail.s_doctor}</option>
 						<option value="">선택</option>
@@ -90,47 +90,47 @@
 				<div class="value">    
 				    <select name="s_startTime">
 				    	<option selected>${detail.s_startTime}</option>
-						<option value="">09:00</option>
-						<option value="">09:30</option>
-						<option value="">10:00</option>
-						<option value="">10:30</option>
-						<option value="">11:00</option>
-						<option value="">11:30</option>
-						<option value="">12:00</option>
-						<option value="">12:30</option>
-						<option value="">14:00</option>
-						<option value="">14:30</option>
-						<option value="">15:00</option>
-						<option value="">15:30</option>
-						<option value="">16:00</option>
-						<option value="">16:30</option>
-						<option value="">17:00</option>
-						<option value="">17:30</option>														
+						<option value="09:00">09:00</option>
+						<option value="09:30">09:30</option>
+						<option value="10:00">10:00</option>
+						<option value="10:30">10:30</option>
+						<option value="11:00">11:00</option>
+						<option value="11:30">11:30</option>
+						<option value="12:00">12:00</option>
+						<option value="12:30">12:30</option>
+						<option value="14:00">14:00</option>
+						<option value="14:30">14:30</option>
+						<option value="15:00">15:00</option>
+						<option value="15:30">15:30</option>
+						<option value="16:00">16:00</option>
+						<option value="16:30">16:30</option>
+						<option value="17:00">17:00</option>
+						<option value="17:30">17:30</option>													
 					</select> ~
 				    <select name="s_endTime">
 						<option selected>${detail.s_endTime}</option>
-						<option value="">09:30</option>
-						<option value="">10:00</option>
-						<option value="">10:30</option>
-						<option value="">11:00</option>
-						<option value="">11:30</option>
-						<option value="">12:00</option>
-						<option value="">12:30</option>
-						<option value="">14:00</option>
-						<option value="">14:30</option>
-						<option value="">15:00</option>
-						<option value="">15:30</option>
-						<option value="">16:00</option>
-						<option value="">16:30</option>
-						<option value="">17:00</option>
-						<option value="">17:30</option>														
+						<option value="09:30">09:30</option>
+						<option value="10:00">10:00</option>
+						<option value="10:30">10:30</option>
+						<option value="11:00">11:00</option>
+						<option value="11:30">11:30</option>
+						<option value="12:00">12:00</option>
+						<option value="12:30">12:30</option>
+						<option value="14:00">14:00</option>
+						<option value="14:30">14:30</option>
+						<option value="15:00">15:00</option>
+						<option value="15:30">15:30</option>
+						<option value="16:00">16:00</option>
+						<option value="16:30">16:30</option>
+						<option value="17:00">17:00</option>
+						<option value="17:30">17:30</option>													
 					</select>
 				</div>
 			</div>
 			<div class="item">	
 				<div class="label">메모</div>	
 				<div>
-					<textarea>${detail.s_memo}</textarea>
+					<textarea name="s_memo">${detail.s_memo}</textarea>
 				</div>	
 			</div>			
 		</div>
@@ -173,7 +173,8 @@
 						<a href="#">차트 보기</a><!-- ${detail.patientVO.p_chart} -->
 					</c:if>
 				</div>
-			</div>									
+			</div>
+			<input type="hidden" name="s_no" value="${detail.s_no}">									
 		</div>
 		<div align="center">
 			<input class="button first" type="submit" value="수정" formaction="/popup2/modify">

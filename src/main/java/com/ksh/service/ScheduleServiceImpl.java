@@ -25,16 +25,17 @@ public class ScheduleServiceImpl implements ScheduleService{
 	}
 	
 	public ScheduleVO detail(ScheduleVO schedule) {
-		System.out.println("ScheduleService = "+schedule);
 		return sm.detail(schedule);
 	}
 	
 	public void modify(ScheduleVO schedule) {
 		sm.modify(schedule);
+		
 	}
 	
 	public void remove(ScheduleVO schedule) {
 		sm.remove(schedule);
+		System.out.println("remove = "+schedule);
 	}
 
 

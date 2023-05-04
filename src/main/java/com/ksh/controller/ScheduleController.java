@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ksh.model.ScheduleVO;
 import com.ksh.service.MedicalService;
@@ -50,10 +51,12 @@ public class ScheduleController {
 				hash.put("start", list.get(i).get("expected_production_start_date")); //시작일자
 				hash.put("end", list.get(i).get("expected_production_end_date")); //종료일자
 */				
-	            hash.put("title", list.get(i).getS_doctor());
+	            hash.put("title", list.get(i).getS_doctor()+'님');
 	            hash.put("start", list.get(i).getS_date()+'T'+list.get(i).getS_startTime());	//getS_date()+'T'+getS_startTime()
 	            hash.put("end", list.get(i).getS_date()+'T'+list.get(i).getS_endTime());
+	            hash.put("s_type", list.get(i).getS_type());
 	            hash.put("s_no", list.get(i).getS_no());
+
 	            
 				jsonObj = new JSONObject(hash); //중괄호 {key:value , key:value, key:value}
 				jsonArr.add(jsonObj); // 대괄호 안에 넣어주기[{key:value , key:value, key:value},{key:value , key:value, key:value}]
@@ -85,10 +88,11 @@ public class ScheduleController {
 	
 	// 수정
 	@RequestMapping(value = "/popup2/modify", method = RequestMethod.GET)
-	public String modifySchedule(ScheduleVO schedule) {
+	public String modifySchedule(ScheduleVO schedule, RedirectAttributes rttr) {
 		ss.modify(schedule);
+		rttr.addAttribute("s_no", schedule.getS_no());
 		//model.addAttribute("detail", ss.detail(schedule));
-		return "redirect:/popUp2";
+		return "redirect:/popup2";
 	}
 	
 	// 삭제
