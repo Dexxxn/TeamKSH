@@ -99,7 +99,7 @@
 
 
                     },
-					select: function(arg) {
+					/* select: function(arg) {
 					console.log(arg);
 						var title = prompt('일정추가');
 						if (title) {
@@ -111,7 +111,7 @@
 							})
 						}
 					calendar.unselect()
-					},
+					}, */
 					
 					// 상세일정 보기
 					// 등록된 일정 클릭시,
@@ -344,7 +344,25 @@
     
     
     		<div class="scheduleSelect">
-			<button class="specificDate_btn"><</button><input id="dateCheck" type="text" readonly><button class="specificDate_btn">></button>
+			<button id="prevDateBtn" class="specificDate_btn"><</button>
+			<input id="dateCheck" type="text" readonly>
+			<button id="nextDateBtn" class="specificDate_btn">></button>
+			<script>
+    		function preDate() {
+    			  var currentDate = new Date(document.getElementById('dateCheck').value);
+    			  currentDate.setDate(currentDate.getDate() - 1);
+    			  document.getElementById('dateCheck').value = currentDate.toISOString().substr(0, 10);
+    			}
+
+    			function nextDate() {
+    			  var currentDate = new Date(document.getElementById('dateCheck').value);
+    			  currentDate.setDate(currentDate.getDate() + 1);
+    			  document.getElementById('dateCheck').value = currentDate.toISOString().substr(0, 10);
+    			}
+
+    			document.getElementById('prevDateBtn').addEventListener('click', preDate);
+    			document.getElementById('nextDateBtn').addEventListener('click', nextDate);
+    		</script>
     			<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료과목</label>
 					<!-- 과 -->
 					<select class="top_optionSelect" name="index_top_s_dept" id="index_top_medical_dept">
