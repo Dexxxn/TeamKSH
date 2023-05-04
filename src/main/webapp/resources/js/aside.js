@@ -1,3 +1,13 @@
+// 기 내원고객은 insert안되게 alert띄우기("내원환자입니다.")
+// https://mangkyu.tistory.com/204
+/*$(function(){
+        var responseMessage = "<c:out value="${message}" />";
+        if (responseMessage != ""){
+            alert(responseMessage)
+        };
+    });*/
+
+
 // aside폼 fixed-> 가로로는 고정, 세로로만 스크롤 가능
 $(function() {
   var marginLeft = parseInt( $("#form_wrap").css('margin-left') );
@@ -31,12 +41,14 @@ $(document).ready(function(){
 
 
 
-// 재진 환자 조회 후 예약등록 시 환자이름 DB로 같이 넘기기
+// 재진 환자 조회 후 예약등록 시 환자이름, 주민번호 DB로 같이 넘기기
 
 $(document).ready(function(){
 	$("#index_medical_dept").on('click', function(){
 		var patientName = $("#p_name_IN").val();
+		var patientIdNum = $("#p_idNum_IN").val();
 		$('input[name=s_patient]').attr('value', patientName);
+		$('input[name=s_patientIdNum]').attr('value',patientIdNum);
 	});
 });
 
@@ -65,6 +77,14 @@ $(document).ready(function(){
 
 	});
 
+});
+
+// 주민번호 입력
+$(document).ready(function(){
+		$("#p_idNum_IN").keyup(function(){
+			$("#p_idNum_OUT").val($("#p_idNum_IN").val());
+		});
+	
 });
 
 

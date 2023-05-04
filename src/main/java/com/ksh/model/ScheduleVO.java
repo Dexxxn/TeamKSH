@@ -10,10 +10,10 @@ public class ScheduleVO {
 	private String s_memo;
 	private String s_doctor;
 	private String s_patient;
+	private String s_patientIdNum;
 	
 	private PatientVO patientVO;
 	private MedicalVO medicalVO;
-	
 	public int getS_no() {
 		return s_no;
 	}
@@ -62,6 +62,12 @@ public class ScheduleVO {
 	public void setS_patient(String s_patient) {
 		this.s_patient = s_patient;
 	}
+	public String getS_patientIdNum() {
+		return s_patientIdNum;
+	}
+	public void setS_patientIdNum(String s_patientIdNum) {
+		this.s_patientIdNum = s_patientIdNum;
+	}
 	public PatientVO getPatientVO() {
 		return patientVO;
 	}
@@ -74,13 +80,17 @@ public class ScheduleVO {
 	public void setMedicalVO(MedicalVO medicalVO) {
 		this.medicalVO = medicalVO;
 	}
-	
 	@Override
 	public String toString() {
 		return "ScheduleVO [s_no=" + s_no + ", s_type=" + s_type + ", s_date=" + s_date + ", s_startTime=" + s_startTime
 				+ ", s_endTime=" + s_endTime + ", s_memo=" + s_memo + ", s_doctor=" + s_doctor + ", s_patient="
-				+ s_patient + ", patientVO=" + patientVO + ", medicalVO=" + medicalVO + "]";
+				+ s_patient + ", s_patientIdNum=" + s_patientIdNum + ", patientVO=" + patientVO + ", medicalVO="
+				+ medicalVO + "]";
 	}
-
+	
+	
+	
+	
+	
 	
 }
