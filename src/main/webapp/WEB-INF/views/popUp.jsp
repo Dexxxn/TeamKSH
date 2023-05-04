@@ -19,15 +19,15 @@
 </head>
 <body>
 <!-- 팝업창 -->
-<div class="date_popUp">
+<div id="schedule_popUp">
 	<div class="title">
 		<span>일정 등록</span>
-		<i class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
+		<i onclick="removePopup()" class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
 	</div>
 	
 	<!-- 캘린더 자리 -->
 	<div id="miniCalendar">
-		<%@ include file = "sideCalendar.jsp" %>
+		<%@ include file = "miniCalendar.jsp" %>
 	</div>	
 	<!-- INSERT할 정보 -->
 	<form id="addSchedule" action="/add" method="get">	
@@ -122,7 +122,7 @@
 	</form>	
 	<div align="center">
 		<input class="button first" type="submit" value="확인" form="addSchedule">
-		<input class="button second" type="button" value="취소">
+		<input onclick="removePopup()" class="button second" type="button" value="취소">
 	</div>
 </div>
 

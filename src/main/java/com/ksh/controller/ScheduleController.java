@@ -51,7 +51,7 @@ public class ScheduleController {
 			 * hash.put("start", list.get(i).get("expected_production_start_date")); //시작일자
 			 * hash.put("end", list.get(i).get("expected_production_end_date")); //종료일자
 			 */
-			hash.put("title", list.get(i).getS_doctor() + '님');
+			hash.put("title", list.get(i).getS_doctor() + '님' +'('+ list.get(i).getS_patient()+')');
 			hash.put("start", list.get(i).getS_date() + 'T' + list.get(i).getS_startTime()); // getS_date()+'T'+getS_startTime()
 			hash.put("end", list.get(i).getS_date() + 'T' + list.get(i).getS_endTime());
 			hash.put("s_type", list.get(i).getS_type());

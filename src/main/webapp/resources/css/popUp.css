@@ -13,17 +13,26 @@ textarea{
     resize: none;
 }
  
-.date_popUp{
+#schedule_popUp{
 	z-index: 5;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate( -50%, -50% );
-/* 	display: none; */
+ 	display: none;
 	background-color: white;
 	box-shadow: 0 8px 32px gray;
 }
-
+#schedule_popUp2{
+	z-index: 5;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate( -50%, -50% );
+ 	display: none;
+	background-color: white;
+	box-shadow: 0 8px 32px gray;
+}
 .title{
 	background-color: #003399;
 	padding: 10px 10px;
@@ -35,7 +44,7 @@ textarea{
 	font-weight: bold;
 }
 
-form{
+#schedule_popUp form{
 	float: left;
 }
 

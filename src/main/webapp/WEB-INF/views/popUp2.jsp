@@ -13,10 +13,10 @@
 </head>
 <body>
 <!-- 팝업창 -->
-<div class="date_popUp">
+<div id="schedule_popUp2">
 	<div class="title">
 		<span>상세 일정</span>
-		<i class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
+		<i onclick="removePopup2()" class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
 	</div>
 	<form name="detailSchedule" onsubmit="return confirm('일정을 변경하시겠습니까?');">	
 		<!-- 일정 정보 -->

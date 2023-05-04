@@ -1,13 +1,20 @@
 // 팝업창 열기/닫기
 function openPopup(){
-	const div = document.getElementById('removePopup');
+	const div = document.getElementById('schedule_popUp');
 	div.style.display = "block";
 }
 function removePopup(){
-	const div = document.getElementById('removePopup');
+	const div = document.getElementById('schedule_popUp');
 	div.style.display = "none";
 }
-
+function openPopup2(){
+	const div = document.getElementById('schedule_popUp2');
+	div.style.display = "block";
+}
+function removePopup2(){
+	const div = document.getElementById('schedule_popUp2');
+	div.style.display = "none";
+}
 //select값 넘기기
 $(document).ready(function(){
 

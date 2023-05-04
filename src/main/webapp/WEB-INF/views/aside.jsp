@@ -125,8 +125,8 @@
 					console.log(arg.event.extendedProps);
 					var x = arg.event.extendedProps.s_no;
 						// 상세 팝업으로
-						location.href = "/popup2?s_no=" + x;
-
+						//location.href = "/popup2?s_no=" + x;
+						openPopup2();
 					},
 					
 					// 얘는 뭐지
@@ -309,8 +309,8 @@
 			</div>
 	</form>
 
-			<!-- 진료 외 일정들 등록 전용 버튼 --><input id="other_schedule_register_btn" type="button" value="일정 등록" onclick="location.href='/popup'" >
-			<!-- 진료 외 일정들 등록 전용 버튼 --><input type="button" value="상세 일정" onclick="location.href='/popup2'" >
+			<!-- 진료 외 일정들 등록 전용 버튼 --><input onclick="openPopup()" id="other_schedule_register_btn" type="button" value="일정 등록">
+
 		</div> <!-- end of "form_wrap"  -->
 		</aside>
 	</div><!-- pageSide_left -->
@@ -401,6 +401,7 @@
 		 </div>
 	</div><!-- pageSide_right -->
 	</div><!-- wrapper -->
-
+<%@ include file="popUp.jsp"%>
+<%@ include file="popUp2.jsp"%>
 </body>
 </html>
