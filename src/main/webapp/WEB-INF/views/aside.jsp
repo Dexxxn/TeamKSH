@@ -83,14 +83,17 @@
 					// 상세일정 보기
 					// 등록된 일정 클릭시,
 					eventClick: function(arg) {
-					 
 					console.log("#등록된 일정 클릭#");
+					
+					console.log(arg)
 					console.log(arg.event);
+					
+					// extendedProps: 이벤트 객체의 속성을 직접 정의
+					console.log(arg.event.extendedProps);
+					var x = arg.event.extendedProps.s_no;
 						// 상세 팝업으로
-						location.href = "/popup2";
-/* 						if (confirm('일정을 삭제하시겠습니까?')) {
-							arg.event.remove()
-						} */
+						location.href = "/popup2?s_no=" + x;
+
 					},
 					
 					// 얘는 뭐지

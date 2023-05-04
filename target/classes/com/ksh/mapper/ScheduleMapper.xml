@@ -54,7 +54,7 @@
 	
 	<update id="modify">
 		UPDATE schedule 
-		SET s_date=#{s_date}, s_startTime=#{s_startTime}, s_endTime=#{s_endTime}
+		SET s_date=#{s_date}, s_startTime=#{s_startTime}, s_endTime=#{s_endTime}, s_memo=#{s_memo}
 		WHERE s_no=#{s_no};
 	</update>
 

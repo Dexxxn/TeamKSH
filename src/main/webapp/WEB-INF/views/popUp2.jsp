@@ -18,7 +18,7 @@
 		<span>상세 일정</span>
 		<i class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
 	</div>
-	<form name="detailSchedule" onsubmit="return confirm('일정을 수정하시겠습니까?');">	
+	<form name="detailSchedule" onsubmit="return confirm('일정을 변경하시겠습니까?');">	
 		<!-- 일정 정보 -->
 		<div class="calendar_select">
 			<div class="item_title">
@@ -168,8 +168,10 @@
 					</c:if> 
 					<c:if test="${detail.patientVO.p_visit=='S'}">
 						재진
-					</c:if> 
-					<a href="#">차트 보기</a><!-- ${detail.patientVO.p_chart} -->
+					</c:if>
+					<c:if test="${detail.patientVO.p_chart!=null}">
+						<a href="#">차트 보기</a><!-- ${detail.patientVO.p_chart} -->
+					</c:if>
 				</div>
 			</div>									
 		</div>

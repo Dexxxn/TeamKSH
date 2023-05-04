@@ -53,6 +53,7 @@ public class ScheduleController {
 	            hash.put("title", list.get(i).getS_doctor());
 	            hash.put("start", list.get(i).getS_date()+'T'+list.get(i).getS_startTime());	//getS_date()+'T'+getS_startTime()
 	            hash.put("end", list.get(i).getS_date()+'T'+list.get(i).getS_endTime());
+	            hash.put("s_no", list.get(i).getS_no());
 	            
 				jsonObj = new JSONObject(hash); //중괄호 {key:value , key:value, key:value}
 				jsonArr.add(jsonObj); // 대괄호 안에 넣어주기[{key:value , key:value, key:value},{key:value , key:value, key:value}]
@@ -94,15 +95,8 @@ public class ScheduleController {
 	@RequestMapping(value = "/popup2/remove", method = RequestMethod.GET)
 	public String removeSchedule(ScheduleVO schedule) {
 		ss.remove(schedule);
-		return "redirect:/monthPlan";
+		return "redirect:/aside";
 	}
-	
-	// 상세 일정 보기
-	@RequestMapping(value = "/model", method = RequestMethod.GET)
-	public String model(Model model, ScheduleVO schedule) {
-		//ss.detail(schedule);
-		model.addAttribute("detail", ss.detail(schedule));
-		return "aside";
-	}
+
 	
 }
