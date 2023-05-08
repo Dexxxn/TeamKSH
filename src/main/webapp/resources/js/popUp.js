@@ -1,5 +1,5 @@
 // 팝업창 열기/닫기
-function openPopup(){
+/*function openPopup(){
 	const div = document.getElementById('schedule_popUp');
 	div.style.display = "block";
 }
@@ -14,7 +14,13 @@ function openPopup2(){
 function removePopup2(){
 	const div = document.getElementById('schedule_popUp2');
 	div.style.display = "none";
+}*/
+function openPopup(){
+	let options = "location=no,toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=1200, height=800, top=0,left=0";
+
+	window.open("http://localhost:8080/popup","_blank", options);
 }
+
 //select값 넘기기
 $(document).ready(function(){
 

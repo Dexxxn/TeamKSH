@@ -27,7 +27,7 @@
 	
 	<!-- 캘린더 자리 -->
 	<div id="miniCalendar">
-		<%@ include file = "miniCalendar.jsp" %>
+		<%@ include file = "sideCalendar.jsp" %>
 	</div>	
 	<!-- INSERT할 정보 -->
 	<form id="addSchedule" action="/add" method="get">	

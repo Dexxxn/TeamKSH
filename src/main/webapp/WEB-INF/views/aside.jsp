@@ -31,6 +31,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="resources/js/main.js" type="text/javascript"></script>
 <script src="resources/js/aside.js" type="text/javascript"></script>
+<script src="resources/js/popUp.js" type="text/javascript"></script>
 
 <!-- api 한글로 -->
  <script src='fullcalendar/core/locales/ko.js'></script>
@@ -126,7 +127,9 @@
 					var x = arg.event.extendedProps.s_no;
 						// 상세 팝업으로
 						//location.href = "/popup2?s_no=" + x;
-						openPopup2();
+						let options2 = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=1200, height=800, top=0,left=0";
+
+						window.open("http://localhost:8080/popup2?s_no=" + x,"_blank", options2);
 					},
 					
 					// 얘는 뭐지
@@ -401,7 +404,5 @@
 		 </div>
 	</div><!-- pageSide_right -->
 	</div><!-- wrapper -->
-<%@ include file="popUp.jsp"%>
-<%@ include file="popUp2.jsp"%>
 </body>
 </html>
