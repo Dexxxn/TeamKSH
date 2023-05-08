@@ -11,5 +11,8 @@ public interface PatientMapper {
 	public ScheduleVO reservationCheck(ScheduleVO schedule);
 	
 	//환자 등록 유무 체크
-	public int already_patient_chk(PatientVO patient);
+	 // @Select("SELECT COUNT(*) FROM patient WHERE where p_no = #{p_no}")
+	public int already_patient_chk(String patientIdNum);
+	
+	public int no_reservation_chk(String nothing);
 }

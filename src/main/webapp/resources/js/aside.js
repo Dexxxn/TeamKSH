@@ -1,25 +1,47 @@
-// 기 내원고객은 insert안되게 alert띄우기("내원환자입니다.")
-// https://mangkyu.tistory.com/204
-/*$(function(){
-        var responseMessage = "<c:out value="${message}" />";
-        if (responseMessage != ""){
-            alert(responseMessage)
-        };
-    });*/
+// 기 내원고객은 insert안되게 alert띄우기("기 내원환자입니다.")
 function already_patient_Chk(){
 			$.ajax({
-				url : "/idChk",
-				type : "post",
+				url : "/idChk", //ajax 통신 url
+				type : "post", // http 방식
 				dataType : "json",
-				data : {"patient_idNum": $("#p_idNum_IN").val()},
+				data : {"patientIdNum": $("#p_idNum_IN").val()}, // 파라미터 : 값
 				success : function(data){
-					if(data == 1){
+					
+					if(data == 1){ // 1이면 중복
 						alert("기 내원환자입니다.");
+					}else if(data == 0){
+						alert("등록가능");
 					}
 				}
 			})
 		}
 
+// 예약등록 내역 없는 환자는 "예약 내역 없음"alert
+$(document).ready(function () {
+	 $("#reservation_confirm_btn").on("click", function no_reservation(){
+		
+//function no_reservation(){ //함수가 true를 반환하면 form이 제출됨
+		$.ajax({
+				url : "/no_reservation", //ajax 통신 url
+				type : "post", // http 방식
+				dataType : "json",
+				data : {"nothing": $("#p_idNum_OUT").val()}, // 파라미터 : 값
+				success : function(data){
+					
+					if(data == 0){ 
+						//alert("예약 내역 없음.");
+						var content = "예약 내역 없음";
+						$('#alert').html(content); //textarea에 특정 내용 추가
+						//}else if(data == 1){alert("예약 1건 있음")}
+						//return false; //form 제출 취소
+					}
+					//return true; //form 제출
+				}
+			});
+	 });
+});
+ 
+//}
 
 // aside폼 fixed-> 가로로는 고정, 세로로만 스크롤 가능
 $(function() {
@@ -54,10 +76,19 @@ $(document).ready(function(){
 
 
 
-// 재진 환자 조회 후 예약등록 시 환자이름, 주민번호 DB로 같이 넘기기
-
+// 재진 환자 조회 후 '예약조회 시' 환자이름, 주민번호 DB로 같이 넘기기
 $(document).ready(function(){
-	$("#index_medical_dept").on('click', function(){
+		$("reservation_confirm").on('click', function(){ // '예약조회' 버튼클릭  시
+		var patientName = $("#p_name_IN").val();
+		var patientIdNum = $("#p_idNum_IN").val();
+		$('input[name=s_patient]').attr('value', patientName);
+		$('input[name=s_patientIdNum]').attr('value',patientIdNum);
+	});
+});
+
+// 재진 환자 조회 후 '예약등록 시' 환자이름, 주민번호 DB로 같이 넘기기
+$(document).ready(function(){
+	$("#index_medical_dept").on('click', function(){ // '예약등록' 버튼클릭  시
 		var patientName = $("#p_name_IN").val();
 		var patientIdNum = $("#p_idNum_IN").val();
 		$('input[name=s_patient]').attr('value', patientName);

@@ -248,7 +248,7 @@
 							<input type="radio"  value="second" name="p_visit" id="second_visit" onclick="showBTN_s()"><span class="patient_visit_radio">재진</span>
 						<input type="submit" value="등록" class="patient_form_btn rs_btn1"  formaction="/patientF" id="patientF">
 						<input type="submit" value="조회" class="patient_form_btn rs_btn1"  formaction="/patientS" id="patientS">
-						<button onclick="already_patient_Chk()">여부조회</button>
+						<button type="button" onclick="already_patient_Chk()" class="patient_form_btn rs_btn1">중복</button>
 						<input type="reset" value="초기화" class="patient_form_btn rs_btn1">
 						<br>
 					</div>
@@ -267,8 +267,8 @@
 		<form method="post">
 			<!-- 캘린더 아래 나머지 입력폼  -->
 			<div id="sub_form">
-				<input type="hidden" id="p_name_OUT" name="s_patient">  <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
-				<input type="hidden" id="p_idNum_OUT" name="s_patientIdNum"> 
+				<input type="text" id="p_name_OUT" name="s_patient">  <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
+				<input type="text" id="p_idNum_OUT" name="s_patientIdNum"> 
 				<div class="label_detail"><label class="patient_form_label" >예약일자</label>
 					<input class="rs_date" type="text" id="selectedDate" name="s_date" readonly value="${OC_reservation.s_date}">
 				</div>
@@ -297,18 +297,20 @@
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
 					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_doctor" id="index_selectDept">
-					<option selected>${OC_reservation.s_doctor}</option>
-								<!-- <option>김태원 원장님</option>
-								<option>엄경수 원장님</option> -->
+				
 							</select>
 				</div>
 				<div  class="label_detail textarea_label_position">
 				<label class="patient_form_label textarea_label">진료내용</label>
-					<textarea class="patient_textarea" rows="3" cols="21" name="s_memo">${OC_reservation.s_memo}</textarea>
+					<textarea class="patient_textarea" rows="3" cols="21" name="s_memo" id="alert">${OC_reservation.s_memo}</textarea>
 				</div>
-				 <input type="submit" value="예약 조회" class="patient_form_btn" id="" formaction="/reservationCheck"> 
+				<div id="reservation_btn_set">
+				 <button type="button" id= "reservation_confirm_btn" onclick="no_reservation()">button</button><!--  예약조회 버튼이랑 기능 합쳐야,,,,  -->  
+				 <!-- <input type="submit" value="예약 조회" class="patient_form_btn" id="reservation_confirm" formaction="/reservationCheck" onsubmit="return no_reservation()">  -->
+				 <input type="submit" value="예약 조회" class="patient_form_btn" id="reservation_confirm" formaction="/reservationCheck"> 
 				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2" formaction="/reserve"> 
 				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/aside'"><br><br><br><br><br><br><br>
+				 </div>
 			</div>
 	</form>
 

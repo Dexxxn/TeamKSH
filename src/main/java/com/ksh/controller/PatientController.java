@@ -3,6 +3,7 @@ package com.ksh.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,53 +22,37 @@ public class PatientController {
 	
 	
 	// 초진 환자 정보 insert하기 
-	
-	 
 	 @RequestMapping(value = "/patientF", method = RequestMethod.POST)
 	public String patientPost(PatientVO patient) {
 		System.out.println(patient);
 		ps.patientreg(patient);
 		return "aside";
-		
 	}
 	
-	//https://dlgkstjq623.tistory.com/335
-	
-	// https://nahosung.tistory.com/74
-	// 내원했던 고객이면 alert해주기("재진 환자입니다") //https://sseozzzy.tistory.com/139
-	 /*@RequestMapping(value = "/patientF", method = RequestMethod.POST)
-		public String patientPost(PatientVO patient, 
-								@RequestParam(value="p_name", required=true) String p_name,
-								@RequestParam(value="p_no", required=true) String p_no, 
-								HttpServletRequest request,
-								HttpServletResponse response) throws Exception{
-		 			
-		 	String url ="";
-		 	PatientVO pt = (PatientVO)request.getSession().getAttribute("patient");
-	 
-	 		
-			//try{
-				if(pt != null) {
-					request.setAttribute("msg", "기 내원 환자입니다.");
-					return "alert";
-				}//else {
-					request.setAttribute("msg","초진 등록 진행");
-				//}
-			//}catch(Exception e) {
-				
-			//}
-			return "";
-			
-	 }*/
-
 	
 	// 아이디 중복 체크
-		 @ResponseBody
-		 @RequestMapping(value="/idChk", method = RequestMethod.POST)
+		/* @ResponseBody
+		 @PostMapping("/idChk")
 		 public int idChk(PatientVO patient) throws Exception {
 		 	int result = ps.already_patient_chk(patient);
 		 	return result;
-		 }
+		 }*/
+	
+	 // 환자 주민등록 여부 중복 체크
+	 @ResponseBody // ajax 값을 바로 jsp로 보내기 위해 사용
+	 @PostMapping("/idChk")
+	 public int idChk(String patientIdNum) throws Exception {
+	 	int result = ps.already_patient_chk(patientIdNum);
+	 	return result;
+	 }
+	 
+	// 예약등록 내역 없는 환자는 "예약 내역 없음"alert
+	 @ResponseBody 
+	 @PostMapping("/no_reservation")
+	 public int noReservation(String nothing) throws Exception {
+		 int result = ps.no_reservation_chk(nothing);
+		 return result;
+	 }
 
 	 
 	 

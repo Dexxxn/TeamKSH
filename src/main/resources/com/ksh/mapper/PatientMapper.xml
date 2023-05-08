@@ -24,8 +24,8 @@
   	
   	
   	<insert id="reserve">
-		insert into schedule(s_type, s_date, s_startTime, s_endTime, s_memo, s_patient,s_patientIdNum, s_doctor)
-		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient},#{s_patientIdNum}, #{s_doctor});  <!-- 진료 OC -->
+		insert into schedule(s_type, s_date, s_startTime, s_endTime, s_memo, s_patient,s_patientIdNum, s_doctor,allDay)
+		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient},#{s_patientIdNum}, #{s_doctor}, false);  <!-- 진료 OC -->
 	 </insert>   
 	
   	<select id="reservationCheck" resultType="com.ksh.model.ScheduleVO">
@@ -33,9 +33,17 @@
   		from schedule
   		where s_patient=#{s_patient} and substring(#{s_patientIdNum},1,6);
   	</select>
+  	
+  <!-- 예약날짜 없는 환자를 예약조회 했을 때(count) -->	
+  	<select id="no_reservation_chk" parameterType="string" resultType="int">
+  		select count(*) 
+	  	from schedule
+	  	where s_patientIdNum = #{s_patientIdNum};
+  	</select>
+
   
   <!--기존 등록 환자 유무 체크(count)  -->
-	  <select id="already_patient_chk" resultType="int">
+	  <select id="already_patient_chk" parameterType="string" resultType="int">
 	  	select count(*) 
 	  	from patient
 	  	where p_no = #{p_no};

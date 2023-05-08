@@ -32,8 +32,20 @@ public class PatientServiceImpl implements PatientService {
 	}
 	
 	//환자 등록 유무 체크
-	public int already_patient_chk(PatientVO patient) {
+	/*public int already_patient_chk(PatientVO patient) {
 		int result = pm.already_patient_chk(patient);
+		return result;
+		
+		return pm.already_patient_chk(patient);
+	}*/
+	
+	public int already_patient_chk(String patientIdNum) {
+		int result = pm.already_patient_chk(patientIdNum);
+		return result;
+	}
+	
+	public int no_reservation_chk(String nothing) {
+		int result = pm.no_reservation_chk(nothing);
 		return result;
 	}
 	
