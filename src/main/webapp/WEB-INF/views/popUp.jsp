@@ -43,9 +43,9 @@
 				<div class="value">    
 				    <select name="s_dept" id="dept"><!--  onchange="location.href='/popup'" -->
 						<option>선택</option>
-						<option value="A">정형외과</option>
-						<option value="B">신경외과</option>														
-						<option value="C">내과</option>
+						<option value="정형외과">정형외과</option>
+						<option value="신경외과">신경외과</option>														
+						<option value="내과">내과</option>
 					</select>
 				</div>
 			</div>
@@ -121,7 +121,7 @@
 		</div>	
 	</form>	
 	<div align="center">
-		<input class="button first" type="submit" value="확인" form="addSchedule">
+		<input class="button first" type="button" value="확인" form="addSchedule" id="addButton">
 		<input onclick="removePopup()" class="button second" type="button" value="취소">
 	</div>
 </div>

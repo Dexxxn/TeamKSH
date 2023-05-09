@@ -19,10 +19,10 @@
         WHERE s_id like 'D%'
  		<if test="s_dept != null">
 			<choose>
-				<when test="s_dept=='A'.toString()">
+				<when test="s_dept=='정형외과'.toString()">
 					and s_dept='정형외과'
 				</when>
-				<when test="s_dept=='B'.toString()">
+				<when test="s_dept=='신경외과'.toString()">
 					and s_dept='신경외과'
 				</when>
 				<otherwise>

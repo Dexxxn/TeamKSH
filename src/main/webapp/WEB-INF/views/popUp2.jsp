@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="resources/css/popUp.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0f537ad086.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/resources/js/popUp.js"></script>
 </head>
 <body>
 <!-- 팝업창 -->
@@ -58,7 +59,7 @@
 			</div>
 			<div class="item">	
 				<div class="label">일정 종류</div>
-				<div class="value">
+				<div class="value" id="type">
 					<c:if test="${detail.s_type=='OC'}">
 						진료
 					</c:if>
@@ -74,18 +75,10 @@
 					<c:if test="${detail.s_type=='H'}">
 						휴무
 					</c:if>
- 
-<%-- 				<select name="type">
-				    	<option selected>${detail.s_type}</option>
-						<option value="">선택</option>
-						<option value="">수술</option>
-						<option value="">회진</option>
-						<option value="">외부 일정</option>														
-						<option value="">휴무</option>
-					</select> --%>
 				</div>				
 			</div>
-			<div class="item">	
+			<c:if test="${detail.s_type!='H'}">
+			<div class="item" id="timeSelect">	
 				<div class="label">시간</div>
 				<div class="value">    
 				    <select name="s_startTime">
@@ -127,6 +120,7 @@
 					</select>
 				</div>
 			</div>
+			</c:if>
 			<div class="item">	
 				<div class="label">메모</div>	
 				<div>

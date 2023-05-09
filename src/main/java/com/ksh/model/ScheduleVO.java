@@ -14,6 +14,7 @@ public class ScheduleVO {
 	private String title;
 	private String start;
 	private String end;
+	private String allDay;
 	private PatientVO patientVO;
 	private MedicalVO medicalVO;
 
@@ -113,6 +114,14 @@ public class ScheduleVO {
 		this.end = end;
 	}
 
+	public String getAllday() {
+		return allDay;
+	}
+
+	public void setAllday(String allDay) {
+		this.allDay = allDay;
+	}
+	
 	public PatientVO getPatientVO() {
 		return patientVO;
 	}

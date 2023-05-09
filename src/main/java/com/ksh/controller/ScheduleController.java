@@ -54,6 +54,7 @@ public class ScheduleController {
 			hash.put("title", list.get(i).getS_doctor() + '님' +'('+ list.get(i).getS_patient()+')');
 			hash.put("start", list.get(i).getS_date() + 'T' + list.get(i).getS_startTime()); // getS_date()+'T'+getS_startTime()
 			hash.put("end", list.get(i).getS_date() + 'T' + list.get(i).getS_endTime());
+			hash.put("allDay", list.get(i).getAllday());
 			hash.put("s_type", list.get(i).getS_type());
 			hash.put("s_no", list.get(i).getS_no());
 

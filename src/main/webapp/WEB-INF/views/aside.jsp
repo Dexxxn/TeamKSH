@@ -124,12 +124,14 @@
 					
 					// extendedProps: 이벤트 객체의 속성을 직접 정의
 					console.log(arg.event.extendedProps);
-					var x = arg.event.extendedProps.s_no;
+					var sno = arg.event.extendedProps.s_no;
 						// 상세 팝업으로
-						//location.href = "/popup2?s_no=" + x;
-						let options2 = "toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=1200, height=800, top=0,left=0";
-
-						window.open("http://localhost:8080/popup2?s_no=" + x,"_blank", options2);
+						//location.href = "/popup2?s_no=" + sno;
+						var x = window.screen.width/2 - 490 / 2;
+						var y = window.screen.height/2 - 631 / 2;
+						
+						let options2 = "location=no,toolbar=no,scrollbars=no,resizable=no,status=no,menubar=no,width=490, height=631, left=" + x + ",top=" + y;
+						window.open("http://localhost:8080/popup2?s_no=" +sno,"_popup2", options2);
 					},
 					
 					// 얘는 뭐지

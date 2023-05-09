@@ -1,25 +1,46 @@
 // 팝업창 열기/닫기
-/*function openPopup(){
-	const div = document.getElementById('schedule_popUp');
-	div.style.display = "block";
-}
 function removePopup(){
 	const div = document.getElementById('schedule_popUp');
-	div.style.display = "none";
-}
-function openPopup2(){
-	const div = document.getElementById('schedule_popUp2');
-	div.style.display = "block";
+	window.close();
 }
 function removePopup2(){
 	const div = document.getElementById('schedule_popUp2');
-	div.style.display = "none";
-}*/
-function openPopup(){
-	let options = "location=no,toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=1200, height=800, top=0,left=0";
-
-	window.open("http://localhost:8080/popup","_blank", options);
+	window.close();
 }
+
+function openPopup(){
+    // 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기
+	var x = (window.screen.width /2) - (610 / 2);
+	var y = (window.screen.height /2) - (431 / 2);
+	
+    let options = "location=no,toolbar=no,scrollbars=no,titlebar=no,resizable=no,status=no,menubar=no,width=610, height=431, left=" + x + ",top=" + y;	
+    window.open("http://localhost:8080/popup","_popup", options);		
+}
+
+$(document).ready(function(){
+	$("#addButton").on("click",function(){
+		$("#addSchedule").submit();
+        // 팝업창이 닫히면서 데이터가 넘어가지 않는 현상 방지
+		setTimeout(function() {   
+            window.close();
+         }, 100);
+		window.opener.location.reload();    // 부모창 reload
+		//window.close();   				// 현재 팝업창 Close
+		alert("일정이 정상적으로 등록되었습니다.");
+	})
+});
+
+$(document).ready(function(){
+	 $("form[name='detailSchedule']").submit(function(event){
+        // 팝업창이 닫히면서 데이터가 넘어가지 않는 현상 방지
+		setTimeout(function() {   
+            window.close();
+         }, 100);
+		window.opener.location.reload();    // 부모창 reload
+		//window.close();   				// 현재 팝업창 Close
+		alert("일정이 정상적으로 등록되었습니다.");
+	})
+});
 
 //select값 넘기기
 $(document).ready(function(){

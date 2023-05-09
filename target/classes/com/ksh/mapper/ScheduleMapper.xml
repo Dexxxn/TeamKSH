@@ -12,8 +12,17 @@
 	</select>
 
 	<insert id="addSchedule">
-		INSERT into Medical_Scheduling.schedule(s_no, s_type, s_date, s_startTime, s_endTime, s_memo, s_doctor)
-		VALUES(#{s_no}, #{s_type}, #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor});
+		INSERT into Medical_Scheduling.schedule(s_no, s_type, s_date, s_startTime, s_endTime, s_memo, s_doctor, allDay)
+		<if test="s_type != null">
+			<choose>
+				<when test="s_type == 'H'.toString()">
+					VALUES(#{s_no}, #{s_type}, #{s_date}, '08:00:00.000000', '18:00:00.000000', #{s_memo}, #{s_doctor}, true);
+				</when>
+				<otherwise>
+					VALUES(#{s_no}, #{s_type}, #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor}, null);
+				</otherwise>
+			</choose>
+		</if>
 	</insert>
 	
 	<resultMap type="com.ksh.model.PatientVO" id="PatientVO">
@@ -56,12 +65,21 @@
   		SET s_date = #{s_date},
       	s_startTime = #{s_startTime},
       	s_endTime = #{s_endTime}
-  		WHERE s_no = #{s_no}
+  		WHERE s_no = #{s_no};
 	</update>
 	
 	<update id="modify">
 		UPDATE schedule 
-		SET s_date=#{s_date}, s_startTime=#{s_startTime}, s_endTime=#{s_endTime}, s_memo=#{s_memo}
+		<if test="s_type != null">
+			<choose>
+				<when test="s_type == 'H'.toString()">
+					SET s_date=#{s_date}, s_startTime=#{s_startTime}, s_endTime=#{s_endTime}, s_memo=#{s_memo}
+				</when>
+				<otherwise>
+					SET s_date=#{s_date}, s_memo=#{s_memo}
+				</otherwise>
+			</choose>
+		</if>
 		WHERE s_no=#{s_no};
 	</update>
 
