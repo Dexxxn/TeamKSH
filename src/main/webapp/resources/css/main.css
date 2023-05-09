@@ -575,12 +575,12 @@ a.fc-event:hover {
 /*
 A HORIZONTAL event
 */
-.fc-h-event { /* allowed to be top-level */
+.fc-h-event { /* allowed to be top-level */ /* 휴무 컬러 */
   display: block;
-  border: 1px solid #3788d8;
-  border: 1px solid var(--fc-event-border-color, #3788d8);
-  background-color: #3788d8;
-  background-color: var(--fc-event-bg-color, #3788d8)
+  border: 1px solid #e1e2e3;
+  border: 1px solid var(--fc-event-border-color, #e1e2e3);
+  background-color: #e1e2e3/* #3788d8 */;
+  background-color: var(--fc-event-bg-color, #e1e2e3)
 
 }
 .fc-h-event .fc-event-main {
@@ -914,8 +914,8 @@ A HORIZONTAL event
   box-sizing: content-box;
   width: 0;
   height: 0;
-  border: 4px solid #3788d8;
-  border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid var(--fc-event-border-color, #3788d8);
+  border: 4px solid #f0ae1f; /* #3788d8; 이벤트 dot */
+  border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid var(--fc-event-border-color, #f0ae1f);
   border-radius: 4px;
   border-radius: calc(var(--fc-daygrid-event-dot-width, 8px) / 2);
 }
@@ -932,18 +932,18 @@ A HORIZONTAL event
 A VERTICAL event
 */
 
-.fc-v-event { /* allowed to be top-level */
+.fc-v-event { /* allowed to be top-level */ /*week, day 일정 컨테이너 컬러  */
   display: block;
-  border: 1px solid #3788d8;
-  border: 1px solid var(--fc-event-border-color, #3788d8);
-  background-color: #3788d8;
-  background-color: var(--fc-event-bg-color, #3788d8)
+  border: 1px solid #ecd7fa;
+  border: 1px solid var(--fc-event-border-color, #ecd7fa);
+  background-color: #ecd7fa;
+  background-color: var(--fc-event-bg-color,#ecd7fa)
 
 }
 
 .fc-v-event .fc-event-main {
-    color: #fff;
-    color: var(--fc-event-text-color, #fff);
+    color: #2b2b2b; /* 글씨 색깔*/
+    color: var(--fc-event-text-color,#2b2b2b);
     height: 100%;
   }
 

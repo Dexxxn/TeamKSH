@@ -269,8 +269,8 @@
 		<form method="post">
 			<!-- 캘린더 아래 나머지 입력폼  -->
 			<div id="sub_form">
-				<input type="text" id="p_name_OUT" name="s_patient">  <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
-				<input type="text" id="p_idNum_OUT" name="s_patientIdNum"> 
+				<input type="hidden" id="p_name_OUT" name="s_patient">  <!--출력되는 곳: 스케줄 테이블에 넣을 환자 이름  -->
+				<input type="hidden" id="p_idNum_OUT" name="s_patientIdNum"> 
 				<div class="label_detail"><label class="patient_form_label" >예약일자</label>
 					<input class="rs_date" type="text" id="selectedDate" name="s_date" readonly value="${OC_reservation.s_date}">
 				</div>
@@ -307,7 +307,7 @@
 					<textarea class="patient_textarea" rows="3" cols="21" name="s_memo" id="alert">${OC_reservation.s_memo}</textarea>
 				</div>
 				<div id="reservation_btn_set">
-				 <button type="button" id= "reservation_confirm_btn" onclick="no_reservation()">button</button><!--  예약조회 버튼이랑 기능 합쳐야,,,,  -->  
+				<!--  <button type="button" id= "reservation_confirm_btn" onclick="no_reservation()">button</button> --><!--  예약조회 버튼이랑 기능 합쳐야,,,,  -->  
 				 <!-- <input type="submit" value="예약 조회" class="patient_form_btn" id="reservation_confirm" formaction="/reservationCheck" onsubmit="return no_reservation()">  -->
 				 <input type="submit" value="예약 조회" class="patient_form_btn" id="reservation_confirm" formaction="/reservationCheck"> 
 				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2" formaction="/reserve"> 
