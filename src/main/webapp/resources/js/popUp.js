@@ -78,6 +78,6 @@ $(document).ready(function(){
 	        $('#timeSelect').css('visibility', 'visible ');
 	    }
 	})
-
+  
 });
 

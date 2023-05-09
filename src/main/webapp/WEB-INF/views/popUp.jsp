@@ -116,7 +116,7 @@
 				<div class="label">메모</div>	
 				<div>
 					<textarea name="s_memo" placeholder="기타 추가 사항 입력."></textarea>
-				</div>	
+				</div>  
 			</div>			
 		</div>	
 	</form>	

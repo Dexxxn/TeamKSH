@@ -65,7 +65,7 @@
   		SET s_date = #{s_date},
       	s_startTime = #{s_startTime},
       	s_endTime = #{s_endTime}
-  		WHERE s_no = #{s_no};
+  		WHERE s_no = #{s_no};  
 	</update>
 	
 	<update id="modify">

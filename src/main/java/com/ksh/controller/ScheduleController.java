@@ -56,7 +56,7 @@ public class ScheduleController {
 			hash.put("end", list.get(i).getS_date() + 'T' + list.get(i).getS_endTime());
 			hash.put("allDay", list.get(i).getAllDay());
 			hash.put("s_type", list.get(i).getS_type());
-			hash.put("s_no", list.get(i).getS_no());
+			hash.put("s_no", list.get(i).getS_no()); 
 
 			jsonObj = new JSONObject(hash); // 중괄호 {key:value , key:value, key:value}
 			jsonArr.add(jsonObj); // 대괄호 안에 넣어주기[{key:value , key:value, key:value},{key:value , key:value,

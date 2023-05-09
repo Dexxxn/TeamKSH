@@ -187,7 +187,7 @@
 	            window.close();					// 현재 팝업창 Close
 	         }, 100);
 			window.opener.location.reload();    // 부모창 reload				
-			alert("일정이 정상적으로 삭제되었습니다.");
+			alert("일정이 정상적으로 삭제되었습니다.");  
 		})
 	});
 </script>

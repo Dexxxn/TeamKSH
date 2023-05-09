@@ -27,7 +27,7 @@ public class ScheduleVO {
 	}
 
 	public String getS_type() {
-		return s_type;
+		return s_type; 
 	}
 
 	public void setS_type(String s_type) {
