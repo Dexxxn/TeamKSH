@@ -209,3 +209,33 @@ $(document).ready(function(){
 	}// list함수 선언 끝		
 			
 })
+$(document).ready(function() {
+  // 검색 버튼 클릭 시 이벤트 처리
+  $("#scheduleSelect_search_btn").click(function() {
+    var s_dept = $("#index_top_medical_dept").val(); // 선택한 진료과목
+    var s_name = $("#index_top_selectDept").val(); // 선택한 진료의
+    var s_type = $("select[name='s_type']").val(); // 선택한 일정 분류
+    console.log(s_dept);
+    console.log(s_name);
+    console.log(s_type);
+ // $.getJSON("/replies/       " + bno    + "/" + page   +              ".json",function(data){
+    $.getJSON("/doctorSchedule/" + s_dept + "/" + s_name + "/" + s_type+".json", function(data) {
+    	
+    	console.log(data);
+    	
+        var scheduleList = data;
+		
+        var scheduleHTML = "";
+        for (var i = 0; i < scheduleList.length; i++) {
+          var schedule = scheduleList[i];
+          scheduleHTML += "<li>" + schedule.title + "</li>";
+          scheduleHTML += "<li>" + schedule.start + "</li>";
+          scheduleHTML += "<li>" + schedule.end + "</li>";
+          // ... 일정 정보 추가
+        }
+        var url = "/doctorSchedule/" + s_dept + "/" + s_name + "/" + s_type;
+        window.location.href = url;
+        $("#scheduleUL").html(scheduleHTML); // 일정 목록을 UL 요소에 삽입
+      });
+    });
+  });

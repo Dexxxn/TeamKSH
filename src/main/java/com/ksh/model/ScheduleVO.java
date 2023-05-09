@@ -17,6 +17,7 @@ public class ScheduleVO {
 	private String allDay;
 	private PatientVO patientVO;
 	private MedicalVO medicalVO;
+	private MedicalVO med;
 
 	public int getS_no() {
 		return s_no;
@@ -27,7 +28,7 @@ public class ScheduleVO {
 	}
 
 	public String getS_type() {
-		return s_type; 
+		return s_type;
 	}
 
 	public void setS_type(String s_type) {
@@ -121,7 +122,7 @@ public class ScheduleVO {
 	public void setAllDay(String allDay) {
 		this.allDay = allDay;
 	}
-	
+
 	public PatientVO getPatientVO() {
 		return patientVO;
 	}
@@ -136,6 +137,14 @@ public class ScheduleVO {
 
 	public void setMedicalVO(MedicalVO medicalVO) {
 		this.medicalVO = medicalVO;
+	}
+
+	public MedicalVO getMed() {
+		return med;
+	}
+
+	public void setMed(MedicalVO med) {
+		this.med = med;
 	}
 
 	@Override

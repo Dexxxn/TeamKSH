@@ -1,6 +1,7 @@
 package com.ksh.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.ksh.model.ScheduleVO;
 
@@ -24,4 +25,5 @@ public interface ScheduleService {
 	// 삭제
 	public void remove(ScheduleVO schedule);
 
+	public List<ScheduleVO> getDoctorSchedule(String s_dept, String s_name, String s_type);
 }

@@ -1,6 +1,7 @@
 package com.ksh.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,11 @@ public class ScheduleServiceImpl implements ScheduleService {
 	public void remove(ScheduleVO schedule) {
 		sm.remove(schedule);
 		System.out.println("remove = " + schedule);
+	}
+
+	public List<ScheduleVO> getDoctorSchedule(String s_dept, String s_name, String s_type) {
+		// ScheduleMapper의 적절한 메서드를 호출하여 의사 일정을 조회
+		return sm.getDoctorSchedule(s_dept, s_name, s_type);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.ksh.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,12 +53,12 @@ public class ScheduleController {
 			 * hash.put("start", list.get(i).get("expected_production_start_date")); //시작일자
 			 * hash.put("end", list.get(i).get("expected_production_end_date")); //종료일자
 			 */
-			hash.put("title", list.get(i).getS_doctor() + '님' +'('+ list.get(i).getS_patient()+')');
+			hash.put("title", list.get(i).getS_doctor() + '님' + '(' + list.get(i).getS_patient() + ')');
 			hash.put("start", list.get(i).getS_date() + 'T' + list.get(i).getS_startTime()); // getS_date()+'T'+getS_startTime()
 			hash.put("end", list.get(i).getS_date() + 'T' + list.get(i).getS_endTime());
 			hash.put("allDay", list.get(i).getAllDay());
 			hash.put("s_type", list.get(i).getS_type());
-			hash.put("s_no", list.get(i).getS_no()); 
+			hash.put("s_no", list.get(i).getS_no());
 
 			jsonObj = new JSONObject(hash); // 중괄호 {key:value , key:value, key:value}
 			jsonArr.add(jsonObj); // 대괄호 안에 넣어주기[{key:value , key:value, key:value},{key:value , key:value,
@@ -76,6 +78,31 @@ public class ScheduleController {
 		System.out.println(schedule);
 		ss.update(schedule);
 		return "/update";
+	}
+
+	@RequestMapping(value = "/doctorSchedule/{s_dept}/{s_name}/{s_type}", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Map<String, Object>> doctorList(@PathVariable("s_dept") String s_dept,
+			@PathVariable("s_name") String s_name, @PathVariable("s_type") String s_type) {
+
+		System.out.println(s_dept + " : " + s_name + " : " + s_type);
+
+		List<ScheduleVO> list = ss.getDoctorSchedule(s_dept, s_name, s_type);
+
+		List<Map<String, Object>> resultList = new ArrayList<>();
+
+		for (ScheduleVO schedule : list) {
+			Map<String, Object> scheduleMap = new HashMap<>();
+			scheduleMap.put("title", schedule.getS_doctor() + "님" + "(" + schedule.getS_patient() + ")");
+			scheduleMap.put("start", schedule.getS_date() + "T" + schedule.getS_startTime());
+			scheduleMap.put("end", schedule.getS_date() + "T" + schedule.getS_endTime());
+			scheduleMap.put("allDay", schedule.getAllDay());
+			scheduleMap.put("s_type", schedule.getS_type());
+			scheduleMap.put("s_no", schedule.getS_no());
+			resultList.add(scheduleMap);
+		}
+
+		return resultList;
 	}
 
 	// 일정 추가

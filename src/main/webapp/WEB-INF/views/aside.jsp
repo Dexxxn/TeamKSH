@@ -292,9 +292,9 @@
 				<div class="label_detail"><label class="patient_form_label">진료과목</label>
 					<!-- 과 --><select class="patient_form_select" name="index_s_dept" id="index_medical_dept">
 								<option>선택</option>
-								<option value="A">정형외과</option>
-								<option value="B">신경외과</option>
-								<option value="C">내과</option>
+								<option value="정형외과">정형외과</option>
+								<option value="신경외과">신경외과</option>
+								<option value="내과">내과</option>
 							</select>
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
@@ -374,9 +374,9 @@
 					<!-- 과 -->
 					<select class="top_optionSelect" name="index_top_s_dept" id="index_top_medical_dept">
 						<option>선택</option>
-						<option value="A">정형외과</option>
-						<option value="B">신경외과</option>
-						<option value="C">내과</option>
+						<option value="정형외과">정형외과</option>
+						<option value="신경외과">신경외과</option>
+						<option value="내과">내과</option>
 					</select>
 				</span>
 				<span class="doctor_schedule_select"><label class="doctor_schedule_label">진료의</label>
@@ -398,7 +398,7 @@
 					
 				</span>
 				
-						<input type="submit" value="검색" id="scheduleSelect_search_btn">
+						<button id="scheduleSelect_search_btn">검색</button>
 			</div><!-- scheduleSelect -->
 	</div><!-- right_top -->	
 

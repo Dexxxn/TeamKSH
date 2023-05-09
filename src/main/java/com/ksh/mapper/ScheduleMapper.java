@@ -1,6 +1,9 @@
 package com.ksh.mapper;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 
 import com.ksh.model.ScheduleVO;
 
@@ -24,4 +27,6 @@ public interface ScheduleMapper {
 	// 삭제
 	public void remove(ScheduleVO schedule);
 
+	public List<ScheduleVO> getDoctorSchedule(@Param("s_dept") String s_dept, @Param("s_name") String s_name,
+			@Param("s_type") String s_type);
 }

@@ -86,4 +86,31 @@
 	<delete id="remove">
 		DELETE FROM schedule WHERE s_no=#{s_no};
 	</delete>
+	
+	<resultMap type="com.ksh.model.MedicalVO" id="Med">
+	    <result column="s_dept" property="s_dept"/>
+	</resultMap>
+	
+	<resultMap type="com.ksh.model.ScheduleVO" id="Sche">
+		<result column="s_no" property="s_no"/>
+	    <result column="s_date" property="s_date"/>
+	    <result column="s_type" property="s_type"/>
+	    <result column="s_startTime" property="s_startTime"/>
+	    <result column="s_endTime" property="s_endTime"/>
+	    <result column="s_memo" property="s_memo"/>
+	    <result column="s_doctor" property="s_doctor"/>
+	    <result column="s_patient" property="s_patient"/>    	    
+   	    <collection property="med" resultMap="MedicalVO"/>
+	</resultMap>
+	
+	<select id="getDoctorSchedule" parameterType="com.ksh.model.ScheduleVO" resultMap="Sche">
+		SELECT
+		s.s_no, s.s_date, s.s_type, s.s_startTime, s.s_endTime, s.s_memo, s.s_doctor, st.s_dept
+		FROM schedule AS s
+		JOIN staff AS st
+		ON s.s_doctor = st.s_name
+		WHERE st.s_dept = #{s_dept}
+		AND st.s_name = #{s_name}
+		AND s.s_type = #{s_type};
+	</select>
 </mapper>
