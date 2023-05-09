@@ -114,11 +114,11 @@ public class ScheduleVO {
 		this.end = end;
 	}
 
-	public String getAllday() {
+	public String getAllDay() {
 		return allDay;
 	}
 
-	public void setAllday(String allDay) {
+	public void setAllDay(String allDay) {
 		this.allDay = allDay;
 	}
 	

@@ -73,14 +73,14 @@
 		<if test="s_type != null">
 			<choose>
 				<when test="s_type == 'H'.toString()">
-					SET s_date=#{s_date}, s_startTime=#{s_startTime}, s_endTime=#{s_endTime}, s_memo=#{s_memo}
+					SET s_date=#{s_date}, s_startTime='08:00:00.000000', s_endTime='18:00:00.000000', s_memo=#{s_memo}
 				</when>
 				<otherwise>
-					SET s_date=#{s_date}, s_memo=#{s_memo}
+					SET s_date=#{s_date}, s_startTime=#{s_startTime}, s_endTime=#{s_endTime}, s_memo=#{s_memo}
 				</otherwise>
 			</choose>
-		</if>
-		WHERE s_no=#{s_no};
+		</if>	
+		WHERE s_no = #{s_no};
 	</update>
 
 	<delete id="remove">

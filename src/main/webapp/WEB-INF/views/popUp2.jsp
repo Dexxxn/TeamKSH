@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0f537ad086.js" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/resources/js/popUp.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <!-- 팝업창 -->
@@ -19,7 +20,7 @@
 		<span>상세 일정</span>
 		<i onclick="removePopup2()" class="fas fa-regular fa-xmark" style="color: white; float: right;"></i>
 	</div>
-	<form name="detailSchedule" onsubmit="return confirm('일정을 변경하시겠습니까?');">	
+	<form name="detailSchedule" onsubmit="return confirm('일정을 변경하시겠습니까?');" id="detailForm">	
 		<!-- 일정 정보 -->
 		<div class="calendar_select">
 			<div class="item_title">
@@ -59,7 +60,7 @@
 			</div>
 			<div class="item">	
 				<div class="label">일정 종류</div>
-				<div class="value" id="type">
+				<div class="value"><input type="hidden" name="s_type" value="${detail.s_type}">
 					<c:if test="${detail.s_type=='OC'}">
 						진료
 					</c:if>
@@ -172,19 +173,24 @@
 		</div>
 		<div align="center">
 			<input class="button first" type="submit" value="수정" formaction="/popup2/modify">
-			<input class="button second" type="submit" value="삭제" formaction="/popup2/remove">
+			<input class="button second" type="button" value="삭제" id="deleteBtn">
 		</div>	
 	</form>	
 </div>
-<!-- 
-	<script>
-		function btn(a){
-			 if (confirm(a)){	//확인
-			     document.detailSchedule.submit();
-			 }else{   			//취소
-			     return false;
-			 }
-		}
-	</script> -->
+
+<script>
+	$(document).ready(function(){
+		$("#deleteBtn").on("click",function(){
+			$("#detailForm").attr("action", "/popup2/remove").submit();
+	        // 팝업창이 닫히면서 데이터가 넘어가지 않는 현상 방지
+			setTimeout(function() {   
+	            window.close();					// 현재 팝업창 Close
+	         }, 100);
+			window.opener.location.reload();    // 부모창 reload				
+			alert("일정이 정상적으로 삭제되었습니다.");
+		})
+	});
+</script>
+
 </body>
 </html>

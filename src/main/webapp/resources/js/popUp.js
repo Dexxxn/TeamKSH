@@ -22,22 +22,9 @@ $(document).ready(function(){
 		$("#addSchedule").submit();
         // 팝업창이 닫히면서 데이터가 넘어가지 않는 현상 방지
 		setTimeout(function() {   
-            window.close();
+            window.close();					// 현재 팝업창 Close
          }, 100);
-		window.opener.location.reload();    // 부모창 reload
-		//window.close();   				// 현재 팝업창 Close
-		alert("일정이 정상적으로 등록되었습니다.");
-	})
-});
-
-$(document).ready(function(){
-	 $("form[name='detailSchedule']").submit(function(event){
-        // 팝업창이 닫히면서 데이터가 넘어가지 않는 현상 방지
-		setTimeout(function() {   
-            window.close();
-         }, 100);
-		window.opener.location.reload();    // 부모창 reload
-		//window.close();   				// 현재 팝업창 Close
+		window.opener.location.reload();    // 부모창 reload				
 		alert("일정이 정상적으로 등록되었습니다.");
 	})
 });
@@ -73,22 +60,24 @@ $(document).ready(function(){
 			
 		});
 	}// list함수 선언 끝		
-			
+
+
 	// 휴무 옵션 선택시 시간 선택 못하게
-/*	$("#selectH").on("click",function(){
-		//alert("aaa")
-		$("option[value='H']").val();
-		var x = $("select[name='s_dept']").val();
-	});*/
-	
-    $('#type').on('change', function () {
-    	var x = $("select[name='s_type']").val();
-    	//alert(x);
-        if (x == 'H') {
-            $('#timeSelect').css('visibility', 'hidden');
-        } else {
-            $('#timeSelect').css('visibility', 'visible ');
-        }
-    });    
-})
+	/*	$("#selectH").on("click",function(){
+			//alert("aaa")
+			$("option[value='H']").val();
+			var x = $("select[name='s_dept']").val();
+		});*/
+		
+	$('#type').on('change', function () {
+		var x = $("select[name='s_type']").val();
+		//alert(x);
+	    if (x == 'H') {
+	        $('#timeSelect').css('visibility', 'hidden');
+	    } else {
+	        $('#timeSelect').css('visibility', 'visible ');
+	    }
+	})
+
+});
 
