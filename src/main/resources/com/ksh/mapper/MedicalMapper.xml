@@ -32,6 +32,11 @@
 		</if>
 	</select>
 	
-
+	<!-- 로그인 -->
+	<select id="logIn" resultType="com.ksh.model.MedicalVO">
+		SELECT s_id, s_password
+		FROM Medical_Scheduling.staff
+		WHERE s_id=#{s_id} and s_password=#{s_password};
+	</select> 
 
 </mapper>

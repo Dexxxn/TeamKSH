@@ -53,10 +53,10 @@ public class HomeController {
 		return "popUp2";
 	}*/
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String aside() {
 		return "index";
-	}	
+	}*/	
 	
 
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)

@@ -11,5 +11,6 @@ public interface MedicalMapper {
 	public ArrayList<MedicalVO> medical(MedicalVO medical);
 	public ArrayList<MedicalVO> medical2(MedicalVO medical);
 	
-	
+	// 로그인
+	public MedicalVO logIn(MedicalVO medical);
 }

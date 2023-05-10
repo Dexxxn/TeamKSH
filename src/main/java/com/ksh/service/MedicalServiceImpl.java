@@ -21,6 +21,8 @@ public class MedicalServiceImpl implements MedicalService {
 		return mm.medical2(medical);
 	}
 	
-
+	public MedicalVO logIn(MedicalVO medical) {
+		return mm.logIn(medical);
+	}
 
 }

@@ -12,5 +12,6 @@ public interface MedicalService {
 	// 과목-의사 select(비동기식)
 	public ArrayList<MedicalVO> medical2(MedicalVO medical);
 	
-
+	// 로그인
+	public MedicalVO logIn(MedicalVO medical);
 }
