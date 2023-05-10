@@ -147,6 +147,36 @@
 					// data 로 값이 넘어온다. log 값 전달.  
 					events: data
 			    });
+			    
+			    $("#scheduleSelect_search_btn").click(function () {
+	                var s_dept = $("#index_top_medical_dept").val(); // 선택한 진료과목
+	                var s_name = $("#index_top_selectDept").val(); // 선택한 진료의
+	                var s_type = $("select[name='s_type']").val(); // 선택한 일정 분류
+
+	                // AJAX 요청을 통해 선택한 일정 데이터를 가져옴
+	                $.getJSON("/doctorSchedule/" + s_dept + "/" + s_name + "/" + s_type + ".json", function (data) {
+	                    var scheduleList = data;
+
+	                    // 풀 캘린더의 이벤트 배열 생성
+	                    var events = [];
+
+	                    // 선택한 일정을 풀 캘린더의 이벤트 배열에 추가
+	                    for (var i = 0; i < scheduleList.length; i++) {
+	                        var schedule = scheduleList[i];
+	                        var event = {
+	                            title: schedule.title,
+	                            start: schedule.start,
+	                            end: schedule.end
+	                            // 여기에 일정 정보를 추가할 수 있음
+	                        };
+	                        events.push(event);
+	                    }
+
+	                    // 풀 캘린더에 선택한 일정만 표시
+	                    calendar.removeAllEvents(); // 기존의 모든 이벤트 제거
+	                    calendar.addEventSource(events); // 선택한 일정 이벤트 추가
+	                });
+	            });
 			
 				calendar.render();
 			}); 
