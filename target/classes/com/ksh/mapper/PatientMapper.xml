@@ -25,7 +25,7 @@
   	
   	<insert id="reserve">
 		insert into schedule(s_type, s_date, s_startTime, s_endTime, s_memo, s_patient,s_patientIdNum, s_doctor,allDay)
-		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient},#{s_patientIdNum}, #{s_doctor}, false);  <!-- 진료 OC -->
+		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient},#{s_patientIdNum}, #{s_doctor}, null);  <!-- 진료 OC -->
 	 </insert>   
 	
   	<select id="reservationCheck" resultType="com.ksh.model.ScheduleVO">
