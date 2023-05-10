@@ -15,6 +15,7 @@ public class ScheduleVO {
 	private String start;
 	private String end;
 	private String allDay;
+	private String backgroundColor;
 	private PatientVO patientVO;
 	private MedicalVO medicalVO;
 	private MedicalVO med;
@@ -122,6 +123,14 @@ public class ScheduleVO {
 	public void setAllDay(String allDay) {
 		this.allDay = allDay;
 	}
+	
+	public String getBackgroundColor() {
+		return backgroundColor;
+	}
+
+	public void setBackgroundColor(String backgroundColor) {
+		this.backgroundColor = backgroundColor;
+	}
 
 	public PatientVO getPatientVO() {
 		return patientVO;
@@ -146,6 +155,8 @@ public class ScheduleVO {
 	public void setMed(MedicalVO med) {
 		this.med = med;
 	}
+	
+	
 
 	@Override
 	public String toString() {

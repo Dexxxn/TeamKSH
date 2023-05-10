@@ -12,15 +12,21 @@
 	</select>
 
 	<insert id="addSchedule">
-		INSERT into Medical_Scheduling.schedule(s_no, s_type, s_date, s_startTime, s_endTime, s_memo, s_doctor, allDay)
-		<if test="s_type != null">
+		INSERT into Medical_Scheduling.schedule(s_no, s_type, s_date, s_startTime, s_endTime, s_memo, s_doctor, allDay, backgroundColor)
+		<if test="s_type == 'H'.toString()">
+			VALUES(#{s_no}, #{s_type}, #{s_date}, '08:00:00.000000', '18:00:00.000000', #{s_memo}, #{s_doctor}, true, '#8C8C8C');
+		</if>
+		<if test="s_type != 'H'.toString()">
 			<choose>
-				<when test="s_type == 'H'.toString()">
-					VALUES(#{s_no}, #{s_type}, #{s_date}, '08:00:00.000000', '18:00:00.000000', #{s_memo}, #{s_doctor}, true);
+				<when test="s_doctor=='장희영원장'.toString() or s_doctor=='김수민과장'.toString() or s_doctor=='김주윤과장'.toString()">
+					VALUES(#{s_no}, #{s_type}, #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor}, null, '#DB9CFF');
 				</when>
-				<otherwise>
-					VALUES(#{s_no}, #{s_type}, #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor}, null);
-				</otherwise>
+				<when test="s_doctor=='이성언원장'.toString() or s_doctor=='박선영과장'.toString() or s_doctor=='홍종무과장'.toString()">
+					VALUES(#{s_no}, #{s_type}, #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor}, null, '#FFDF24');
+				</when>
+				<when test="s_doctor=='정기원원장'.toString() or s_doctor=='백수미과장'.toString()">
+					VALUES(#{s_no}, #{s_type}, #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_doctor}, null, '#86E57F');
+				</when>
 			</choose>
 		</if>
 	</insert>
