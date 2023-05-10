@@ -24,8 +24,21 @@
   	
   	
   	<insert id="reserve">
-		insert into schedule(s_type, s_date, s_startTime, s_endTime, s_memo, s_patient,s_patientIdNum, s_doctor,allDay)
-		values("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient},#{s_patientIdNum}, #{s_doctor}, null);  <!-- 진료 OC -->
+		insert into schedule(s_type, s_date, s_startTime, s_endTime, s_memo, s_patient, s_patientIdNum, s_doctor,allDay, backgroundColor)
+		
+		<if test="s_doctor != null">
+			<choose>
+				<when test="s_doctor=='장희영원장'.toString() or s_doctor=='김수민과장'.toString() or s_doctor=='김주윤과장'.toString()">
+					VALUES("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient}, #{s_patientIdNum}, #{s_doctor}, null, '#DB9CFF');
+				</when>
+				<when test="s_doctor=='이성언원장'.toString() or s_doctor=='박선영과장'.toString() or s_doctor=='홍종무과장'.toString()">
+					VALUES("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient}, #{s_patientIdNum}, #{s_doctor}, null, '#FFDF24');
+				</when>
+				<when test="s_doctor=='정기원원장'.toString() or s_doctor=='백수미과장'.toString()">
+					VALUES("OC", #{s_date}, #{s_startTime}, #{s_endTime}, #{s_memo}, #{s_patient}, #{s_patientIdNum}, #{s_doctor}, null, '#86E57F');
+				</when>
+			</choose>
+		</if>
 	 </insert>   
 	
   	<select id="reservationCheck" resultType="com.ksh.model.ScheduleVO">
