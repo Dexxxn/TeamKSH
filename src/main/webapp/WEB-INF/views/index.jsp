@@ -24,7 +24,7 @@
 <!-- CSS -->
 <link rel="stylesheet" href="resources/css/sideCalendar.css">
 <link rel="stylesheet" href="resources/css/main.css">
-<link rel="stylesheet" href="resources/css/index.css">
+<link rel="stylesheet" href="/resources/css/index.css">
 
 
 <!-- JS -->
@@ -330,7 +330,9 @@
 			<div id="nav_btn_set">
 				<div class="nav_btn" id="schedule_nav_btn"><a href="#;" class="nav_anchor">schedule</a></div>
 				<div class="nav_btn" id="notice_nav_btn"><a href="notice" class="nav_anchor">notice</a></div>
+				<div style="margin-left: auto;"><b>${login.s_name}</b>님 Have a good day!</div>
 			</div>
+			 
 			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outpatient Clinic Schedule Board</div>
 			
 			

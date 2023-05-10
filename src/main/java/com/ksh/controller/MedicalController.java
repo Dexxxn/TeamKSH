@@ -55,8 +55,11 @@ public class MedicalController {
 			return "alert";
 		}
 		else {
-			session.setAttribute("login", ms.logIn(medical));				
-			return "index";	// return "redirect:'/'" 도 가능 -> redirect: '반드시 서버주소'
+			session.setAttribute("login", ms.logIn(medical));			
+			String s_name = ((MedicalVO) session.getAttribute("login")).getS_name();
+			model.addAttribute("msg", s_name + "님으로 로그인 되었습니다.");
+			model.addAttribute("url", "index");
+			return "alert";	// return "redirect:'/'" 도 가능 -> redirect: '반드시 서버주소'
 		}
 	};
 	

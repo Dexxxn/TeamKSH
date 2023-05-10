@@ -103,7 +103,7 @@
 /* 오른쪽 섹션  */
 	  
 	  /* 네비게이션 버튼  */
-		#nav_btn_set { display: flex; margin-left: 25px; margin-top: 7px; }
+		#nav_btn_set { display: flex; align-items: flex-end; margin-left: 25px; margin-top: 7px; }
 		#nav_btn_set .nav_btn{ border-radius: 23px; color:white; width: 130px; height:45px; font-family: 'Oswald', sans-serif; font-size:23px; box-shadow: 2px 0 0 rgb(224, 224, 224); text-align:center; line-height: 42px;}
 		#schedule_nav_btn{ background-color: rgb(243, 156, 18);}
 		#notice_nav_btn{ background-color: rgb(155, 89, 182); }

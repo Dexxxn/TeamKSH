@@ -34,7 +34,7 @@
 	
 	<!-- 로그인 -->
 	<select id="logIn" resultType="com.ksh.model.MedicalVO">
-		SELECT s_id, s_password
+		SELECT s_id, s_password, s_name
 		FROM Medical_Scheduling.staff
 		WHERE s_id=#{s_id} and s_password=#{s_password};
 	</select> 
