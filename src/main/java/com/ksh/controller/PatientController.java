@@ -26,7 +26,7 @@ public class PatientController {
 	public String patientPost(PatientVO patient) {
 		System.out.println(patient);
 		ps.patientreg(patient);
-		return "aside";
+		return "index";
 	}
 	
 	
@@ -64,7 +64,7 @@ public class PatientController {
 		model.addAttribute("patientInfo", ps.secondVisit_patient(patient));
 		ps.secondVisit_patient(patient);
 		
-		return "aside";
+		return "index";
 	}
 	
 	// 예약등록 
@@ -73,7 +73,7 @@ public class PatientController {
 		System.out.println("bbb");
 		System.out.println("patient="+schedule);
 		ps.reserve(schedule);
-		return "redirect:/aside"; // redirect안쓰면 브라우저 새로고침 시 데이터 계속 들어감
+		return "redirect:/index"; // redirect안쓰면 브라우저 새로고침 시 데이터 계속 들어감
 	}
 	
 	// 예약 조회
@@ -83,7 +83,7 @@ public class PatientController {
 		System.out.println("patient="+schedule);
 		model.addAttribute("OC_reservation", ps.reservationCheck(schedule));
 		ps.reservationCheck(schedule);
-		return "aside";
+		return "index";
 	}
 	
 	

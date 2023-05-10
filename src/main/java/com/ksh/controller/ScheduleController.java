@@ -113,7 +113,7 @@ public class ScheduleController {
 		ss.addSchedule(schedule);
 		// 그냥 aside.jsp로 가면 서버주소에 insert하는 값이 남게됨
 		// .jsp가 아닌 .jsp로 리턴되는 서버로 이동해야함
-		return "redirect:/aside";
+		return "redirect:/index";
 	}
 
 	// 상세 일정 보기
@@ -137,7 +137,7 @@ public class ScheduleController {
 	@RequestMapping(value = "/popup2/remove", method = RequestMethod.GET)
 	public String removeSchedule(ScheduleVO schedule) {
 		ss.remove(schedule);
-		return "redirect:/aside";
+		return "redirect:/index";
 	}
 
 }

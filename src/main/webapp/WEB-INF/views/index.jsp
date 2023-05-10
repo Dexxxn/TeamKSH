@@ -24,13 +24,13 @@
 <!-- CSS -->
 <link rel="stylesheet" href="resources/css/sideCalendar.css">
 <link rel="stylesheet" href="resources/css/main.css">
-<link rel="stylesheet" href="resources/css/aside.css">
+<link rel="stylesheet" href="resources/css/index.css">
 
 
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="resources/js/main.js" type="text/javascript"></script>
-<script src="resources/js/aside.js" type="text/javascript"></script>
+<script src="resources/js/index.js" type="text/javascript"></script>
 <script src="resources/js/popUp.js" type="text/javascript"></script>
 
 <!-- api 한글로 -->
@@ -255,7 +255,7 @@
 						<br>
 					</div>
 						<div class="label_detail"><label class="patient_form_label">연락처</label>
-							<input class="patient_form_input" type="text" name="p_phone" value="${patientInfo.p_phone}">
+							<input class="patient_form_input" type="text" maxlength="11" name="p_phone" value="${patientInfo.p_phone}">
 						</div>
 						<div class="label_detail textarea_label_position">
 							<label class="patient_form_label textarea_label">주소</label>
@@ -311,7 +311,7 @@
 				 <!-- <input type="submit" value="예약 조회" class="patient_form_btn" id="reservation_confirm" formaction="/reservationCheck" onsubmit="return no_reservation()">  -->
 				 <input type="submit" value="예약 조회" class="patient_form_btn" id="reservation_confirm" formaction="/reservationCheck"> 
 				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2" formaction="/reserve"> 
-				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/aside'"><br><br><br><br><br><br><br>
+				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/index'"><br><br><br><br><br><br><br>
 				 </div>
 			</div>
 	</form>

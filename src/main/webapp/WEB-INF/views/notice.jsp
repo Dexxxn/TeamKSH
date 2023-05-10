@@ -26,7 +26,7 @@
 <div id="right_top">
 			<!-- 네비게이션 바 -->
 		<div id="nav_btn_set">
-				<div class="nav_btn" id="schedule_nav_btn"><a href="aside" class="notice_nav_anchor">schedule</a></div>
+				<div class="nav_btn" id="schedule_nav_btn"><a href="index" class="notice_nav_anchor">schedule</a></div>
 				<div class="nav_btn" id="notice_nav_btn"><a href="notice"  class="notice_nav_anchor">notice</a></div>
 		</div>
 		<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Notification</div>
