@@ -53,7 +53,8 @@
 			
 			request.done(function (data) {
 			    console.log(data); // log 로 데이터 찍어주기.
-	    
+			    var monthlyTotal = data.length;
+			    document.getElementById('monthly_total').value = '당월 전체: ' + monthlyTotal;
 			    var calendarEl = document.getElementById('main_Calendar');
 	
 			    var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -137,6 +138,7 @@
 					// 얘는 뭐지
 					editable: true,
 					dayMaxEvents: true, // allow "more" link when too many events
+					
 					dateClick: function(info) {
 					    var dateStr = info.dateStr;
 					    document.getElementById('dateCheck').value = dateStr;
@@ -336,7 +338,7 @@
 			<div id="navBar"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Outpatient Clinic Schedule Board</div>
 			
 			
-    <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : n건" readonly>
+    <!-- 이달 전체 건수 --><input type="text" id="monthly_total" placeholder="당월 전체 : " readonly>
 		 <div id="main_Calendar_wrap">
 		 <!-- 네비게이션 달력 -->
 		<p></p>
