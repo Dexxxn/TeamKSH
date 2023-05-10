@@ -301,7 +301,7 @@
 				</div>
 				<div class="label_detail"><label class="patient_form_label">진료의사</label>
 					<!-- 해당과의 의료진  --><select class="patient_form_select" name="s_doctor" id="index_selectDept">
-				
+										<option selected>${OC_reservation.s_doctor}</option>
 							</select>
 				</div>
 				<div  class="label_detail textarea_label_position">
