@@ -118,7 +118,7 @@
 	  
 	  
 	  
-	  /* 전체 건수 */ #monthly_total{text-align:center; width: 120px; height:27px; margin:6px; padding:4px; background-color: #DCDCDC; color: white; border:none; margin-left: 30px;}
+	  /* 전체 건수 */ #monthly_total{text-align:center; width: 120px; height:27px; margin:6px; padding:4px; background-color: orange; color: white; border:none; margin-left: 30px;}
 	  
 	 .scheduleSelect .doctor_schedule_select{margin-left: 9px;}
 	  
