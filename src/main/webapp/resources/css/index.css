@@ -47,7 +47,7 @@
 		
 		#form_wrap .patient_visit_radio{margin:5px; }
 		
-		#form_wrap .patient_form_btn{ background-color:rgb(94, 94, 94); color:white; font-size:11px; height:20px; border-radius: 5px;}
+		#form_wrap .patient_form_btn{ background-color:rgb(94, 94, 94); color:white; font-size:11px; height:20px; border-radius: 5px; width:76px;}
 		#form_wrap .patient_form_btn:hover{color:black; background-color:white; font-weight:bold;}
 		#form_wrap .rs_btn1{ width:37px; margin: 3px;}
 		#form_wrap .rs_btn1:hover{color:black; background-color:white; font-weight:bold;}
@@ -61,7 +61,7 @@
 		#form_wrap .patient_textarea{width:173px; resize:none; font-weight:bold; padding-left:10px; padding-top:3px;} 
 		
 		#form_wrap .patient_textarea:focus{background-color:#e8f0fe;}
-		#form_wrap #visit_radio_div{ margin-left:12px; padding: 3px; width:236px; display: flex; }
+		#form_wrap #visit_radio_div{ margin-left:58px; padding: 3px; width:236px; display: flex; }
 		
 		
 		#reservation_btn_set{margin-top: 45px; margin-left:78px;}
@@ -96,7 +96,7 @@
 	  #rs_btn2:hover{color:black; background-color:white; font-weight:bold;} */
 	  
 	  /* 진료 외 일정들 등록 전용 버튼 */
-	  #other_schedule_register_btn{width: 110px; height:28px; margin-left: 75px; background-color:rgb(94, 94, 94); color: white; border-radius: 5px;}
+	  #other_schedule_register_btn{width: 110px; height:28px; margin-left: 83px; margin-top: 50px; background-color:rgb(94, 94, 94); color: white; border-radius: 5px;}
 	  
 	  
 	  

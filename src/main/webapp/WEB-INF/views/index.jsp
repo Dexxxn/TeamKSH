@@ -281,7 +281,7 @@
 						<input type="submit" value="등록" class="patient_form_btn rs_btn1"  formaction="/patientF" id="patientF">
 						<input type="submit" value="조회" class="patient_form_btn rs_btn1"  formaction="/patientS" id="patientS">
 						<button type="button" onclick="already_patient_Chk()" class="patient_form_btn rs_btn1">중복</button>
-						<input type="reset" value="초기화" class="patient_form_btn rs_btn1">
+						<!-- <input type="reset" value="초기화" class="patient_form_btn rs_btn1"> -->
 						<br>
 					</div>
 						<div class="label_detail"><label class="patient_form_label">연락처</label>
@@ -342,7 +342,7 @@
 				 <!-- <input type="submit" value="예약 조회" class="patient_form_btn" id="reservation_confirm" formaction="/reservationCheck" onsubmit="return no_reservation()">  -->
 				 <input type="submit" value="예약 조회" class="patient_form_btn" id="reservation_confirm" formaction="/reservationCheck"> 
 				 <input type="submit" value="예약 등록" class="patient_form_btn" id="rs_btn2" formaction="/reserve"> 
-				 <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/index'"><br><br><br><br><br><br><br>
+				 <!-- <input type="button" value="새로고침" class="patient_form_btn" id="" onclick="location.href='/index'"> --><br><br><br><br><br><br><br>
 				 </div>
 			</div>
 	</form>
