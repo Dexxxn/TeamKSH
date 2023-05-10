@@ -225,4 +225,14 @@
 		  width: 1px;
 		  height: 1px;
 		}
+		
+		#boardWrite_btn{  background: #f5f5f5;
+		  color: black;
+		  border-color: #f5f5f5;
+		  margin-top:30px;
+		  margin-left:1400px;}
+		
+		#boardWrite_btn:hover{ background: #373737;
+		  border-color: #373737;
+		  color: #fff;}
 	  
