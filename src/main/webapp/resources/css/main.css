@@ -936,8 +936,8 @@ A VERTICAL event
   display: block;
   border: 1px solid #ecd7fa;
   border: 1px solid var(--fc-event-border-color, #ecd7fa);
-  background-color: #ecd7fa;
-  background-color: var(--fc-event-bg-color,#ecd7fa)
+  background-color: rgba(188, 232, 241, 0.3);
+  background-color: var(--fc-event-bg-color, rgba(188, 232, 241, 0.3));
 
 }
 

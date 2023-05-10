@@ -216,12 +216,10 @@
             for (i=1; i<=lastDate.getDate(); i++) {              
                 cell = row.insertCell();
                 cell.innerHTML = i;
-                cell.onclick = function () {
+/*                 cell.onclick = function () {
                    var event = prompt("일정추가"); 
-                  
-                   
-                 
-                }
+
+                } */
                 cnt = cnt + 1;
                 if (cnt %7 == 2){
                 	cell.innerHTML= i + "월"
