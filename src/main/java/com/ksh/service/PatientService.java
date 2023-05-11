@@ -5,18 +5,21 @@ import com.ksh.model.ScheduleVO;
 
 public interface PatientService {
 	
+	// 초진 환자 정보 insert하기 
 	public void patientreg(PatientVO patient);
 	
+	// 재진 환자 정보 select해오기
 	public PatientVO secondVisit_patient(PatientVO patient);
 	
+	// 예약등록
 	public void reserve(ScheduleVO schedule);
 	
+	// 예약 조회
 	public ScheduleVO reservationCheck(ScheduleVO schedule);
 	
-	//환자등록 유무 체크
-	/*public int already_patient_chk(PatientVO patient);*/
+	//환자등록 중복유무 체크
 	public int already_patient_chk(String patientIdNum);
 	
-	public int no_reservation_chk(String nothing);
+
 }
 	

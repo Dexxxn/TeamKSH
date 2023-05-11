@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>error</title>
+<title>notice</title>
 </head>
 <body>
 <!-- https://dev-kmh-note.tistory.com/1 -->

@@ -47,12 +47,6 @@
   		where s_patient=#{s_patient} and substring(#{s_patientIdNum},1,6);
   	</select>
   	
-  <!-- 예약날짜 없는 환자를 예약조회 했을 때(count) -->	
-  	<select id="no_reservation_chk" parameterType="string" resultType="int">
-  		select count(*) 
-	  	from schedule
-	  	where s_patientIdNum = #{s_patientIdNum};
-  	</select>
 
   
   <!--기존 등록 환자 유무 체크(count)  -->
